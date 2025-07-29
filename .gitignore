@@ -1,0 +1,25 @@
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# ESP-IDF build artifacts
+build/
+*.bin
+*.elf
+*.map
+*.hex
+*.obj
+
+# CMake artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake_install
+MakeFile
+
+# IDF config files (generated)
+sdkconfig
+sdkconfig.old
