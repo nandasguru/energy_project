@@ -19,7 +19,7 @@
 #define KX134_ODCNTL 0x21
 #define KX134_CNTL1_PC1_BIT 0x80
 
-#define INTERVAL_S 1
+#define INTERVAL_S 10 // In seconds
 
 #define KX134_WHO_AM_I 0x13
 
@@ -125,7 +125,6 @@ void app_main(void) {
     kx134_init();
 
     float last_x = 0.0, last_y = 0.0, last_z = 0.0;
-    const float VIBRATION_THRESHOLD = 300.0;
     
     while (1) {
         float temperature = 0.0;
@@ -145,10 +144,19 @@ void app_main(void) {
             // Root Mean Square (RMS) of deltas for vibration value
             float vibration_value = sqrtf(((dx*dx) + (dy*dy) + (dz*dz))  / 3.0 );
 
-            printf("Temp: %.2f C, Accel x: %d (%.3f), y: %d (%.3f), z: %d (%.3f), V: %.3f\n",
-            temperature, x, xg, y, yg, z, zg, vibration_value);
+            printf(
+                "{\"Temperature\": %.2f, "
+//                "\"raw_x\": %d, "
+                "\"x_g\": %.3f, "
+//                "\"raw_y\": %d, "
+                "\"y_g\": %.3f, "
+//                "\"raw_z\": %d, "
+                "\"z_g\": %.3f, "
+                "\"Vibration\": %.3f}\n", 
+                temperature, /*x,*/ xg, /*y,*/ yg, /*z,*/ zg, vibration_value
+            );
 
-            if(dx > VIBRATION_THRESHOLD || dy > VIBRATION_THRESHOLD || dz > VIBRATION_THRESHOLD){
+            if(vibration_value > 100){
                 printf("Vibration Detected\n");
             }
             last_x = x;
