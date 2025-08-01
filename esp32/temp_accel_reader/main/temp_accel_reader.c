@@ -19,9 +19,9 @@
 #define KX134_ODCNTL 0x21
 #define KX134_CNTL1_PC1_BIT 0x80
 
-#define INTERVAL_S 10 // In seconds
-
 #define KX134_WHO_AM_I 0x13
+
+#define INTERVAL_S 2.0 // In seconds
 
 esp_err_t i2c_master_init(void) {
     i2c_config_t conf = {
@@ -156,7 +156,7 @@ void app_main(void) {
                 temperature, /*x,*/ xg, /*y,*/ yg, /*z,*/ zg, vibration_value
             );
 
-            if(vibration_value > 100){
+            if(vibration_value > 20){
                 printf("Vibration Detected\n");
             }
             last_x = x;
@@ -168,6 +168,6 @@ void app_main(void) {
             printf("Failed to read sensors\n");
         }
 
-        vTaskDelay(INTERVAL_S * 1000 / portTICK_PERIOD_MS);
+        vTaskDelay(INTERVAL_S * 1000.0 / portTICK_PERIOD_MS);
     }
 }
