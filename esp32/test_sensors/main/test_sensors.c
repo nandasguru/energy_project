@@ -101,6 +101,9 @@ static void sensor_task(void *pvParameters)
 // Application main function
 void app_main(void)
 {
+
+    //printf("\n\nIf you see this, printf statements also work!!!\n\n");
+
     ESP_LOGI(TAG, "Starting RV8803 RTC + TMP117 Temperature Sensor Test");
     
     // Initialize shared I2C bus first
