@@ -69,7 +69,7 @@ esp_err_t kx134_init(void) {
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (KX134_ADDR << 1) | I2C_MASTER_WRITE, true);
     i2c_master_write_byte(cmd, KX134_CNTL1, true);
-    i2c_master_write_byte(cmd, 0x00, true);
+    i2c_master_write_byte(cmd, TMP117_TEMP_REG, true);
     i2c_master_stop(cmd);
     ret = i2c_master_cmd_begin(I2C_MASTER_NUM, cmd, 1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(cmd);
