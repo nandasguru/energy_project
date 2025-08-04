@@ -1,206 +1,143 @@
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "esp_system.h"
 #include "i2c_util.h"
-#include "rv8803.h"
 #include "tmp117.h"
 
-static const char *TAG = "SENSOR_TEST";
+#define KX134_ADDR 0x1F
+#define KX134_XOUT_L 0x08
+#define KX134_CNTL1 0x1B
+#define KX134_ODCNTL 0x21
+#define TAG "SENSOR_TEST"
 
-// Global device handles
 static i2c_master_dev_handle_t tmp117_dev_handle;
-static i2c_master_dev_handle_t rv8803_dev_handle;
+static i2c_master_dev_handle_t kx134_dev_handle;
 static tmp117_dev_t tmp117_device;
-static rv8803_dev_t rv8803_device;
-
-// Task handles
 static TaskHandle_t sensor_task_handle = NULL;
 
-// Initialize RTC with current time if needed
-static esp_err_t setup_rtc_time(void)
+// === KX134 Functions ===
+esp_err_t kx134_init(i2c_master_dev_handle_t dev)
 {
-    rv8803_datetime_t current_time;
-    esp_err_t ret = rv8803_get_time(&rv8803_device, &current_time);
+    esp_err_t ret;
+    //uint8_t data;
+
+    // Set CNTL1 to standby (PC1 = 0) to configure
     
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to read RTC time");
-        return ret;
-    }
+    uint8_t tx1[2] = {KX134_CNTL1, 0x00};
+    ret = i2c_master_transmit(dev, tx1, sizeof(tx1), I2C_MASTER_TIMEOUT_MS);
 
-    // Check if time seems valid (year should be reasonable)
-    if (current_time.year < 2023 || current_time.year > 2030) {
-        ESP_LOGW(TAG, "RTC time seems invalid (%d), setting default time", current_time.year);
-        
-        // Set a default time: 2024-01-01 12:00:00, Monday
-        rv8803_datetime_t default_time = {
-            .year = 2024,
-            .month = 1,
-            .date = 1,
-            .hour = 12,
-            .minute = 0,
-            .second = 0,
-            .weekday = 1  // Monday
-        };
-        
-        ret = rv8803_set_time(&rv8803_device, &default_time);
-        if (ret != ESP_OK) {
-            ESP_LOGE(TAG, "Failed to set default RTC time");
-            return ret;
-        }
-        ESP_LOGI(TAG, "Default RTC time set");
-    } else {
-        ESP_LOGI(TAG, "RTC time is valid: %04d-%02d-%02d %02d:%02d:%02d", 
-                 current_time.year, current_time.month, current_time.date,
-                 current_time.hour, current_time.minute, current_time.second);
-    }
+    if (ret != ESP_OK) return ret;
 
+    // Set output data rate
+    uint8_t tx2[2] = {KX134_ODCNTL, 0x02};
+    ret = i2c_master_transmit(dev, tx2, sizeof(tx2), I2C_MASTER_TIMEOUT_MS);
+
+    if (ret != ESP_OK) return ret;
+
+    // Set CNTL1 to operating mode with 2g range, low noise, high resolution
+    uint8_t tx3[2] = {KX134_CNTL1, 0xC1};
+    ret = i2c_master_transmit(dev, tx3, sizeof(tx3), I2C_MASTER_TIMEOUT_MS);
+    return ret;
+}
+
+esp_err_t kx134_read_xyz(i2c_master_dev_handle_t dev, int16_t *x, int16_t *y, int16_t *z)
+{
+    esp_err_t ret;
+    uint8_t reg = KX134_XOUT_L;
+    uint8_t data[6];
+
+    ret = i2c_master_transmit(dev, &reg, 1, I2C_MASTER_TIMEOUT_MS);
+    if (ret != ESP_OK) return ret;
+
+    ret = i2c_master_receive(dev, data, sizeof(data), I2C_MASTER_TIMEOUT_MS);
+    if(ret != ESP_OK) return ret;
+
+    *x = (int16_t)((data[1] << 8) | data[0]);
+    *y = (int16_t)((data[3] << 8) | data[2]);
+    *z = (int16_t)((data[5] << 8) | data[4]);
     return ESP_OK;
 }
 
-// Sensor reading task
+// === Sensor Task ===
 static void sensor_task(void *pvParameters)
 {
-    rv8803_datetime_t rtc_time;
     float temperature;
-    bool voltage_low;
-    
+    int16_t x, y, z;
+    int16_t last_x = 0, last_y = 0, last_z = 0;
+
     ESP_LOGI(TAG, "Sensor monitoring task started");
 
     while (1) {
-        // Read current time from RV8803
-        esp_err_t rtc_ret = rv8803_get_time(&rv8803_device, &rtc_time);
-        
-        // Read temperature from TMP117
         temperature = tmp117_read_temp_c(&tmp117_device);
-        
-        // Check RTC voltage status
-        esp_err_t voltage_ret = rv8803_check_voltage_low(&rv8803_device, &voltage_low);
-        
-        // Log the readings
-        if (rtc_ret == ESP_OK && !isnan(temperature)) {
-            ESP_LOGI(TAG, "[%04d-%02d-%02d %02d:%02d:%02d] Temperature: %.4f°C%s",
-                     rtc_time.year, rtc_time.month, rtc_time.date,
-                     rtc_time.hour, rtc_time.minute, rtc_time.second,
-                     temperature,
-                     (voltage_ret == ESP_OK && voltage_low) ? " [RTC LOW VOLTAGE]" : "");
+        esp_err_t accel_status = kx134_read_xyz(kx134_dev_handle, &x, &y, &z);
+
+        if (!isnan(temperature) && accel_status == ESP_OK) {
+            float xg = x / 4096.0;
+            float yg = y / 4096.0;
+            float zg = z / 4096.0;
+
+            float dx = fabsf((float)x - (float)last_x);
+            float dy = fabsf((float)y - (float)last_y);
+            float dz = fabsf((float)z - (float)last_z);
+            float vibration = sqrtf((dx * dx + dy * dy + dz * dz) / 3.0);
+
+            ESP_LOGI(TAG, "Temp: %.2f C | Accel (g): X=%.3f Y=%.3f Z=%.3f | Vibration=%.3f",
+                     temperature, xg, yg, zg, vibration);
+
+            if (vibration > 20.0) {
+                ESP_LOGW(TAG, "Vibration Detected!");
+            }
+
+            last_x = x;
+            last_y = y;
+            last_z = z;
         } else {
-            ESP_LOGW(TAG, "Failed to read sensors - RTC: %s, TMP117: %s",
-                     esp_err_to_name(rtc_ret),
-                     isnan(temperature) ? "FAILED" : "OK");
+            ESP_LOGW(TAG, "Sensor read failed: TMP117=%s, KX134=%s",
+                     isnan(temperature) ? "FAIL" : "OK",
+                     accel_status == ESP_OK ? "OK" : "FAIL");
         }
 
-        // Wait for next reading (10 seconds)
-        vTaskDelay(pdMS_TO_TICKS(10000));
+        vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }
 
-// Application main function
+// === Main ===
 void app_main(void)
 {
+    ESP_LOGI(TAG, "Starting TMP117 + KX134 Test");
 
-    //printf("\n\nIf you see this, printf statements also work!!!\n\n");
-
-    ESP_LOGI(TAG, "Starting RV8803 RTC + TMP117 Temperature Sensor Test");
-    
-    // Initialize shared I2C bus first
-    ESP_LOGI(TAG, "Initializing shared I2C bus...");
-    esp_err_t ret = i2c_util_init();
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize I2C bus: %s", esp_err_to_name(ret));
+    if (i2c_util_init() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize I2C");
         return;
     }
 
-    // Add RV8803 device to the I2C bus
-    ESP_LOGI(TAG, "Adding RV8803 RTC to I2C bus...");
-    ret = i2c_util_add_device(RV8803_I2C_ADDR, &rv8803_dev_handle);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to add RV8803 device to I2C bus");
+    if (i2c_util_add_device(TMP117_I2C_ADDR, &tmp117_dev_handle) != ESP_OK ||
+        tmp117_init(&tmp117_device, tmp117_dev_handle, TMP117_I2C_ADDR) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize TMP117");
         return;
     }
 
-    // Initialize RV8803 RTC
-    ESP_LOGI(TAG, "Initializing RV8803 RTC...");
-    ret = rv8803_init(&rv8803_device, rv8803_dev_handle, RV8803_I2C_ADDR);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize RV8803: %s", esp_err_to_name(ret));
+    if (i2c_util_add_device(KX134_ADDR, &kx134_dev_handle) != ESP_OK ||
+        kx134_init(kx134_dev_handle) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize KX134");
         return;
     }
 
-    // Set up RTC time if needed
-    ret = setup_rtc_time();
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to setup RTC time");
-        return;
-    }
-
-    // Add TMP117 device to the I2C bus
-    ESP_LOGI(TAG, "Adding TMP117 to I2C bus...");
-    ret = i2c_util_add_device(TMP117_I2C_ADDR, &tmp117_dev_handle);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to add TMP117 device to I2C bus");
-        return;
-    }
-
-    // Initialize TMP117 sensor
-    ESP_LOGI(TAG, "Initializing TMP117 sensor...");
-    ret = tmp117_init(&tmp117_device, tmp117_dev_handle, TMP117_I2C_ADDR);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize TMP117: %s", esp_err_to_name(ret));
-        return;
-    }
-
-    // Configure TMP117 for optimal performance
-    tmp117_config_t tmp117_config = {
+    tmp117_config_t cfg = {
         .alert_mode = ALERT_MODE_ALERT,
         .alert_polarity = ALERT_POL_LOW,
-        .averaging = AVG_8_SAMPLES,           // 8 samples averaging for better accuracy
-        .conversion_cycle = CC_250MS,         // 250ms conversion cycle
-        .conversion_mode = MODE_CONTINUOUS,   // Continuous conversion
+        .averaging = AVG_8_SAMPLES,
+        .conversion_cycle = CC_250MS,
+        .conversion_mode = MODE_CONTINUOUS,
         .data_ready_alert_enable = false
     };
+    tmp117_set_config(&tmp117_device, &cfg);
 
-    ret = tmp117_set_config(&tmp117_device, &tmp117_config);
-    if (ret != ESP_OK) {
-        ESP_LOGW(TAG, "Failed to configure TMP117, using defaults: %s", esp_err_to_name(ret));
-    } else {
-        ESP_LOGI(TAG, "TMP117 configured with 8-sample averaging and 250ms cycle");
-    }
+    xTaskCreate(sensor_task, "sensor_task", 4096, NULL, 5, &sensor_task_handle);
 
-    // Test initial readings
-    ESP_LOGI(TAG, "Testing initial sensor readings...");
-    
-    rv8803_datetime_t test_time;
-    ret = rv8803_get_time(&rv8803_device, &test_time);
-    if (ret == ESP_OK) {
-        ESP_LOGI(TAG, "RTC Test: %04d-%02d-%02d %02d:%02d:%02d", 
-                 test_time.year, test_time.month, test_time.date,
-                 test_time.hour, test_time.minute, test_time.second);
-    }
-
-    float test_temp = tmp117_read_temp_c(&tmp117_device);
-    if (!isnan(test_temp)) {
-        ESP_LOGI(TAG, "TMP117 Test: %.4f°C (%.2f°F)", test_temp, tmp117_read_temp_f(&tmp117_device));
-    }
-
-    // Create sensor monitoring task
-    BaseType_t task_ret = xTaskCreate(
-        sensor_task,
-        "sensor_task",
-        4096,
-        NULL,
-        5,
-        &sensor_task_handle
-    );
-
-    if (task_ret != pdPASS) {
-        ESP_LOGE(TAG, "Failed to create sensor task");
-        return;
-    }
-
-    ESP_LOGI(TAG, "System initialized successfully. Starting periodic sensor logging...");
-    ESP_LOGI(TAG, "Logging interval: 10 seconds");
+    ESP_LOGI(TAG, "System initialized. Logging every 2s");
 }
