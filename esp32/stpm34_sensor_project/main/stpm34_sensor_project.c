@@ -63,6 +63,16 @@
  #include "i2c_util.h"
  #include "tmp117.h"
  
+
+
+
+ int read_temperature_TMP117(float *temperature);
+ int read_accel_kx134(int16_t *x, int16_t *y, int16_t *z);
+ #define KX134_CNTL1 0x1B
+ #define KX134_ODCNTL 0x21
+ #define KX134_I2C_ADDR 0x1F
+ #define KX134_XOUT_L 0x08
+
  
  // UART configuration
  #define STPM_UART              UART_NUM_1
@@ -314,10 +324,10 @@ typedef struct
     int32_t activeEnergy;
 
     // New Fields
-    float temperature;
-    int16_t accelX;
-    int16_t accelY;
-    int16_t accelZ;
+    float temperatureC;
+    float accelX;
+    float accelY;
+    float accelZ;
 
 }STPM34Params;
 
@@ -759,7 +769,9 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
     int snprintf_result = snprintf(
         formattedString,
         MAX_STRING_LENGTH,
-        "{V1: %.3f, I1: %.3f, P1: %.3f, S1: %.3f, F1: %.2f, PH1: %.2f, V2: %.3f, I2: %.3f, P2: %.3f, S2: %.3f F2: %.2f, PH2: %.2f}\r\n",
+        "{V1: %.3f, I1: %.3f, P1: %.3f, S1: %.3f, F1: %.2f, PH1: %.2f, V2: %.3f, I2: %.3f, "
+        "P2: %.3f, S2: %.3f, F2: %.2f, PH2: %.2f, "
+        "Temp(C): %.2f, AccelX: %.2f, AccelY: %.2f, AccelZ: %.2f}\r\n",
         stpmParams.rmsVoltagePhase1,
         stpmParams.rmsCurrentPhase1,
         (float)stpmParams.activePowerPhase1 / 1000.0f,  //Corrected the division and cast
@@ -771,7 +783,12 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
         (float)stpmParams.activePowerPhase2 / 1000.0f,   //Corrected the division and cast
         (float)stpmParams.apparentPowerPhase2 / 1000.0f,
         stpmParams.frequencyPhase2,
-        stpmParams.phaseAnglePhase2
+        stpmParams.phaseAnglePhase2,
+
+        stpmParams.temperatureC,
+        stpmParams.accelX,
+        stpmParams.accelY,
+        stpmParams.accelZ
     );
 
     //Check for `snprintf` errors.
@@ -1770,6 +1787,25 @@ static void sensor_task(void *pvParameters)
          flush_uart_tx_rx_buff();
          // Read all parameters. VRms, IRms and ActivePower
          readAll_Params();
+         
+         // Read temperature
+         float temperature;
+         if(read_temperature_TMP117(&temperature) == 0){
+            stpmParams.temperatureC = temperature;
+         } else {
+            stpmParams.temperatureC = -999.9f; // error value
+         }
+
+         // Read KX134
+         int16_t x_raw, y_raw, z_raw;
+         if(read_accel_kx134(&x_raw, &y_raw, &z_raw) == 0){
+            stpmParams.accelX = x_raw / 16384.0f; // convert to g
+            stpmParams.accelY = y_raw / 16384.0f;
+            stpmParams.accelZ = z_raw / 16384.0f;
+         } else {
+            stpmParams.accelX = stpmParams.accelY = stpmParams.accelZ = -999.9f; // error value
+         }
+
          // Disable the peripheral
          uart_driver_delete(STPM_UART);
          //Send data to RPi UART
