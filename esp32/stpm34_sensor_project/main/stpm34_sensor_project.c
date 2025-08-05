@@ -56,6 +56,12 @@
  #include "driver/gpio.h"
  #include "sdkconfig.h"
  #include "esp_log.h"
+
+ 
+
+
+ #include "i2c_util.h"
+ #include "tmp117.h"
  
  
  // UART configuration
@@ -85,6 +91,16 @@
  const int RpiRxPin = 25;
 
  static const char *STPM_TAG = "UART STPM34";
+
+
+
+
+ static const char *SENSOR_TAG = "SENSOR_TEST";
+ static i2c_master_dev_handle_t tmp117_dev_handle;
+ static i2c_master_dev_handle_t kx134_dev_handle;
+ static tmp117_dev_t tmp117_device;
+ static float g_current_temperature = 0.0f;
+ static int16_t g_accel_x = 0, g_accel_y = 0, g_accel_z = 0;
  
  /* Register Address Mapping */
  #define START_REG_ADDR         0x00
@@ -296,6 +312,13 @@ typedef struct
     int32_t apparentPowerPhase1;
     int32_t apparentPowerPhase2;
     int32_t activeEnergy;
+
+    // New Fields
+    float temperature;
+    int16_t accelX;
+    int16_t accelY;
+    int16_t accelZ;
+
 }STPM34Params;
 
  /*Function Prototypes*/
@@ -1610,8 +1633,98 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
      memset(res, 0xFF, sizeof(res));
      rearrangeBytes(dataBuff, res, FRAME_LEN-1, ENEDATASTARTIND);
      parseActEnergy((uint8_t*)res, 1);*/  
+
+
+     stpmParams.accelX = g_accel_x;
+     stpmParams.accelY = g_accel_y;
+     stpmParams.accelZ = g_accel_z;
  
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // === KX134 Functions ===
+esp_err_t kx134_init(i2c_master_dev_handle_t dev)
+{
+    esp_err_t ret;
+    //uint8_t data;
+
+    // Set CNTL1 to standby (PC1 = 0) to configure
+    
+    uint8_t tx1[2] = {KX134_CNTL1, 0x00};
+    ret = i2c_master_transmit(dev, tx1, sizeof(tx1), I2C_MASTER_TIMEOUT_MS);
+
+    if (ret != ESP_OK) return ret;
+
+    // Set output data rate
+    uint8_t tx2[2] = {KX134_ODCNTL, 0x02};
+    ret = i2c_master_transmit(dev, tx2, sizeof(tx2), I2C_MASTER_TIMEOUT_MS);
+
+    if (ret != ESP_OK) return ret;
+
+    // Set CNTL1 to operating mode with 2g range, low noise, high resolution
+    uint8_t tx3[2] = {KX134_CNTL1, 0xC1};
+    ret = i2c_master_transmit(dev, tx3, sizeof(tx3), I2C_MASTER_TIMEOUT_MS);
+    return ret;
+}
+
+esp_err_t kx134_read_xyz(i2c_master_dev_handle_t dev, int16_t *x, int16_t *y, int16_t *z)
+{
+    esp_err_t ret;
+    uint8_t reg = KX134_XOUT_L;
+    uint8_t data[6];
+
+    ret = i2c_master_transmit(dev, &reg, 1, I2C_MASTER_TIMEOUT_MS);
+    if (ret != ESP_OK) return ret;
+
+    ret = i2c_master_receive(dev, data, sizeof(data), I2C_MASTER_TIMEOUT_MS);
+    if(ret != ESP_OK) return ret;
+
+    *x = (int16_t)((data[1] << 8) | data[0]);
+    *y = (int16_t)((data[3] << 8) | data[2]);
+    *z = (int16_t)((data[5] << 8) | data[4]);
+    return ESP_OK;
+}
+
+// === Sensor Task ===
+static void sensor_task(void *pvParameters)
+{
+
+    ESP_LOGI(SENSOR_TAG, "Sensor monitoring task started");
+    while(1){
+        g_current_temperature = tmp117_read_temp_c(&tmp117_device);
+
+        esp_err_t accel_ret = kx134_read_xyz(kx134_dev_handle, &g_accel_x, &g_accel_y, &g_accel_z);
+
+        if(!isnan(g_current_temperature) && accel_ret == ESP_OK) {
+            ESP_LOGI(SENSOR_TAG, "Temp: %.2f | Accel: X = %d, Y= %d, Z = %d", g_current_temperature, g_accel_x, 
+            g_accel_y, g_accel_z);
+        } else {
+            ESP_LOGW(SENSOR_TAG, "Sensor read failed. Temp: %s, Accel: %s", isnan(g_current_temperature) ? "FAILED" : "OK",
+                                                                            accel_ret == ESP_OK ? "OK" : "FAILED");
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(10000));
+    }
+
+}
+    
 
 
  /**
@@ -1810,6 +1923,53 @@ void debug_calculation_macros(void)
      /* Flush the input and output buffers before performning a read */
      // Wait for the default reg (0x00) value to be available on the UART
      esp_rom_delay_us(2000000);
+
+
+
+
+
+    ESP_LOGI(SENSOR_TAG, "Initializing I2C...");
+    esp_err_t ret = i2c_util_init();
+    if (ret != ESP_OK) {
+        ESP_LOGE(SENSOR_TAG, "I2C init failed: %s", esp_err_to_name(ret));
+        return;
+    }
+
+    // TMP117 Init
+    ret = i2c_util_add_device(TMP117_I2C_ADDR, &tmp117_dev_handle);
+    if (ret != ESP_OK) {
+        ESP_LOGE(SENSOR_TAG, "TMP117 add failed");
+        return;
+    }
+    ret = tmp117_init(&tmp117_device, tmp117_dev_handle, TMP117_I2C_ADDR);
+    if (ret != ESP_OK) {
+        ESP_LOGE(SENSOR_TAG, "TMP117 init failed");
+        return;
+    }
+
+    // KX134 Init
+    ret = i2c_util_add_device(KX134_I2C_ADDR, &kx134_dev_handle);
+    if (ret != ESP_OK) {
+        ESP_LOGE(SENSOR_TAG, "KX134 add failed");
+        return;
+    }
+    ret = kx134_init(kx134_dev_handle);
+    if (ret != ESP_OK) {
+        ESP_LOGE(SENSOR_TAG, "KX134 init failed");
+        return;
+    }
+
+    // Start sensor task
+    BaseType_t task_ret = xTaskCreate(sensor_task, "sensor_task", 4096, NULL, 5, NULL);
+    if (task_ret != pdPASS) {
+        ESP_LOGE(SENSOR_TAG, "Failed to create sensor task");
+        return;
+    }
+
+
+
+
+
      performDummyRead();
      flush_uart_tx_rx_buff();
      ESP_LOGD(STPM_TAG,"Register before writing:");
