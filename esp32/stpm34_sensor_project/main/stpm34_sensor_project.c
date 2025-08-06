@@ -857,8 +857,8 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
         formattedString,
         MAX_STRING_LENGTH,
         "{V1: %.3f, I1: %.3f, P1: %.3f, S1: %.3f, F1: %.2f, PH1: %.2f, V2: %.3f, I2: %.3f, "
-        "P2: %.3f, S2: %.3f, F2: %.2f, PH2: %.2f, "
-        "Temp(F): %.2f, AccelX: %.2f, AccelY: %.2f, AccelZ: %.2f, "
+        "P2: %.3f, S2: %.3f, F2: %.2f, PH2: %.2f, Temp(F): %.2f, "
+//        "AccelX: %.2f, AccelY: %.2f, AccelZ: %.2f, "    uncomment to display sensor accel values
         "VibValue: %.2f, Vibration: %d}\r\n\n",
         stpmParams.rmsVoltagePhase1,
         stpmParams.rmsCurrentPhase1,
@@ -874,9 +874,13 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
         stpmParams.phaseAnglePhase2,
 
         stpmParams.temperatureC,
-        stpmParams.accelX,
+
+        /*
+        stpmParams.accelX,    uncomment to display sensor accel values
         stpmParams.accelY,
         stpmParams.accelZ,
+        */
+
         stpmParams.vibrationMagnitude,
         stpmParams.vibrationDetected
     );
