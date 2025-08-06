@@ -20,11 +20,12 @@ def convertToKeyValuePairs(line):
         line = line[1:-1]
 
     # print("Remove braces: ", line) - debug
-
+    
     # Fix missing commas
     line = re.sub(r'(\d)\s+([A-Za-z])', r'\1, \2', line)
     # print("Fix missing commmas: ", line) - debug
-
+    
+    
     # Add quotes around keys
     line = re.sub(r'([^,"\s]+)\s*:', r'"\1":', line)
     # print("added quotes: ", line) - debug

@@ -60,20 +60,41 @@
  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
  #include "i2c_util.h"
  #include "tmp117.h"
  
 
 
 
- int read_temperature_TMP117(float *temperature);
- int read_accel_kx134(int16_t *x, int16_t *y, int16_t *z);
+ 
  #define KX134_CNTL1 0x1B
  #define KX134_ODCNTL 0x21
  #define KX134_I2C_ADDR 0x1F
  #define KX134_XOUT_L 0x08
 
  
+
+
+
+
+
+
+
+
+
+
  // UART configuration
  #define STPM_UART              UART_NUM_1
  #define RPI4_UART              UART_NUM_2
@@ -274,7 +295,7 @@
 #define ACTPWRDATAENDIND_PH1    199
 #define ACTPWRDATASTARTIND_PH2  244
 #define ACTPWRDATAENDIND_PH2    247
-#define MAX_STRING_LENGTH       250
+#define MAX_STRING_LENGTH       350
 //Clean up below
 #define APPPWRDATASTARTIND_PH1  208
 #define APPPWRDATAENDIND_PH1    211
@@ -305,6 +326,27 @@ const uart_config_t rpi_uart_config =
     .flow_ctrl  = UART_HW_FLOWCTRL_DISABLE
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Structure to maintain the parameters to be measured from STPM34*/
 typedef struct 
 {
@@ -329,7 +371,29 @@ typedef struct
     float accelY;
     float accelZ;
 
+    float vibrationMagnitude;
+    bool vibrationDetected;
+
 }STPM34Params;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /*Function Prototypes*/
 int formatSTPMParams(STPM34Params stpmParams, char* formattedString);
@@ -576,7 +640,7 @@ float calculate_phase_angle(uint8_t phase_number, uint8_t* cx_pha_register_value
         }
     
         // Wait for transmission to complete (with timeout)
-        esp_err_t err = uart_wait_tx_done(RPI4_UART, pdMS_TO_TICKS(100)); // 100ms timeout
+        esp_err_t err = uart_wait_tx_done(RPI4_UART, pdMS_TO_TICKS(200)); // 200ms timeout
         if (err != ESP_OK) {
             ESP_LOGE(STPM_TAG, "UART transmission error: %s", esp_err_to_name(err));
             return; // Or handle the error
@@ -726,6 +790,29 @@ float calculate_phase_angle(uint8_t phase_number, uint8_t* cx_pha_register_value
          reversed[i] = buffer[start_index + 3 - i];
      }
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 /**
  * @brief Formats STPM parameter values into a string.
@@ -771,7 +858,8 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
         MAX_STRING_LENGTH,
         "{V1: %.3f, I1: %.3f, P1: %.3f, S1: %.3f, F1: %.2f, PH1: %.2f, V2: %.3f, I2: %.3f, "
         "P2: %.3f, S2: %.3f, F2: %.2f, PH2: %.2f, "
-        "Temp(C): %.2f, AccelX: %.2f, AccelY: %.2f, AccelZ: %.2f}\r\n",
+        "Temp(F): %.2f, AccelX: %.2f, AccelY: %.2f, AccelZ: %.2f, "
+        "VibValue: %.2f, Vibration: %d}\r\n\n",
         stpmParams.rmsVoltagePhase1,
         stpmParams.rmsCurrentPhase1,
         (float)stpmParams.activePowerPhase1 / 1000.0f,  //Corrected the division and cast
@@ -788,7 +876,9 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
         stpmParams.temperatureC,
         stpmParams.accelX,
         stpmParams.accelY,
-        stpmParams.accelZ
+        stpmParams.accelZ,
+        stpmParams.vibrationMagnitude,
+        stpmParams.vibrationDetected
     );
 
     //Check for `snprintf` errors.
@@ -968,7 +1058,7 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
          }
          // Add an intermittent delay between reads (1-5 ms)
          //vTaskDelay(1 / portTICK_PERIOD_MS);  // Example: 1 ms delay
-         esp_rom_delay_us(100);
+         esp_rom_delay_us(200);
      }
      ESP_LOGI(STPM_TAG, "All register data mapped to buffer successfully.");
  }
@@ -1725,7 +1815,7 @@ static void sensor_task(void *pvParameters)
 
     ESP_LOGI(SENSOR_TAG, "Sensor monitoring task started");
     while(1){
-        g_current_temperature = tmp117_read_temp_c(&tmp117_device);
+        g_current_temperature = tmp117_read_temp_f(&tmp117_device);
 
         esp_err_t accel_ret = kx134_read_xyz(kx134_dev_handle, &g_accel_x, &g_accel_y, &g_accel_z);
 
@@ -1769,6 +1859,8 @@ static void sensor_task(void *pvParameters)
  void read_electrical_params_task(void *param) 
  {
     char formatted_string[MAX_STRING_LENGTH];
+    static int16_t last_x = 0, last_y = 0, last_z = 0;
+
      while (1) 
      {
          // Enable the peripheral
@@ -1789,8 +1881,8 @@ static void sensor_task(void *pvParameters)
          readAll_Params();
          
          // Read temperature
-         float temperature;
-         if(read_temperature_TMP117(&temperature) == 0){
+         float temperature = tmp117_read_temp_f(&tmp117_device);
+         if(!isnan(temperature)){
             stpmParams.temperatureC = temperature;
          } else {
             stpmParams.temperatureC = -999.9f; // error value
@@ -1798,16 +1890,48 @@ static void sensor_task(void *pvParameters)
 
          // Read KX134
          int16_t x_raw, y_raw, z_raw;
-         if(read_accel_kx134(&x_raw, &y_raw, &z_raw) == 0){
-            stpmParams.accelX = x_raw / 16384.0f; // convert to g
-            stpmParams.accelY = y_raw / 16384.0f;
-            stpmParams.accelZ = z_raw / 16384.0f;
+
+         esp_err_t ret = kx134_read_xyz(kx134_dev_handle, &x_raw, &y_raw, &z_raw);
+         if(ret == ESP_OK){
+            stpmParams.accelX = x_raw / 4096.0f; // convert to g
+            stpmParams.accelY = y_raw / 4096.0f;
+            stpmParams.accelZ = z_raw / 4096.0f;
+
+            // Calculate Vibrations
+            // Change in raw values
+            float dx = fabsf((float)x_raw - (float)last_x);
+            float dy = fabsf((float)y_raw - (float)last_y);
+            float dz = fabsf((float)z_raw - (float)last_z);
+
+            // RMS for vibration
+            stpmParams.vibrationMagnitude = sqrtf(( (dx*dx) + (dy*dy) + (dz*dz) ) / 3.0);
+
+            // Check if vibration occurs
+            stpmParams.vibrationDetected = (stpmParams.vibrationMagnitude > 20.0f); // Chose 20 arbitrarily
+
+            // Update Lasts
+            last_x = x_raw;
+            last_y = y_raw;
+            last_z = z_raw;
+
          } else {
             stpmParams.accelX = stpmParams.accelY = stpmParams.accelZ = -999.9f; // error value
+            stpmParams.vibrationMagnitude = 0.0f;
+            stpmParams.vibrationDetected = false;
          }
 
          // Disable the peripheral
          uart_driver_delete(STPM_UART);
+
+         ESP_LOGI(SENSOR_TAG, "Read Params: Temp=%.2f C, AccelX=%.2f g, AccelY=%.2f g, AccelZ=%.2f g",
+                              stpmParams.temperatureC,
+                              stpmParams.accelX,
+                              stpmParams.accelY,
+                              stpmParams.accelZ);
+         ESP_LOGI(SENSOR_TAG, "Read Params: Vibration Magnitude: %.2f, Vibration Detected: %s",
+                              stpmParams.vibrationMagnitude,
+                              stpmParams.vibrationDetected ? "YES" : "NO");
+
          //Send data to RPi UART
          int res = formatSTPMParams(stpmParams, formatted_string);
          if (res == 0)
