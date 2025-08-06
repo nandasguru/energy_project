@@ -1771,6 +1771,8 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
 
 
  // === KX134 Functions ===
+
+ // This function initializes the kx134 accelerometer used for sensing vibrations
 esp_err_t kx134_init(i2c_master_dev_handle_t dev)
 {
     esp_err_t ret;
@@ -1795,10 +1797,13 @@ esp_err_t kx134_init(i2c_master_dev_handle_t dev)
     return ret;
 }
 
+// Reads the data from the accelerometer
+// Gets the values from the lower x output register till the higher z output register
+// and places them in data[]
 esp_err_t kx134_read_xyz(i2c_master_dev_handle_t dev, int16_t *x, int16_t *y, int16_t *z)
 {
     esp_err_t ret;
-    uint8_t reg = KX134_XOUT_L;
+    uint8_t reg = KX134_XOUT_L; // lower X output register
     uint8_t data[6];
 
     ret = i2c_master_transmit(dev, &reg, 1, I2C_MASTER_TIMEOUT_MS);
@@ -1814,6 +1819,7 @@ esp_err_t kx134_read_xyz(i2c_master_dev_handle_t dev, int16_t *x, int16_t *y, in
 }
 
 // === Sensor Task ===
+// The task that reads temperature and accelerometer data
 static void sensor_task(void *pvParameters)
 {
 
@@ -1822,7 +1828,8 @@ static void sensor_task(void *pvParameters)
         g_current_temperature = tmp117_read_temp_f(&tmp117_device);
 
         esp_err_t accel_ret = kx134_read_xyz(kx134_dev_handle, &g_accel_x, &g_accel_y, &g_accel_z);
-
+        
+        // Check if it was successful or not
         if(!isnan(g_current_temperature) && accel_ret == ESP_OK) {
             ESP_LOGI(SENSOR_TAG, "Temp: %.2f | Accel: X = %d, Y= %d, Z = %d", g_current_temperature, g_accel_x, 
             g_accel_y, g_accel_z);
@@ -1907,7 +1914,7 @@ static void sensor_task(void *pvParameters)
             float dy = fabsf((float)y_raw - (float)last_y);
             float dz = fabsf((float)z_raw - (float)last_z);
 
-            // RMS for vibration
+            // Root Means Square (RMS) of deltas for vibration
             stpmParams.vibrationMagnitude = sqrtf(( (dx*dx) + (dy*dy) + (dz*dz) ) / 3.0);
 
             // Check if vibration occurs
@@ -2091,7 +2098,7 @@ void debug_calculation_macros(void)
 
 
 
-
+    // Initialize master I2C
     ESP_LOGI(SENSOR_TAG, "Initializing I2C...");
     esp_err_t ret = i2c_util_init();
     if (ret != ESP_OK) {
