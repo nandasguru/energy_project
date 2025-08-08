@@ -57,22 +57,40 @@ def query_vm_range(metric_name, start_unix, end_unix):
         print("Error querying VM:", e)
         return None
 
+# Function to round time down to the nearest minute
+# This is to match the time stamps here and in Grafana
+def round_down_to_minute(ts):
+    return ts - (ts % 60)
+
 if __name__ == "__main__":
 
-    # Convert desired start/end to Unix timestamps (use your timezone helper!)
+    metric = "dataESP_S1"
+    pst = pytz.timezone('US/Pacific')
+    
+    testing_mode = False # Decides whether or not to use regular or custom time interval for testing
 
-    # Use MONTH, DAY, YEAR, HOUR, MINUTE, SECOND
-    start = user_to_unix_timestamp(8, 5, 2025, 17, 40, 0)
-    end = user_to_unix_timestamp(8, 5, 2025, 18, 0, 0)
     
-    metric = "dataESP_V1"
-    
-    data = query_vm_range(metric, start, end)
-    
-    if data:
-        pst = pytz.timezone('US/Pacific')
-        for ts, val in data:
+    while True:
+        now = int(time.time())
+
+        if testing_mode:
+            step = 10
+            start = now - step
+            end = now
+        else:
+            # Always at the 0th second. Easier comparison with Grafana
+            step = 60
+            start = round_down_to_minute((now-step))
+            end = round_down_to_minute(now)
+
+        data = query_vm_range(metric, start, end)
+
+        if data:
+            ts, val = data[-1] # Get latest data point
             dt = datetime.datetime.fromtimestamp(ts, pytz.utc).astimezone(pst)
             dt_str = dt.strftime("%Y-%m-%d %H:%M:%S %Z")
-                       
             print(f"{dt_str}: {val}")
+        else:
+            print("[WARNING] No data received")
+
+        time.sleep(step)
