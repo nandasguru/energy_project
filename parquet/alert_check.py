@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     while True:
 
-        one_or_zero_random = random.choices([1,0], weights=[95,5])[0]
+        one_or_zero_random = random.choices([1,0], weights=[63,37])[0]
         # print(one_or_zero_random)
 
         if time_window_index == 0:
