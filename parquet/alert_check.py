@@ -60,7 +60,7 @@ def query_vm_range(metric_name, start_unix, end_unix, step):
         "query": metric_name,
         "start": start_unix,
         "end": end_unix,
-        "step": step # 60s intervals
+        "step": step # interval in seconds
     }
 
     try:
@@ -107,17 +107,20 @@ if __name__ == "__main__":
     BIN_EDGES_NPY = pathlib.Path("parquet/720388-469__1001_1681_10421_power_bin_edges.npy")
     lookup = QuantileLookupPandas(LOOKUP_PARQUET, BIN_EDGES_NPY)
 
-    # Use these for custom time
+    # Set a custom time. Ignore if using current time (It'll get overwritten no biggie)
     start = user_to_unix_timestamp(8, 7, 2025, 14, 0, 0)
     end = user_to_unix_timestamp(8, 7, 2025, 16, 0, 0)
 
     # When collecting real data
 
-    step = 60
+    step = 10
 
-    # This variable keeps track of the current time window
+    # This variable keeps track of the current time window in minutes
     current_time_window = 15
-    time_window_index = 0
+
+    # Set the index of time window (current minute within window)
+    timeNow = datetime.datetime.now()
+    time_window_index = timeNow.minute % current_time_window
 
     # Define variables used for comparison
     # Generate alert if power outside of percentile range 5 times in a row or
@@ -138,14 +141,21 @@ if __name__ == "__main__":
 
 
 
-
-
         now = int(time.time())
         
-        # Use these for using current time
-        # start = round_down_to_minute((now-step))
-        # end = round_down_to_minute(now)
+        #"""
+        # Use these for using current time with 60 step, comment for historical data
+        if step == 60:   
+            start = round_down_to_minute((now-step))
+            end = round_down_to_minute(now)
         
+        # Any other step, use this
+        else:    
+            start = now - step
+            end = now
+
+
+        #"""
 
         data = query_vm_range(metric, start, end, step)
 
@@ -163,6 +173,7 @@ if __name__ == "__main__":
             # Calculating fake metric value
             # Since the 'real' data is already over the 95th percentile I have, use 
             # a smaller number every once in a while so it's within the percentile range
+            real_val = val
             if one_or_zero_random == 0:
                 val = 15 # Use this fake value to show power ok
 
@@ -172,10 +183,14 @@ if __name__ == "__main__":
 
             try:
                 p05, p95 = lookup.predict(dt, val)     
-                print(f"5 pctl is: {p05:.2f}, 95 pctl is: {p95:.2f}\n")
+                print(f"5 pctl is: {p05:.2f}, 95 pctl is: {p95:.2f}")
+
+                # Until fake values aren't needed anymore
+                print(f"Real {metric} value: {real_val}\n")
+
             except ValueError as e:
                 print(f"Lookup error: {e}")
-                break
+                #break
 
             # At this point, have both metric value and 5th/95th percentile values
             # can do comparison(s) now
@@ -208,19 +223,22 @@ if __name__ == "__main__":
                 over_95_in_a_row = 0
                 under_05_in_a_row = 0
 
-                   
+                    
         
             # print counts
             print(f"[TEST] under 5 count:     {under_05_in_a_row}")
-            print(f"[TEST] over 95 count:     {over_95_in_a_row}\n")
+            print(f"[TEST] over 95 count:     {over_95_in_a_row}\n")     
 
 
+
+            
         else:
             print("[WARNING] No data received")
-            break
+            #break
 
-        start += step
-        end += step
+        # When using live data, comment these out
+        #start += step
+        #end += step
 
         if time_window_index == current_time_window:
             print("[TEST] --- Time window end ---\n")
@@ -231,10 +249,7 @@ if __name__ == "__main__":
             # Check if we are going to cross a time window, if yes, reset the counts
 
             under_05_in_a_row = 0
-            over_95_in_a_row = 0              
+            over_95_in_a_row = 0
 
-
-
-
-        time.sleep(2) # this should be step, change it back then remove this comment
+        time.sleep(step) # this should be step, change it back then remove this comment
                       # when finished testing/doing live data
