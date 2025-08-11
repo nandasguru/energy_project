@@ -111,10 +111,10 @@ if __name__ == "__main__":
     start = user_to_unix_timestamp(8, 7, 2025, 14, 0, 0)
     end = user_to_unix_timestamp(8, 7, 2025, 16, 0, 0)
 
-    use_live_data = False
+    # Decides whether to collect real time or historical data
+    use_live_data = True
 
     # When collecting real data, use 60
-
     step = 60
 
     # This variable keeps track of the current time window in minutes
@@ -180,7 +180,7 @@ if __name__ == "__main__":
             # a smaller number every once in a while so it's within the percentile range
             real_val = val
             if one_or_zero_random == 0:
-                #val = 15 # Use this fake value to show power ok
+                #val = 7 # Use this fake value to show power ok
                 pass
             # ====Remove ends here====
 
@@ -196,10 +196,12 @@ if __name__ == "__main__":
 
             except ValueError as e:
                 print(f"Lookup error: {e}")
-                #break
+                break
 
             # At this point, have both metric value and 5th/95th percentile values
             # can do comparison(s) now
+
+            # ==================== ALL TEST CASES SHOULD GO HERE ====================
 
             # Currently, only test case for generating alert is if the metric value is
             # outside the percentile range 5 times in a row within the 15 minute window
@@ -230,7 +232,7 @@ if __name__ == "__main__":
                 under_05_in_a_row = 0
 
                     
-        
+        # ==================== ALL TEST CASES SHOULD END HERE ====================
             # print counts
             print(f"[TEST] under 5 count:     {under_05_in_a_row}")
             print(f"[TEST] over 95 count:     {over_95_in_a_row}\n")     
@@ -240,7 +242,7 @@ if __name__ == "__main__":
             
         else:
             print("[WARNING] No data received")
-            #break
+            break
 
         # When using historical data, self increment start and end
         if not use_live_data: 
@@ -257,7 +259,5 @@ if __name__ == "__main__":
 
             under_05_in_a_row = 0
             over_95_in_a_row = 0
-
         
-        time.sleep(2) # this should be step, change it back then remove this comment
-                      # when finished testing/doing live data
+        time.sleep(step if use_live_data else 3)

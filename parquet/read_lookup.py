@@ -171,8 +171,8 @@ if __name__ == "__main__":
 
     # live sample -------------------------------------------------------------
     now = datetime.now()                 # use aware tz in production
-    random_time = datetime(2021, 4, 15, 11, 47)
-    recent_apparent_power = 4.7         # kVA (example)
+    random_time = datetime(2020, 1, 1, 00, 00)
+    recent_apparent_power = 4.7        # kVA (example)
 
     p05, p95 = lookup.predict(now, recent_apparent_power)
     print(f"[{now:%F %T}] "
