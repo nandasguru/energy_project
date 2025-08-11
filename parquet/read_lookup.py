@@ -31,8 +31,10 @@ lookup_table_1 = "parquet/720388-469__732_10481_power_lookup_table.parquet"
 power_bin_npy_1 = "parquet/720388-469__732_10481_power_bin_edges.npy"
 lookup_table_2 = "parquet/720388-469__1001_1681_10421_power_lookup_table.parquet"
 power_bin_npy_2 = "parquet/720388-469__1001_1681_10421_power_bin_edges.npy"
-LOOKUP_PARQUET = pathlib.Path(lookup_table_2)
-BIN_EDGES_NPY  = pathlib.Path(power_bin_npy_2)
+lookup_table_3 = "parquet/727935-24234__8641_8761_8891_9006_9251_power_lookup_table.parquet"
+power_bin_npy_3 = "parquet/727935-24234__8641_8761_8891_9006_9251_power_bin_edges.npy"
+LOOKUP_PARQUET = pathlib.Path(lookup_table_3)
+BIN_EDGES_NPY  = pathlib.Path(power_bin_npy_3)
 
 # -----------------------------------------------------------------------------
 # SMALL UTILITIES

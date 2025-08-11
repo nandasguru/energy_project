@@ -103,24 +103,29 @@ if __name__ == "__main__":
     metric = "dataESP_S1"
     pst = pytz.timezone('US/Pacific')
 
-    LOOKUP_PARQUET = pathlib.Path("parquet/720388-469__1001_1681_10421_power_lookup_table.parquet")
-    BIN_EDGES_NPY = pathlib.Path("parquet/720388-469__1001_1681_10421_power_bin_edges.npy")
+    LOOKUP_PARQUET = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_lookup_table.parquet")
+    BIN_EDGES_NPY = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_bin_edges.npy")
     lookup = QuantileLookupPandas(LOOKUP_PARQUET, BIN_EDGES_NPY)
 
     # Set a custom time. Ignore if using current time (It'll get overwritten no biggie)
     start = user_to_unix_timestamp(8, 7, 2025, 14, 0, 0)
     end = user_to_unix_timestamp(8, 7, 2025, 16, 0, 0)
 
-    # When collecting real data
+    use_live_data = False
 
-    step = 10
+    # When collecting real data, use 60
+
+    step = 60
 
     # This variable keeps track of the current time window in minutes
     current_time_window = 15
 
     # Set the index of time window (current minute within window)
-    timeNow = datetime.datetime.now()
-    time_window_index = timeNow.minute % current_time_window
+    if use_live_data:
+        timeNow = datetime.datetime.now()
+        time_window_index = timeNow.minute % current_time_window
+    else:
+        time_window_index = 0
 
     # Define variables used for comparison
     # Generate alert if power outside of percentile range 5 times in a row or
@@ -132,7 +137,7 @@ if __name__ == "__main__":
     while True:
 
         one_or_zero_random = random.choices([1,0], weights=[63,37])[0]
-        # print(one_or_zero_random)
+        # print([TEST]one_or_zero_random)
 
         if time_window_index == 0:
             print("[TEST] --- Time window start ---\n")
@@ -142,20 +147,20 @@ if __name__ == "__main__":
 
 
         now = int(time.time())
-        
-        #"""
-        # Use these for using current time with 60 step, comment for historical data
-        if step == 60:   
-            start = round_down_to_minute((now-step))
-            end = round_down_to_minute(now)
-        
-        # Any other step, use this
-        else:    
-            start = now - step
-            end = now
+
+        # Only need to use current time for live data        
+        if use_live_data:
+            # Use these for using current time with 60 step
+            if step == 60:   
+                start = round_down_to_minute((now-step))
+                end = round_down_to_minute(now)
+            
+            # Any other step, use this
+            else:    
+                start = now - step
+                end = now
 
 
-        #"""
 
         data = query_vm_range(metric, start, end, step)
 
@@ -175,18 +180,19 @@ if __name__ == "__main__":
             # a smaller number every once in a while so it's within the percentile range
             real_val = val
             if one_or_zero_random == 0:
-                val = 15 # Use this fake value to show power ok
-
+                #val = 15 # Use this fake value to show power ok
+                pass
             # ====Remove ends here====
 
+            print("[TEST] Time window index: ", time_window_index)
             print(f"{dt_str}: {metric} = {val}")
 
             try:
                 p05, p95 = lookup.predict(dt, val)     
-                print(f"5 pctl is: {p05:.2f}, 95 pctl is: {p95:.2f}")
+                print(f"[TEST]5 pctl is: {p05:.2f}, 95 pctl is: {p95:.2f}")
 
                 # Until fake values aren't needed anymore
-                print(f"Real {metric} value: {real_val}\n")
+                print(f"[TEST]Real {metric} value: {real_val}\n")
 
             except ValueError as e:
                 print(f"Lookup error: {e}")
@@ -236,9 +242,10 @@ if __name__ == "__main__":
             print("[WARNING] No data received")
             #break
 
-        # When using live data, comment these out
-        #start += step
-        #end += step
+        # When using historical data, self increment start and end
+        if not use_live_data: 
+            start += step
+            end += step
 
         if time_window_index == current_time_window:
             print("[TEST] --- Time window end ---\n")
@@ -251,5 +258,6 @@ if __name__ == "__main__":
             under_05_in_a_row = 0
             over_95_in_a_row = 0
 
-        time.sleep(step) # this should be step, change it back then remove this comment
+        
+        time.sleep(2) # this should be step, change it back then remove this comment
                       # when finished testing/doing live data
