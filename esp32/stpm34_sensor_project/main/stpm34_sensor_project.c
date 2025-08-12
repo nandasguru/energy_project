@@ -1328,11 +1328,11 @@ int formatSTPMParams(STPM34Params stpmParams, char* formattedString) {
      // RMS Current Calculation
      rmscurrent = (uint32_t)((rawRMS & 0xFFFF8000) >> 15);
      //ESP_LOGD(STPM_TAG, "RMSCurrent After BitMasking: %llu", rmscurrent);
-     ESP_LOGD(STPM_TAG, "RMSCurrent After BitMasking: %lu", rmscurrent);
+     ESP_LOGI(STPM_TAG, "RMSCurrent After BitMasking: %lu", rmscurrent);
  
      tempRMS = (uint64_t)(rmscurrent * CONFIG_CURRENT_MULTI_FACTOR);
      tempRMS *= 10;
-     ESP_LOGD(STPM_TAG, "RMSCurrent After Multiplying factor: %llu", tempRMS);
+     ESP_LOGI(STPM_TAG, "RMSCurrent After Multiplying factor: %llu", tempRMS);
      //tempRMS = (uint32_t)(tempRMS >> 17);
      tempRMS = tempRMS >> 17;
  
