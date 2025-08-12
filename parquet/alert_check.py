@@ -111,11 +111,11 @@ if __name__ == "__main__":
     start = user_to_unix_timestamp(8, 7, 2025, 14, 0, 0)
     end = user_to_unix_timestamp(8, 7, 2025, 16, 0, 0)
 
-    # Decides whether to collect real time or historical data
+    # Decides whether to collect real time (True) or historical (False) data
     use_live_data = True
 
     # When collecting real data, use 60
-    step = 60
+    step = 10
 
     # This variable keeps track of the current time window in minutes
     current_time_window = 15

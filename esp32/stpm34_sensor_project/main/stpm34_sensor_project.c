@@ -203,8 +203,8 @@
     // Below CT config is for SCT-013-030 which produces 1V per 30 Amperes measured on the secondary of the CT from the line to which the CT is clamped
     //#define CT_MAX_RATING_CURRENT_AMPS     5.0
     //#define CT_MAX_RATING_MILLI_VOLTS      333
-    #define CT_MAX_RATING_CURRENT_AMPS     60.0
-    #define CT_MAX_RATING_MILLI_VOLTS      1000
+    #define CT_MAX_RATING_CURRENT_AMPS     30.0
+    #define CT_MAX_RATING_MILLI_VOLTS      333
     
  #elif CT_TYPE == CT_CURRENT_OUTPUT
     // Example for CT with current output
@@ -252,15 +252,19 @@
  */
  //Now that the decision on the modes are based on the sensitivity calculation, we need not validate the expected mode as it was previously.
  // Refer to #define CT_SENSITIVITY
+
+ 
  #define CONFIG_VOLTAGE_MULTI_FACTOR                CALC_VOLTAGE_MULTI_FACTOR() // Will output 116274
  #define CONFIG_CURRENT_MULTI_FACTOR                CALC_CURRENT_MULTI_FACTOR(CT_SENSITIVITY)
  #define CONFIG_POWER_FACTOR_MULTIPLE               CALC_POWER_MULTI_FACTOR(CT_SENSITIVITY)
-                 
- /*#define CONFIG_VOLTAGE_MULTI_FACTOR                116274 // Will output 116274
+  
+
+/*
+ #define CONFIG_VOLTAGE_MULTI_FACTOR                116274 // Will output 116274
  #define CONFIG_CURRENT_MULTI_FACTOR                4214
  #define CONFIG_POWER_FACTOR_MULTIPLE               4900123
-*/
- 
+ */
+
  #define FACTOR_POWER_ON_ENERGY                         (858)
  #define ENERGY_FACTOR_MULTIPLE                         (uint32_t)CONFIG_POWER_FACTOR_MULTIPLE / FACTOR_POWER_ON_ENERGY
 
@@ -303,7 +307,7 @@
 #define APPPWRDATAENDIND_PH2    259
 
 //Macro to configure DEBUG message related to CT Config
-#define DEBUG_CONFIG_MACROS  0
+#define DEBUG_CONFIG_MACROS  1
 uint8_t rpi_uart_buff_size = 0;
  
 //Below struct is used in STPM34 Uart init
