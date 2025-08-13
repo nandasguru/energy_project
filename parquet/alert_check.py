@@ -100,12 +100,41 @@ def round_down_to_minute(ts):
 
 if __name__ == "__main__":
 
-    metric = "dataESP_S1"
+    # All metrics collected in Victoria Metrics by Raspberry Pi from ESP32
+    metric_V1 = "dataESP_V1"
+    metric_V2 = "dataESP_V2"
+    metric_I1 = "dataESP_I1"
+    metric_I2 = "dataESP_I2"
+    metric_P1 = "dataESP_P1"
+    metric_P2 = "dataESP_P2"
+    metric_S1 = "dataESP_S1"
+    metric_S2 = "dataESP_S2"
+    metric_F1 = "dataESP_F1"
+    metric_F2 = "dataESP_F2"
+    metric_PH1 = "dataESP_PH1"
+    metric_PH2 = "dataESP_PH2"
+    metric_Temp = "dataESP_Temp(F)"
+    metric_VibValue = "dataESP_VibValue"
+    metric_VibBool = "dataESP_Vibration"
+
+    # Experiments:
+    #
+    #
+    # Experiment 1: 5 in a row < 5 pctl or > 95 pctl App.Power withi time window
+    # Experiment 2: Too much/less voltage from grid
+    # Experiment 3: Too much change in frequency (freq can only decrease)
+    # Experiment 4: Too low power factor (cannot be > 1) [S / P]
+    # Experiment 5: Capacity of transformer. Don't send alert if capacity is available at S > 95 pctl
+    # Experiment 6: High temperature check
+    # Experiment 7: High vibration check
+    #
+    #
+    #
+
+    # General variables
     pst = pytz.timezone('US/Pacific')
 
-    LOOKUP_PARQUET = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_lookup_table.parquet")
-    BIN_EDGES_NPY = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_bin_edges.npy")
-    lookup = QuantileLookupPandas(LOOKUP_PARQUET, BIN_EDGES_NPY)
+
 
     # Set a custom time. Ignore if using current time (It'll get overwritten no biggie)
     start = user_to_unix_timestamp(8, 7, 2025, 14, 0, 0)
@@ -115,7 +144,7 @@ if __name__ == "__main__":
     use_live_data = True
 
     # When collecting real data, use 60
-    step = 10
+    step = 60
 
     # This variable keeps track of the current time window in minutes
     current_time_window = 15
@@ -133,6 +162,10 @@ if __name__ == "__main__":
     percentile_range_threshold = 5
     under_05_in_a_row = 0
     over_95_in_a_row = 0
+
+    LOOKUP_PARQUET = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_lookup_table.parquet")
+    BIN_EDGES_NPY = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_bin_edges.npy")
+    lookup = QuantileLookupPandas(LOOKUP_PARQUET, BIN_EDGES_NPY)
 
     while True:
 
@@ -162,50 +195,47 @@ if __name__ == "__main__":
 
 
 
-        data = query_vm_range(metric, start, end, step)
+        data = query_vm_range(metric_S1, start, end, step)
 
         if data:
             ts, val = data[-1] # Get latest data point
             dt = datetime.datetime.fromtimestamp(ts, pytz.utc).astimezone(pst)
             dt_str = dt.strftime("%Y-%m-%d %H:%M:%S %Z")
 
-            # Use a FAKE metric value, in this case S1, to simulate too much power
-            # before testing with load simulator, just for the sake of testing the code
-            # for alerts. Remove this part later when doing the actual thing fr
-            # Remove when actual thingy is working
-            # ====Remove starts here====
+            # val (the input metric_S1 for lookup table) is in W, first convert to kW
+            val = val / 1000.0
 
-            # Calculating fake metric value
-            # Since the 'real' data is already over the 95th percentile I have, use 
-            # a smaller number every once in a while so it's within the percentile range
-            real_val = val
-            if one_or_zero_random == 0:
-                #val = 7 # Use this fake value to show power ok
-                pass
-            # ====Remove ends here====
-
+            
             print("[TEST] Time window index: ", time_window_index)
-            print(f"{dt_str}: {metric} = {val}")
+            print(f"{dt_str}: {metric_S1} = {val:.3f}")
+
+            
+
+            # ==================== ALL TEST CASES SHOULD GO HERE ====================
+
+            # TEST CASE 1
+            """
+            This test case checks if an apparent power is outside the percentile range
+            (< 5th percentile or > 95th percentile). If it is outside this range
+            [percentile_range_threshold] times (default is 5 I guess), send alert. Otherwise
+            don't have to do anything
+            """
 
             try:
                 p05, p95 = lookup.predict(dt, val)     
-                print(f"[TEST]5 pctl is: {p05:.2f}, 95 pctl is: {p95:.2f}")
+                print(f"[TEST]5 pctl is: {p05:.3f}, 95 pctl is: {p95:.3f}")
 
                 # Until fake values aren't needed anymore
-                print(f"[TEST]Real {metric} value: {real_val}\n")
+                # print(f"[TEST]Real {metric_S1} value: {real_val}\n")
 
             except ValueError as e:
                 print(f"Lookup error: {e}")
                 break
 
-            # At this point, have both metric value and 5th/95th percentile values
+            # At this point, have both metric_S1 value and 5th/95th percentile values
             # can do comparison(s) now
 
-            # ==================== ALL TEST CASES SHOULD GO HERE ====================
-
-            # Currently, only test case for generating alert is if the metric value is
-            # outside the percentile range 5 times in a row within the 15 minute window
-
+        
             # Check under 05th percentile
             if val < p05:
                 under_05_in_a_row += 1 # increase under 5 pctl count
@@ -213,7 +243,7 @@ if __name__ == "__main__":
 
                 # Happened enough times to generate alert
                 if under_05_in_a_row == percentile_range_threshold:
-                    print("\n==========THIS IS THE ALERT==========\n")
+                    print("\n==========THIS IS THE ALERT (under 05 pctl)==========\n")
                     under_05_in_a_row = 0 # once alert, reset back to 0
 
             # Check over 95th percentile
@@ -223,17 +253,26 @@ if __name__ == "__main__":
 
                 # Happened enough time to generate alert
                 if over_95_in_a_row == percentile_range_threshold:
-                    print("\n==========THIS IS THE ALERT==========\n")
+                    print("\n==========THIS IS THE ALERT (over 95 pctl)==========\n")
                     over_95_in_a_row = 0 # once alert, reset back to 0
 
-            # Reset alert counts if metric is within percentile range
+            # Reset alert counts if metric_S1 is within percentile range
             else:
                 over_95_in_a_row = 0
                 under_05_in_a_row = 0
 
+            # Although repetitive, probably better to keep everything related next to each other
+            if time_window_index == current_time_window:
+                # Since we are only checking within each time window, we don't want to give an
+                # alert if there are 5 outliers in a row if it crosses a time window (for now)
+                # Check if we are going to cross a time window, if yes, reset the counts
+
+                under_05_in_a_row = 0
+                over_95_in_a_row = 0
+
                     
         # ==================== ALL TEST CASES SHOULD END HERE ====================
-            # print counts
+            # print counts and checks
             print(f"[TEST] under 5 count:     {under_05_in_a_row}")
             print(f"[TEST] over 95 count:     {over_95_in_a_row}\n")     
 
@@ -252,12 +291,5 @@ if __name__ == "__main__":
         if time_window_index == current_time_window:
             print("[TEST] --- Time window end ---\n")
             time_window_index = 0
-
-            # Since we are only checking within each time window, we don't want to give an
-            # alert if there are 5 outliers in a row if it crosses a time window (for now)
-            # Check if we are going to cross a time window, if yes, reset the counts
-
-            under_05_in_a_row = 0
-            over_95_in_a_row = 0
         
         time.sleep(step if use_live_data else 3)
