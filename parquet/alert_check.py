@@ -34,7 +34,8 @@ class QuantileLookupPandas:
         dow = ts.isoweekday()
         pidx = self.power_bin_index(power)
 
-        print(f"[TEST] Lookup table parameters:  daily window number = {dwin}, day of week = {dow}, power bin index = {pidx}")
+        print(f"[TEST] Lookup table parameters:  daily window number = {dwin}, day of week = {dow}, power bin index = {pidx}\n")
+        
         try:
             row = self.table.loc[(dwin, dow, pidx)]
         except KeyError:
@@ -161,7 +162,7 @@ if __name__ == "__main__":
     pst = pytz.timezone('US/Pacific')
     # Set a custom time. Ignore if using current time (It'll get overwritten no biggie)
     # Set 'end' for when the data starts
-    # Honestly it doesn't matter what 'start' is set to
+    # Just keep 'start' the same as 'end'
     start = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
     end = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
 
@@ -178,6 +179,7 @@ if __name__ == "__main__":
     if use_live_data:
         timeNow = datetime.datetime.now()
         time_window_index = timeNow.minute % current_time_window
+    # Make sure when doing this, the start/end time is a proper window start (:00, :15, :30, :45)
     else:
         time_window_index = 0
 
@@ -202,8 +204,9 @@ if __name__ == "__main__":
 
     # Initialize
     value_for_lookup_input = 0
-    total_Val_S_value = 0
-
+    total_window_sum = 0
+    p05 = 0
+    p95 = 0
 
 
 
@@ -255,15 +258,7 @@ if __name__ == "__main__":
 
 
         if time_window_index == 0:
-            print("[TEST] --- Time window start ---\n")
-
-            # Set the lookup value
-            value_for_lookup_input = total_Val_S_value
-            print("[TEST] Value for lookup input before factor is: ", value_for_lookup_input)
-
-            # Multiply the lookup value by 15/60 (basically divide by 4)
-            value_for_lookup_input *= 0.25
-            print(f"[TEST] Value for lookup input after factor is: {value_for_lookup_input}\n\n")
+            print("[TEST] ********** Time window start **********\n")
 
         time_window_index += 1
         print(f"[TEST] Time window index: {time_window_index}\n")
@@ -295,9 +290,20 @@ if __name__ == "__main__":
         don't have to do anything
         """
 
+        # Step 1:
+        # Get data for the minute
+        # Get timestamp and value of apparent power
+        # Use timestamp and lookup table input for the time window (only first minute of each window)
+        # Initialize total window sum = 0 (only first minute of each window)
+        #
+
+        
+        
+        # Get data
         dataS1 = query_vm_range(metric_S1, start, end, step)
         dataS2 = query_vm_range(metric_S2, start, end, step)
 
+        # Only continue if the data exists
         if dataS1 and dataS2:
             ts_S1, valS1 = dataS1[-1] # Get latest data point for S1
             ts_S2, valS2 = dataS2[-1] # Get latest data point for S2
@@ -309,84 +315,121 @@ if __name__ == "__main__":
             # valS1 and valS2 are in W, first convert to kW
             valS1 /= 1000.0
             valS2 /= 1000.0
-
-            # Decide whether to use S1, S2, or both for the input of the lookup table
-            #val_S = valS1
-            #val_S = valS2
-            val_S = valS1 + valS2
             
-            # Sum each app.power value per minute over time window
-            # This will be used as input for the lookup table in the next time window
-            # and is set at the beginning of each time window
-            total_Val_S_value += val_S             
-               
-            print(f"{dt_S_str}: {metric_S1} = {valS1:.3f}, {metric_S2} = {valS2:.3f}\n")
+            # Now have the timestamp and data separate, can use timestamp for lookup table
+            # to get predicted values for the time window and initialize totaw window sum
+            # Only needs to be done once at the beginning of each time window
 
-
-
-            try:
+            # Print current timestamp
+            print(f"\n[TEST] Current timestamp: {dt_S_str}\n")
+            
+            if time_window_index == 1: # Beginning of time window
                 
+                p05, p95 = lookup.predict(dt_S, value_for_lookup_input)
+                # Now have p05 and p95 for the time window
+
+                # Initialize total window sum = 0
+                total_window_sum = 0
+                print(f"[TEST] Set total window sum to {total_window_sum}")
+
+            # Print p05, p95 for each minute, even though it's only updated each window
+            print(f"5th pctl value: {p05:.3f}, 95th pctl value: {p95}")
 
 
-                print(f"[TEST] Value for lookup table input: {value_for_lookup_input:.4f}")
+            # Step 2:
+            # Add total window sum by App.power each minute (for later use)
+            # Compare each App.Power value to p05 and p95 values for time window
+            # If App.Power exceeds any value 5 times in a row within time window, alert
+            #
 
-                print(f"[TEST] Using {value_for_lookup_input:.3f} for lookup table input\n")
 
-                p05, p95 = lookup.predict(dt_S, value_for_lookup_input)     
-                print(f"[TEST] 5 pctl is: {p05:.3f}, 95 pctl is: {p95:.3f}\n")
+            # Increment total window sum by App.Power value
+            # ==========Still need to decide whether to use 1 phase or both combined. Use S1 for now==========
+            S = valS1
+            #S = valS2
+            #S = valS1 + valS2
 
-                # Until fake values aren't needed anymore
-                # print(f"[TEST] Real {metric_S1} value: {real_val}\n")
+            total_window_sum += S # Will be used later for next window lookup table
+            print(f"[TEST] Current total window sum: {total_window_sum:.5f}\n")
 
-            except ValueError as e:
-                print(f"Lookup error: {e}")
-                break
+            # Now start the comparisions for raisng alerts
 
-            # At this point, have both metric_S1 value and 5th/95th percentile values
-            # can do comparison(s) now
+            # First case: Under 5th pctl
+            if S < p05:
+                under_05_in_a_row += 1 # Increase under 5 pctl count
+                over_95_in_a_row = 0 # Reset over 95 pctl count
 
-        
-            # Check under 05th percentile
-            if val_S < p05:
-                under_05_in_a_row += 1 # increase under 5 pctl count
-                over_95_in_a_row = 0 # reset the over 95 pctl count
-
-                # Happened enough times to generate alert
+                # If under 5 pctl [percentile_range_threshold] time in a row, alert
                 if under_05_in_a_row == percentile_range_threshold:
-                    print("\n==========THIS IS THE ALERT (under 05 pctl)==========\n")
-                    under_05_in_a_row = 0 # once alert, reset back to 0
+                    print("==========THIS IS THE ALERT (Under 05th pctl)==========\n")
+                    under_05_in_a_row = 0 # Reset count once alert occurs
 
-            # Check over 95th percentile
-            elif val_S > p95:
-                over_95_in_a_row += 1 # increase over 95 pctl count
-                under_05_in_a_row = 0 # reset the under 5 pctl count
+            # Second case: Over 95th pctl
+            elif S > p95:
+                over_95_in_a_row += 1 # Increase over 95 pctl count
+                under_05_in_a_row = 0 # Reset under 5 pctl count
 
-                # Happened enough time to generate alert
+                # If over 95 pctl [percentile_range_threshold] times in a row, alert
                 if over_95_in_a_row == percentile_range_threshold:
-                    print("\n==========THIS IS THE ALERT (over 95 pctl)==========\n")
-                    over_95_in_a_row = 0 # once alert, reset back to 0
+                    print("==========THIS IS THE ALERT (Over 95th pctl)==========\n")
+                    over_95_in_a_row = 0 # Reset count once alert occurs
 
-            # Reset alert counts if metric_S1 is within percentile range
+            # Last case: Within range
             else:
-                over_95_in_a_row = 0
+                # Just reset the count, since nothing out of range
                 under_05_in_a_row = 0
+                over_95_in_a_row = 0
 
-            # Although repetitive, probably better to keep everything related next to each other
+            # This concludes the comparision for out of range App.Power, but still need
+            # to make sure that all this happens within the same time window
+            # If time window is about to change, just reset the counts to 0
+            # Also do Step 4 checks in same if statement
+
             if time_window_index == current_time_window:
-                # Since we are only checking within each time window, we don't want to give an
-                # alert if there are 5 outliers in a row if it crosses a time window (for now)
-                # Check if we are going to cross a time window, if yes, reset the counts
-
                 under_05_in_a_row = 0
                 over_95_in_a_row = 0
 
-            # print counts and checks
-            print(f"[TEST] under 5 count:     {under_05_in_a_row}")
-            print(f"[TEST] over 95 count:     {over_95_in_a_row}\n")     
-           
+            
+            # At this point all cases SHOULD be taken care of, all within the same time window
+
+            # Step 3:
+            # This just happens every minute, taken care of by this while loop
+            #
+
+            # Step 4:
+            # This happens when the end of the time window is reached / last minute of time window
+            # Once Step 2 finishes for last minute:
+            # Total window sum should be the sum of all App.Power values from time window
+            # Value for the next window lookup table input is calculated
+            # Reset total window sum to 0 to keep it within the time window
+            #
+
+            
+            # All of this happens after Step 2 finishes for final minute, which it should have by this point
+            # Make sure it's the final mintue
+                
+                # Check total window sum
+                print(f"[TEST] Total window sum: {total_window_sum:.3f}")
+
+                # Set value for the next window lookup table
+                value_for_lookup_input = total_window_sum * 0.25 # Total window sum x factor
+                print(f"[TEST] Value for the next window lookup table: {value_for_lookup_input}")
+
+                # Reset total window sum to 0 so it only sums values for one window
+                total_window_sum = 0
+
+            # At this point, data should be coming in every minute, being compared to the correct values
+            # Lookup table inputs and total window sums should be calculated correctly
+            # p05 and p95 are calculated once at the beginning of each time window
+            
+            # Print current counts and checks for debugging
+            print(f"[TEST] Under 5 count:   {under_05_in_a_row}")
+            print(f"[TEST] Over 95 count:   {over_95_in_a_row}\n")
+
+        # Skip everything and print warning if no data is found
         else:
             print("[WARNING] No data received")
-            break
+            break    
 
 
         # TEST CASE 6
@@ -456,8 +499,8 @@ if __name__ == "__main__":
             end += step
 
         if time_window_index == current_time_window:
-            print("[TEST] --- Time window end ---\n")
+            print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 5)
+        time.sleep(step if use_live_data else 10)
         
