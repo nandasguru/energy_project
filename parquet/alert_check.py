@@ -175,7 +175,7 @@ if __name__ == "__main__":
     # Experiment 1: 5 in a row < 5 pctl or > 95 pctl App.Power withi time window
     # Experiment 2: Too much/less voltage from grid
     # Experiment 3: Too much change in frequency (freq can only decrease)
-    # Experiment 4: Too low power factor (cannot be > 1) [S / P]
+    # Experiment 4: Too low power factor (cannot be > 1) [S / P] ========== Don't know if do it or not
     # Experiment 5: Capacity of transformer. Don't send alert if capacity is available at S > 95 pctl
     # Experiment 6: High temperature check
     # Experiment 7: High vibration check
@@ -190,8 +190,10 @@ if __name__ == "__main__":
     # For PST time
     pst = pytz.timezone('US/Pacific')
     # Set a custom time. Ignore if using current time (It'll get overwritten no biggie)
+    # This is for a SINGLE Query, not the whole range
     # Set 'end' for when the data starts
     # Just keep 'start' the same as 'end'
+
     start = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
     end = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
 
@@ -244,6 +246,27 @@ if __name__ == "__main__":
 
 
 
+    # Experiment 2 variables
+    #
+    #
+    # To be done later
+
+
+
+    # Experiment 3 variables
+    #
+    #
+    # To be done later
+
+
+
+    # Experiment 4 variables
+    #
+    #
+    # To be done later
+
+
+
     # Experiment 5 variables
     #
     #
@@ -261,7 +284,7 @@ if __name__ == "__main__":
     #
 
     # If temperature is above threshold, send alert
-    temperature_threshold_F = 50 # Change to whatever needed
+    temperature_threshold_F = 90 # Change to whatever needed
 
 
 
@@ -283,11 +306,6 @@ if __name__ == "__main__":
     while True:
 
         print("--------------------------------------------------------------------------------------------------------------")
-
-        # Remove later
-        one_or_zero_random = random.choices([1,0], weights=[63,37])[0]
-        # print([TEST] one_or_zero_random)
-
 
         if time_window_index == 0:
             print("[TEST] ********** Time window start **********\n")
@@ -314,7 +332,7 @@ if __name__ == "__main__":
 
         # ==================== ALL TEST CASES SHOULD GO HERE ====================
 
-        # TEST CASE 1
+        # EXPERIMENT 1
         """
         This test case checks if an apparent power is outside the percentile range
         (< 5th percentile or > 95th percentile). If it is outside this range
@@ -340,6 +358,7 @@ if __name__ == "__main__":
 
         # Only continue if the data exists
         if dataS1 and dataS2:
+            # Data comes as a tuple (timestamp, value)
             ts_S1, valS1 = dataS1[-1] # Get latest data point for S1
             ts_S2, valS2 = dataS2[-1] # Get latest data point for S2
 
@@ -490,7 +509,7 @@ if __name__ == "__main__":
             break    
 
 
-        # TEST CASE 6
+        # EXPERIMENT 6
         """
         This test case just monitors temperature read by the temperature sensor, and sends
         and alert if the temperature (in F) reaches a value higher than the specified
@@ -522,7 +541,7 @@ if __name__ == "__main__":
 
 
 
-        # TEST CASE 7: High vibration
+        # EXPERIMENT 7: High vibration
         """
         This test case monitors the vibration read by the accelerometer, and sends an alert
         if the vibration is above 20 (default setting) or a custom variable
