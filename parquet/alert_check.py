@@ -366,7 +366,6 @@ if __name__ == "__main__":
             dt_S = datetime.datetime.fromtimestamp(ts_S1, pytz.utc).astimezone(pst)
             dt_S_str = dt_S.strftime("%Y-%m-%d %H:%M:%S %Z") # Human readable string
 
-            print(f"This is the dt_S{dt_S}")
             # valS1 and valS2 are in W, first convert to kW
             valS1 /= 1000.0
             valS2 /= 1000.0
@@ -416,7 +415,7 @@ if __name__ == "__main__":
                 under_05_in_a_row += 1 # Increase under 5 pctl count
                 over_95_in_a_row = 0 # Reset over 95 pctl count
 
-                # If under 5 pctl [percentile_range_threshold] time in a row, alert
+                # If under 5 pctl [percentile_range_threshold] times in a row, alert
                 if under_05_in_a_row == percentile_range_threshold:
                     print("==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
                     # Send alert to VM
@@ -450,7 +449,8 @@ if __name__ == "__main__":
             # This concludes the comparision for out of range App.Power, but still need
             # to make sure that all this happens within the same time window
             # If time window is about to change, just reset the counts to 0
-            # Also do Step 4 checks in same if statement
+            # Also do Step 4 checks in same if statement since this happens in the
+            # last minute of each time window only
 
             if time_window_index == current_time_window:
                 under_05_in_a_row = 0
