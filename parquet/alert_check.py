@@ -101,6 +101,10 @@ def query_vm_range(metric_name, start_unix, end_unix, step):
 def round_down_to_minute(ts):
     return ts - (ts % 60)
 
+
+
+
+
 # Function to send an alert back to VM once it's been detected
 def send_alert_VM(URL):
     ts_ns = time.time_ns()
@@ -113,8 +117,14 @@ def send_alert_VM(URL):
             print("[TEST] Msg send successfully!")
         else:
             print(f"Failed. Status Code: {response.status_code}")
-    except:
-        pass
+    except Exception as e:
+        print(f"Error sending test alert: {e}")
+
+
+
+
+
+
 
 if __name__ == "__main__":
 
@@ -229,7 +239,7 @@ if __name__ == "__main__":
     #
 
     # If temperature is above threshold, send alert
-    temperature_threshold_F = 90
+    temperature_threshold_F = 90 # Change to whatever needed
 
 
 
@@ -287,11 +297,14 @@ if __name__ == "__main__":
         This test case checks if an apparent power is outside the percentile range
         (< 5th percentile or > 95th percentile). If it is outside this range
         [percentile_range_threshold] times (default is 5 I guess), send alert. Otherwise
-        don't have to do anything
+        don't have to do anything. Also send an alert if the total window sum goes above
+        the 95th percentile, even if individual App.power values didn't. Don't need to
+        check the same condition for < 5th percentile since the alert will trigger
+        earlier with the individual data points under 5th percentile check
         """
 
         # Step 1:
-        # Get data for the minute
+        # Get data for the first minute of time window
         # Get timestamp and value of apparent power
         # Use timestamp and lookup table input for the time window (only first minute of each window)
         # Initialize total window sum = 0 (only first minute of each window)
@@ -310,7 +323,7 @@ if __name__ == "__main__":
 
             # Get time stamp for App.Power. Use S1 or S2, doesn't matter, same timestamp
             dt_S = datetime.datetime.fromtimestamp(ts_S1, pytz.utc).astimezone(pst)
-            dt_S_str = dt_S.strftime("%Y-%m-%d %H:%M:%S %Z")
+            dt_S_str = dt_S.strftime("%Y-%m-%d %H:%M:%S %Z") # Human readable string
 
             # valS1 and valS2 are in W, first convert to kW
             valS1 /= 1000.0
@@ -332,8 +345,7 @@ if __name__ == "__main__":
                 total_window_sum = 0
                 print(f"[TEST] Set total window sum to {total_window_sum}")
 
-            # Print p05, p95 for each minute, even though it's only updated each window
-            print(f"5th pctl value: {p05:.3f}, 95th pctl value: {p95}")
+            
 
 
             # Step 2:
@@ -344,34 +356,37 @@ if __name__ == "__main__":
 
 
             # Increment total window sum by App.Power value
-            # ==========Still need to decide whether to use 1 phase or both combined. Use S1 for now==========
-            S = valS1
+            # ==========Still need to decide whether to use 1 phase or both combined. Comment whichever necessary==========
+            #S = valS1
             #S = valS2
-            #S = valS1 + valS2
+            S = valS1 + valS2
 
             total_window_sum += S # Will be used later for next window lookup table
             print(f"[TEST] Current total window sum: {total_window_sum:.5f}\n")
 
+            # Print data, p05, p95 for debugging
+            print(f"\nMetric: {S}, 5th pctl value: {p05:.3f}, 95th pctl value: {p95}\n")
+
             # Now start the comparisions for raisng alerts
 
-            # First case: Under 5th pctl
+            # First case: Consistently under 5th pctl
             if S < p05:
                 under_05_in_a_row += 1 # Increase under 5 pctl count
                 over_95_in_a_row = 0 # Reset over 95 pctl count
 
                 # If under 5 pctl [percentile_range_threshold] time in a row, alert
                 if under_05_in_a_row == percentile_range_threshold:
-                    print("==========THIS IS THE ALERT (Under 05th pctl)==========\n")
+                    print("==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
                     under_05_in_a_row = 0 # Reset count once alert occurs
 
-            # Second case: Over 95th pctl
+            # Second case: Consistently over 95th pctl
             elif S > p95:
                 over_95_in_a_row += 1 # Increase over 95 pctl count
                 under_05_in_a_row = 0 # Reset under 5 pctl count
 
                 # If over 95 pctl [percentile_range_threshold] times in a row, alert
                 if over_95_in_a_row == percentile_range_threshold:
-                    print("==========THIS IS THE ALERT (Over 95th pctl)==========\n")
+                    print("==========THIS IS THE ALERT (Consistently over 95th pctl)==========\n")
                     over_95_in_a_row = 0 # Reset count once alert occurs
 
             # Last case: Within range
@@ -402,7 +417,8 @@ if __name__ == "__main__":
             # Total window sum should be the sum of all App.Power values from time window
             # Value for the next window lookup table input is calculated
             # Reset total window sum to 0 to keep it within the time window
-            #
+            # If final total window sum > 95 pctl, also trigger alert.
+            # No need to check total window sum < 5 pctl since Consistent under 5 pctl will trigger
 
             
             # All of this happens after Step 2 finishes for final minute, which it should have by this point
@@ -410,6 +426,10 @@ if __name__ == "__main__":
                 
                 # Check total window sum
                 print(f"[TEST] Total window sum: {total_window_sum:.3f}")
+
+                # Alert if total window sum > 95 pctl
+                if total_window_sum > p95:
+                    print("==========THIS IS THE ALERT (Total window sum over 95th pctl)==========")
 
                 # Set value for the next window lookup table
                 value_for_lookup_input = total_window_sum * 0.25 # Total window sum x factor
