@@ -106,19 +106,28 @@ def round_down_to_minute(ts):
 
 
 # Function to send an alert back to VM once it's been detected
-def send_alert_VM(URL):
-    ts_ns = time.time_ns()
+def send_alert_VM(URL, ts_real, alert_code):
 
-    vm_line = f'energy_alert{{msg-"hi"}} 1 {ts_ns}'
+    ts_before = int(ts_real - 1)
+    ts_after = int(ts_real + 1)
+
+
+    vm_line = (
+        f'Alert code=0 {ts_before}\n'
+        f'Alert code={alert_code} {ts_real}\n'
+        f'Alert code=0 {ts_after}'
+    )
 
     try:
         response = requests.post(URL, data=vm_line)
         if response.status_code == 204:
-            print("[TEST] Msg send successfully!")
+            print("[TEST] Alert sent to VM successfully!")
         else:
             print(f"Failed. Status Code: {response.status_code}")
     except Exception as e:
         print(f"Error sending test alert: {e}")
+
+
 
 
 
@@ -149,6 +158,16 @@ if __name__ == "__main__":
     metric_Temp = "{__name__=\"dataESP_Temp(F)\"}"
 
 
+    # Define alert codes for sending alerts to Victoria Metrics
+    No_Alert            =  0
+    High_Temperature    =  1
+    High_Vibration      =  2
+    Consistent_Under_5  =  3
+    Consistent_Over_95  =  4
+    Total_Sum_Over_95   =  5
+    Over_Voltage        =  6
+    Under_Voltage       =  7
+    Low_Frequency       =  8
 
     # Experiments:
     #
@@ -197,6 +216,9 @@ if __name__ == "__main__":
     # Victoria Metrics Variables, for writing alerts to VM
     VM_URL = "http://localhost:8428/write"
 
+    # Change this to decide if alerts are actually sent to VM or just printed
+    alerts_are_active = True
+
 
     # Experiment 1 Variables
     #
@@ -239,7 +261,7 @@ if __name__ == "__main__":
     #
 
     # If temperature is above threshold, send alert
-    temperature_threshold_F = 90 # Change to whatever needed
+    temperature_threshold_F = 50 # Change to whatever needed
 
 
 
@@ -325,6 +347,7 @@ if __name__ == "__main__":
             dt_S = datetime.datetime.fromtimestamp(ts_S1, pytz.utc).astimezone(pst)
             dt_S_str = dt_S.strftime("%Y-%m-%d %H:%M:%S %Z") # Human readable string
 
+            print(f"This is the dt_S{dt_S}")
             # valS1 and valS2 are in W, first convert to kW
             valS1 /= 1000.0
             valS2 /= 1000.0
@@ -377,6 +400,11 @@ if __name__ == "__main__":
                 # If under 5 pctl [percentile_range_threshold] time in a row, alert
                 if under_05_in_a_row == percentile_range_threshold:
                     print("==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        send_alert_VM(VM_URL, ts_S1, Consistent_Under_5)
+
+
                     under_05_in_a_row = 0 # Reset count once alert occurs
 
             # Second case: Consistently over 95th pctl
@@ -387,6 +415,11 @@ if __name__ == "__main__":
                 # If over 95 pctl [percentile_range_threshold] times in a row, alert
                 if over_95_in_a_row == percentile_range_threshold:
                     print("==========THIS IS THE ALERT (Consistently over 95th pctl)==========\n")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        send_alert_VM(VM_URL, ts_S1, Consistent_Over_95)
+
+
                     over_95_in_a_row = 0 # Reset count once alert occurs
 
             # Last case: Within range
@@ -430,6 +463,11 @@ if __name__ == "__main__":
                 # Alert if total window sum > 95 pctl
                 if total_window_sum > p95:
                     print("==========THIS IS THE ALERT (Total window sum over 95th pctl)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        send_alert_VM(VM_URL, ts_S1, Total_Sum_Over_95)
+
+
 
                 # Set value for the next window lookup table
                 value_for_lookup_input = total_window_sum * 0.25 # Total window sum x factor
@@ -472,6 +510,11 @@ if __name__ == "__main__":
             # Check for alerts
             if valTemp > temperature_threshold_F:
                 print("==========THIS IS THE ALERT (Excess Temperature)========== ")
+                # Send alert to VM
+                if alerts_are_active:
+                    send_alert_VM(VM_URL, ts_Temp, High_Temperature)
+
+                                    
 
         else:
             print("[WARNING] No data received")
@@ -502,10 +545,18 @@ if __name__ == "__main__":
             # Check for alert
             if use_custom_vibration_threshold:
                 if valVibM > custom_vibration_threshold:
-                    print("==========THIS IS AN ALERT (Excess Vibration)==========")
+                    print("==========THIS IS THE ALERT (Excess Vibration)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        send_alert_VM(VM_URL, ts_VibM, High_Vibration)
+
+
             else:
                 if valVibB:
-                    print("==========THIS IS AN ALERT (Excess Vibration)==========")
+                    print("==========THIS IS THE ALERT (Excess Vibration)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        send_alert_VM(VM_URL, ts_VibB, High_Vibration)
                     
         else:
             print("[WARNING] No data received")
