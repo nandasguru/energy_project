@@ -253,8 +253,8 @@ if __name__ == "__main__":
     #
     
     # Initialize thresholds for voltage
-    under_voltage_threshold = 124
-    over_voltage_threshold = 105
+    under_voltage_threshold = 105
+    over_voltage_threshold = 125
 
     v_range_threshold = 5
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     #
     
     under_frequency_threshold = 59.95
-    over_frequency_threshold = 60.05
+    over_frequency_threshold = 58.7
 
     f_range_threshold = 5
     under_f_in_a_row = 0
@@ -584,8 +584,15 @@ if __name__ == "__main__":
                     # Send alert to VM
                     if alerts_are_active:
                         pass
+
+                    over_v1_in_a_row = 0 # Reset over v1 count
             # V1 is in range
             else:
+                under_v1_in_a_row = 0 # Reset under v1 count
+                over_v1_in_a_row = 0 # Reset over v1 count
+
+            # Make sure it stays to one time window
+            if time_window_index == current_time_window:
                 under_v1_in_a_row = 0 # Reset under v1 count
                 over_v1_in_a_row = 0 # Reset over v1 count
 
@@ -593,23 +600,60 @@ if __name__ == "__main__":
 
 
             # Now check V2
+            # V2 under voltage [v_range_threshold] times in a row
             if valV2 < under_voltage_threshold:
-                print("==========THIS IS THE ALERT (V2 Under-voltage)==========")
-                # Send alert to VM
-                if alerts_are_active:
-                    pass
+                under_v2_in_a_row += 1 # Increase under v2 count
+                over_v2_in_a_row = 0 # Reset over v2 count
 
+                # If under-voltage [v_range_threshold] times in a row
+                if under_v2_in_a_row == v_range_threshold:
+                    print("==========THIS IS THE ALERT (V2 Under-voltage)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        #send here
+                        pass
+
+                    under_v2_in_a_row = 0 # Reset under v2 count
+
+                
+            # V2 over voltage [v_range_threshold] time in a row
             elif valV2 > over_voltage_threshold:
-                print("==========THIS IS THE ALERT (V2 Over-voltage)==========")
-                # Send alert to VM
-                if alerts_are_active:
-                    pass
+                over_v2_in_a_row += 1 # Increase over v2 count
+                under_v2_in_a_row = 0 # Reset under v2 count
 
+                # If over-voltage [v_range_threshold] times in a row
+                if over_v2_in_a_row == v_range_threshold:
+                    print("==========THIS IS THE ALERT (V2 Over-voltage)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        pass
+
+                    over_v2_in_a_row = 0 # Reset over v2 count
+
+            # V2 is in range
+            else:
+                under_v2_in_a_row = 0 # Reset under v2 count
+                over_v2_in_a_row = 0 # Reset over v2 count
+
+            # Make sure it stays to one time window
+            if time_window_index == current_time_window:
+                under_v2_in_a_row = 0 # Reset under v2 count
+                over_v2_in_a_row = 0 # Reset over v2 count
+
+
+            # Finished checking V2
             
             # At this point V1 and V2 are separately compared to the over and under voltage
             # theshold, and sends an alert if they are outside that range
 
+            # Print v1 and v2 counts
+            print("\n[TEST] V1 and V2 counts:")
+            print(f"[TEST] Under v1 count:  {under_v1_in_a_row}")
+            print(f"[TEST] Over v1 count: {over_v1_in_a_row}")
+            print(f"[TEST] Under v2 count: {under_v2_in_a_row}")
+            print(f"[TEST] Over v2 count: {over_v2_in_a_row}\n")
 
+        # Skip everything and print warning if no data is found
         else:
             print("[WARNING] No data received")
             break
@@ -639,14 +683,64 @@ if __name__ == "__main__":
             # Check for alert
 
             # First check F1
-            if valF1F1 < under_frequency_threshold:
-                print("==========THIS IS THE ALERT (F1 Under-frequency)==========")
-                pass
-            
+            # F1 under frequency [f_range_threshold] times in a row
+            if valF1 < under_frequency_threshold:
+                under_f_in_a_row += 1 # Increase under f count
+                over_f_in_a_row = 0 # Reset over f count
 
+                # If under-frequency [f_range_threshold] times in a row
+                if under_f_in_a_row == f_range_threshold:
+                    print("==========THIS IS THE ALERT (Under-frequency)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        #send here
+                        pass
+
+                    under_f_in_a_row = 0 # Reset under f count
+
+            # F1 over frequency [f_range_threshold] time in a row
+            elif valF1 > over_frequency_threshold:
+                over_f_in_a_row += 1 # Increase over f count
+                under_f_in_a_row = 0 # Reset under f count
+
+                # If over-frequency [f_range_threshold] time in a row
+                if over_f_in_a_row == f_range_threshold:
+                    print("==========THIS IS THE ALERT (Over-frequency)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        #send here
+                        pass
+
+                    over_f_in_a_row = 0 # Reset over f count
+
+            # F1 is in range
+            else:
+                under_f_in_a_row = 0 # Reset under f count
+                over_f_in_a_row = 0 # Reset over f count
+
+            # Make sure it stays to one time window
+            if time_window_index == current_time_window:
+                under_f_in_a_row = 0 # Reset under f count
+                over_f_in_a_row = 0 # Reset over f count
+
+            # Finished checking F1
+
+            # For now, there's no need to check F2, since it's going to be the exact same
+            # as F1, so the F1 checks cover both F1 and F2. If needed, just add F2
+            # checks below, exact same as F1 check, but with F2 parameters
+
+            # Print f counts
+            print("\n[TEST] F counts:")
+            print(f"[TEST] Under f count: {under_f_in_a_row}")
+            print(f"[TEST] Over f count: {over_f_in_a_row}\n")
+            
+        # Skip everything and print warning if no data is found
         else:
             print("[WARNING] No data received")
             break
+
+
+
 
         # EXPERIMENT 6
         """
@@ -731,5 +825,5 @@ if __name__ == "__main__":
             print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 1)
+        time.sleep(step if use_live_data else 5)
         
