@@ -193,9 +193,11 @@ if __name__ == "__main__":
     # This is for a SINGLE Query, not the whole range
     # Set 'end' for when the data starts
     # Just keep 'start' the same as 'end'
+    # Keep it to the time window
 
-    start = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
-    end = user_to_unix_timestamp(8, 13, 2025, 13, 0, 0)
+    end = user_to_unix_timestamp(8, 13, 2025, 12, 45, 0)
+    start = user_to_unix_timestamp(8, 13, 2025, 12, 45, 0)
+    
 
 
     # Decides whether to collect real time (True) or historical (False) data
@@ -249,14 +251,18 @@ if __name__ == "__main__":
     # Experiment 2 variables
     #
     #
-    # To be done later
+    
+    # Initialize thresholds for voltage
+    under_voltage_threshold = 124
+    over_voltage_threshold = 105
 
 
 
     # Experiment 3 variables
     #
     #
-    # To be done later
+    
+    under_frequency_threshold = 59.95
 
 
 
@@ -406,7 +412,9 @@ if __name__ == "__main__":
             print(f"[TEST] Current total window sum: {total_window_sum:.5f}\n")
 
             # Print data, p05, p95 for debugging
-            print(f"\nMetric: {S}, 5th pctl value: {p05:.3f}, 95th pctl value: {p95}\n")
+            print(f"\n[TEST] S1 = {valS1}\n[TEST] S2 = {valS2}\n[TEST] S1 + S2 = {S:.5f}\n")
+            print(f"[TEST] value for lookup table input: {value_for_lookup_input}")
+            print(f"\nMetric: {S:.5f}, 5th pctl value: {p05:.3f}, 95th pctl value: {p95}\n")
 
             # Now start the comparisions for raisng alerts
 
@@ -469,7 +477,7 @@ if __name__ == "__main__":
             # Total window sum should be the sum of all App.Power values from time window
             # Value for the next window lookup table input is calculated
             # Reset total window sum to 0 to keep it within the time window
-            # If final total window sum > 95 pctl, also trigger alert.
+            # If final total window sum x factor > 95 pctl, also trigger alert.
             # No need to check total window sum < 5 pctl since Consistent under 5 pctl will trigger
 
             
@@ -479,18 +487,18 @@ if __name__ == "__main__":
                 # Check total window sum
                 print(f"[TEST] Total window sum: {total_window_sum:.3f}")
 
+                # Set value for the next window lookup table
+                value_for_lookup_input = total_window_sum * 0.25 # Total window sum x factor
+                print(f"\n[TEST] Value for the next window lookup table: {value_for_lookup_input}")
+                print("[TEST] This is also the value compared to the p95 pctl of window")
+
                 # Alert if total window sum > 95 pctl
-                if total_window_sum > p95:
+                if value_for_lookup_input > p95:
                     print("==========THIS IS THE ALERT (Total window sum over 95th pctl)==========")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_S1, Total_Sum_Over_95)
 
-
-
-                # Set value for the next window lookup table
-                value_for_lookup_input = total_window_sum * 0.25 # Total window sum x factor
-                print(f"[TEST] Value for the next window lookup table: {value_for_lookup_input}")
 
                 # Reset total window sum to 0 so it only sums values for one window
                 total_window_sum = 0
@@ -507,7 +515,76 @@ if __name__ == "__main__":
         else:
             print("[WARNING] No data received")
             break    
+        
 
+
+        # EXPERIMENT 2
+        """
+        This test case checks whether the voltage coming from the grid simulator is
+        over or under the voltage thresholds [under_voltage_threshold], [over_voltage_threshold]
+        If so, give an alert
+        """
+        dataV1 = query_vm_range(metric_V1, start, end, step)
+        dataV2 = query_vm_range(metric_V2, start, end, step)
+
+        if dataV1 and dataV2:
+            ts_V1, valV1 = dataV1[-1]
+            ts_V2, valV2 = dataV2[-1]
+
+            # Voltage timestamp, should be same as the app.power timestamp, but just in case
+            dt_V_str = datetime.datetime.fromtimestamp(ts_V1, pytz.utc).astimezone(pst).strftime("%Y-%m-%d %H:%M:%S %Z")
+
+            # Print the values
+            print(f"[TEST] Timestamp: {dt_V_str}, V1: {valV1}, V2: {valV2}")
+
+            # Check for alert
+
+            # First check V1
+            if valV1 < under_voltage_threshold:
+                print("==========THIS IS THE ALERT (V1 Under-voltage)==========")
+                # Send alert to VM
+                if alerts_are_active:
+                    # send here
+                    pass
+
+            elif valV1 > over_voltage_threshold:
+                print("==========THIS IS THE ALERT (V1 Over-voltage)==========")
+                # Send alert to VM
+                if alerts_are_active:
+                    pass
+
+
+            # Now check V2
+            if valV2 < under_voltage_threshold:
+                print("==========THIS IS THE ALERT (V2 Under-voltage)==========")
+                # Send alert to VM
+                if alerts_are_active:
+                    pass
+
+            elif valV2 > over_voltage_threshold:
+                print("==========THIS IS THE ALERT (V2 Over-voltage)==========")
+                # Send alert to VM
+                if alerts_are_active:
+                    pass
+
+            
+            # At this point V1 and V2 are separately compared to the over and under voltage
+            # theshold, and sends an alert if they are outside that range
+
+
+        else:
+            print("[WARNING] No data received")
+            break
+
+        
+
+
+        # EXPERIMENT 3
+        """
+        This test case checks whether the frequency of the grid simulator goes outside the
+        thresholds [under_frequency], [over_frequency]. If it does, send an alert
+        """
+        
 
         # EXPERIMENT 6
         """
@@ -592,5 +669,5 @@ if __name__ == "__main__":
             print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 10)
+        time.sleep(step if use_live_data else 1)
         
