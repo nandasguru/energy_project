@@ -174,7 +174,7 @@ if __name__ == "__main__":
     #
     # Experiment 1: 5 in a row < 5 pctl or > 95 pctl App.Power withi time window
     # Experiment 2: Too much/less voltage from grid
-    # Experiment 3: Too much change in frequency (freq can only decrease)
+    # Experiment 3: Too much change in frequency
     # Experiment 4: Too low power factor (cannot be > 1) [S / P] ========== Don't know if do it or not
     # Experiment 5: Capacity of transformer. Don't send alert if capacity is available at S > 95 pctl
     # Experiment 6: High temperature check
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     VM_URL = "http://localhost:8428/write"
 
     # Change this to decide if alerts are actually sent to VM or just printed
-    alerts_are_active = True
+    alerts_are_active = False
 
 
     # Experiment 1 Variables
@@ -256,6 +256,13 @@ if __name__ == "__main__":
     under_voltage_threshold = 124
     over_voltage_threshold = 105
 
+    v_range_threshold = 5
+
+    under_v1_in_a_row = 0
+    over_v1_in_a_row = 0
+    under_v2_in_a_row = 0
+    over_v2_in_a_row = 0
+
 
 
     # Experiment 3 variables
@@ -263,6 +270,11 @@ if __name__ == "__main__":
     #
     
     under_frequency_threshold = 59.95
+    over_frequency_threshold = 60.05
+
+    f_range_threshold = 5
+    under_f_in_a_row = 0
+    over_f_in_a_row = 0
 
 
 
@@ -537,21 +549,47 @@ if __name__ == "__main__":
             # Print the values
             print(f"[TEST] Timestamp: {dt_V_str}, V1: {valV1}, V2: {valV2}")
 
-            # Check for alert
+
+
+
+
+            # Check for alert now
+
+
 
             # First check V1
+            # V1 under voltage [v_range_threshold] times in a row
             if valV1 < under_voltage_threshold:
-                print("==========THIS IS THE ALERT (V1 Under-voltage)==========")
-                # Send alert to VM
-                if alerts_are_active:
-                    # send here
-                    pass
+                under_v1_in_a_row += 1 # Increase under v1 count
+                over_v1_in_a_row = 0 # Reset over v1 count
 
+                # If under-voltage [v_range_threshold] times in a row
+                if under_v1_in_a_row == v_range_threshold:
+                    print("==========THIS IS THE ALERT (V1 Under-voltage)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        # send here
+                        pass
+
+                    under_v1_in_a_row = 0 # Reset under v1 count
+
+            # V1 over voltage [v_range_threshold] times in a row
             elif valV1 > over_voltage_threshold:
-                print("==========THIS IS THE ALERT (V1 Over-voltage)==========")
-                # Send alert to VM
-                if alerts_are_active:
-                    pass
+                over_v1_in_a_row += 1 # Increase over v1 count
+                under_v1_in_a_row = 0 # Reset under v1 count
+
+                # If over-voltage [v_range_threshold] times in a row
+                if over_v1_in_a_row == v_range_threshold:   
+                    print("==========THIS IS THE ALERT (V1 Over-voltage)==========")
+                    # Send alert to VM
+                    if alerts_are_active:
+                        pass
+            # V1 is in range
+            else:
+                under_v1_in_a_row = 0 # Reset under v1 count
+                over_v1_in_a_row = 0 # Reset over v1 count
+
+            # Finished checking V1
 
 
             # Now check V2
@@ -584,7 +622,31 @@ if __name__ == "__main__":
         This test case checks whether the frequency of the grid simulator goes outside the
         thresholds [under_frequency], [over_frequency]. If it does, send an alert
         """
-        
+        dataF1 = query_vm_range(metric_F1, start, end, step)
+        dataF2 = query_vm_range(metric_F2, start, end, step)
+
+        # If the data exists
+        if dataF1 and dataF2:
+            ts_F1, valF1 = dataF1[-1]
+            ts_F2, valF2 = dataF2[-1]
+
+            # Frequency timestamp, should be same as the app.power timestamp, but just in case
+            dt_F_str = datetime.datetime.fromtimestamp(ts_F1, pytz.utc).astimezone(pst).strftime("%Y-%m-%d %H:%M:%S %Z")
+
+            #P Print the values
+            print(f"[TEST] Timestamp: {dt_F_str}, F1: {valF1}, F2: {valF2}")
+
+            # Check for alert
+
+            # First check F1
+            if valF1F1 < under_frequency_threshold:
+                print("==========THIS IS THE ALERT (F1 Under-frequency)==========")
+                pass
+            
+
+        else:
+            print("[WARNING] No data received")
+            break
 
         # EXPERIMENT 6
         """
