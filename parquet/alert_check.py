@@ -195,8 +195,8 @@ if __name__ == "__main__":
     # Just keep 'start' the same as 'end'
     # Keep it to the time window
 
-    end = user_to_unix_timestamp(8, 13, 2025, 12, 45, 0)
-    start = user_to_unix_timestamp(8, 13, 2025, 12, 45, 0)
+    end = user_to_unix_timestamp(8, 16, 2025, 11, 0, 0)
+    start = user_to_unix_timestamp(8, 13, 2025, 11, 0, 0)
     
 
 
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     VM_URL = "http://localhost:8428/write"
 
     # Change this to decide if alerts are actually sent to VM or just printed
-    alerts_are_active = False
+    alerts_are_active = True
 
 
     # Experiment 1 Variables
@@ -253,8 +253,9 @@ if __name__ == "__main__":
     #
     
     # Initialize thresholds for voltage
-    under_voltage_threshold = 105
-    over_voltage_threshold = 125
+    # +- 5%
+    under_voltage_threshold = 114
+    over_voltage_threshold = 126
 
     v_range_threshold = 5
 
@@ -270,7 +271,7 @@ if __name__ == "__main__":
     #
     
     under_frequency_threshold = 59.95
-    over_frequency_threshold = 58.7
+    over_frequency_threshold = 60.05
 
     f_range_threshold = 5
     under_f_in_a_row = 0
@@ -360,7 +361,12 @@ if __name__ == "__main__":
         check the same condition for < 5th percentile since the alert will trigger
         earlier with the individual data points under 5th percentile check
         """
-
+        # Indicate values are for S
+        print("##########################")
+        print("APPARENT POWER")
+        print("##########################")
+        print("")
+        
         # Step 1:
         # Get data for the first minute of time window
         # Get timestamp and value of apparent power
@@ -426,7 +432,7 @@ if __name__ == "__main__":
             # Print data, p05, p95 for debugging
             print(f"\n[TEST] S1 = {valS1}\n[TEST] S2 = {valS2}\n[TEST] S1 + S2 = {S:.5f}\n")
             print(f"[TEST] value for lookup table input: {value_for_lookup_input}")
-            print(f"\nMetric: {S:.5f}, 5th pctl value: {p05:.3f}, 95th pctl value: {p95}\n")
+            print(f"\nMetric (S): {S:.5f}, 5th pctl value: {p05:.3f}, 95th pctl value: {p95}\n")
 
             # Now start the comparisions for raisng alerts
 
@@ -437,7 +443,7 @@ if __name__ == "__main__":
 
                 # If under 5 pctl [percentile_range_threshold] times in a row, alert
                 if under_05_in_a_row == percentile_range_threshold:
-                    print("==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
+                    print("\n==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_S1, Consistent_Under_5)
@@ -452,7 +458,7 @@ if __name__ == "__main__":
 
                 # If over 95 pctl [percentile_range_threshold] times in a row, alert
                 if over_95_in_a_row == percentile_range_threshold:
-                    print("==========THIS IS THE ALERT (Consistently over 95th pctl)==========\n")
+                    print("\n==========THIS IS THE ALERT (Consistently over 95th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_S1, Consistent_Over_95)
@@ -506,7 +512,7 @@ if __name__ == "__main__":
 
                 # Alert if total window sum > 95 pctl
                 if value_for_lookup_input > p95:
-                    print("==========THIS IS THE ALERT (Total window sum over 95th pctl)==========")
+                    print("\n==========THIS IS THE ALERT (Total window sum over 95th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_S1, Total_Sum_Over_95)
@@ -536,6 +542,13 @@ if __name__ == "__main__":
         over or under the voltage thresholds [under_voltage_threshold], [over_voltage_threshold]
         If so, give an alert
         """
+        # Indicate values are for V
+        print("##########################")
+        print("VOLTAGE")
+        print("##########################")
+        print()
+
+
         dataV1 = query_vm_range(metric_V1, start, end, step)
         dataV2 = query_vm_range(metric_V2, start, end, step)
 
@@ -565,7 +578,7 @@ if __name__ == "__main__":
 
                 # If under-voltage [v_range_threshold] times in a row
                 if under_v1_in_a_row == v_range_threshold:
-                    print("==========THIS IS THE ALERT (V1 Under-voltage)==========")
+                    print("\n==========THIS IS THE ALERT (V1 Under-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         # send here
@@ -580,7 +593,7 @@ if __name__ == "__main__":
 
                 # If over-voltage [v_range_threshold] times in a row
                 if over_v1_in_a_row == v_range_threshold:   
-                    print("==========THIS IS THE ALERT (V1 Over-voltage)==========")
+                    print("\n==========THIS IS THE ALERT (V1 Over-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         pass
@@ -607,7 +620,7 @@ if __name__ == "__main__":
 
                 # If under-voltage [v_range_threshold] times in a row
                 if under_v2_in_a_row == v_range_threshold:
-                    print("==========THIS IS THE ALERT (V2 Under-voltage)==========")
+                    print("\n==========THIS IS THE ALERT (V2 Under-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         #send here
@@ -623,7 +636,7 @@ if __name__ == "__main__":
 
                 # If over-voltage [v_range_threshold] times in a row
                 if over_v2_in_a_row == v_range_threshold:
-                    print("==========THIS IS THE ALERT (V2 Over-voltage)==========")
+                    print("\n==========THIS IS THE ALERT (V2 Over-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         pass
@@ -648,6 +661,7 @@ if __name__ == "__main__":
 
             # Print v1 and v2 counts
             print("\n[TEST] V1 and V2 counts:")
+            print(f"[TEST] Under Threshold: {under_voltage_threshold}, Over Threshold: {over_voltage_threshold}")
             print(f"[TEST] Under v1 count:  {under_v1_in_a_row}")
             print(f"[TEST] Over v1 count: {over_v1_in_a_row}")
             print(f"[TEST] Under v2 count: {under_v2_in_a_row}")
@@ -666,6 +680,13 @@ if __name__ == "__main__":
         This test case checks whether the frequency of the grid simulator goes outside the
         thresholds [under_frequency], [over_frequency]. If it does, send an alert
         """
+        # Indicate values are for F
+        print("##########################")
+        print("FREQUENCY")
+        print("##########################")
+        print()
+
+
         dataF1 = query_vm_range(metric_F1, start, end, step)
         dataF2 = query_vm_range(metric_F2, start, end, step)
 
@@ -690,7 +711,7 @@ if __name__ == "__main__":
 
                 # If under-frequency [f_range_threshold] times in a row
                 if under_f_in_a_row == f_range_threshold:
-                    print("==========THIS IS THE ALERT (Under-frequency)==========")
+                    print("\n==========THIS IS THE ALERT (Under-frequency)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         #send here
@@ -705,7 +726,7 @@ if __name__ == "__main__":
 
                 # If over-frequency [f_range_threshold] time in a row
                 if over_f_in_a_row == f_range_threshold:
-                    print("==========THIS IS THE ALERT (Over-frequency)==========")
+                    print("\n==========THIS IS THE ALERT (Over-frequency)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         #send here
@@ -731,6 +752,7 @@ if __name__ == "__main__":
 
             # Print f counts
             print("\n[TEST] F counts:")
+            print(f"[TEST] Under Threshold: {under_frequency_threshold}, Over Threshold: {over_frequency_threshold}")
             print(f"[TEST] Under f count: {under_f_in_a_row}")
             print(f"[TEST] Over f count: {over_f_in_a_row}\n")
             
@@ -748,6 +770,13 @@ if __name__ == "__main__":
         and alert if the temperature (in F) reaches a value higher than the specified
         threshold [temperature_threshold_F]
         """
+        # Indicate values are for Temp
+        print("##########################")
+        print("TEMPERATURE")
+        print("##########################")
+        print()
+
+
         dataTemp = query_vm_range(metric_Temp, start, end, step)
 
         if dataTemp:
@@ -757,11 +786,12 @@ if __name__ == "__main__":
             dt_Temp_str = datetime.datetime.fromtimestamp(ts_Temp, pytz.utc).astimezone(pst).strftime("%Y-%m-%d %H:%M:%S %Z")
 
             # Print the values
-            print(f"[TEST] Timestamp: {dt_Temp_str}, Temperature: {valTemp}")
+            print(f"[TEST] Threshold: {temperature_threshold_F} F")
+            print(f"[TEST] Timestamp: {dt_Temp_str}, Temperature: {valTemp}\n")
 
             # Check for alerts
             if valTemp > temperature_threshold_F:
-                print("==========THIS IS THE ALERT (Excess Temperature)========== ")
+                print("\n==========THIS IS THE ALERT (Excess Temperature)==========\n")
                 # Send alert to VM
                 if alerts_are_active:
                     send_alert_VM(VM_URL, ts_Temp, High_Temperature)
@@ -780,6 +810,13 @@ if __name__ == "__main__":
         if the vibration is above 20 (default setting) or a custom variable
         [custom_vibration_threshold]
         """
+        # Indicate values are for Vib
+        print("##########################")
+        print("VIBRATION")
+        print("##########################")
+        print()
+
+
         dataVibrationBoolean = query_vm_range(metric_VibBool, start, end, step)
         dataVibrationMagnitude = query_vm_range(metric_VibValue, start, end, step)
 
@@ -792,12 +829,13 @@ if __name__ == "__main__":
             dt_Vib_str = datetime.datetime.fromtimestamp(ts_VibB, pytz.utc).astimezone(pst).strftime("%Y-%m-%d %H:%M:%S %Z")
 
             # Print the values
+            print(f"[TEST] Threshold: {20 if not use_custom_vibration_threshold else custom_vibration_threshold}")
             print(f"[TEST] Timestamp: {dt_Vib_str}, VibrationMag: {valVibM}, VibrationBool: {valVibB}")
 
             # Check for alert
             if use_custom_vibration_threshold:
                 if valVibM > custom_vibration_threshold:
-                    print("==========THIS IS THE ALERT (Excess Vibration)==========")
+                    print("\n==========THIS IS THE ALERT (Excess Vibration)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_VibM, High_Vibration)
@@ -805,7 +843,7 @@ if __name__ == "__main__":
 
             else:
                 if valVibB:
-                    print("==========THIS IS THE ALERT (Excess Vibration)==========")
+                    print("\n==========THIS IS THE ALERT (Excess Vibration)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
                         send_alert_VM(VM_URL, ts_VibB, High_Vibration)
@@ -825,5 +863,5 @@ if __name__ == "__main__":
             print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 5)
+        time.sleep(step if use_live_data else 0.5)
         
