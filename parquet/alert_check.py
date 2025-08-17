@@ -351,7 +351,7 @@ if __name__ == "__main__":
 
 
 
-    # Start the main loop
+    # Start the main loop. This will run every minute
     while True:
 
         print("--------------------------------------------------------------------------------------------------------------")
