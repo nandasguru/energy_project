@@ -106,16 +106,16 @@ def round_down_to_minute(ts):
 
 
 # Function to send an alert back to VM once it's been detected
-def send_alert_VM(URL, ts_real, alert_code):
+def send_alert_VM(URL, ts_real, alert_name, alert_code):
 
     ts_before = int(ts_real - 1)
     ts_after = int(ts_real + 1)
 
 
     vm_line = (
-        f'Alert code=0 {ts_before}\n'
-        f'Alert code={alert_code} {ts_real}\n'
-        f'Alert code=0 {ts_after}'
+        f'Alert {alert_name}=0 {ts_before}\n'
+        f'Alert {alert_name}={alert_code} {ts_real}\n'
+        f'Alert {alert_name}=0 {ts_after}'
     )
 
     try:
@@ -158,23 +158,48 @@ if __name__ == "__main__":
     metric_Temp = "{__name__=\"dataESP_Temp(F)\"}"
 
 
-    # Define alert codes for sending alerts to Victoria Metrics
-    No_Alert            =  0
-    High_Temperature    =  1
-    High_Vibration      =  2
-    Consistent_Under_5  =  3
-    Consistent_Over_95  =  4
-    Total_Sum_Over_95   =  5
-    Over_Voltage        =  6
-    Under_Voltage       =  7
-    Low_Frequency       =  8
+    # Define alert names and codes for sending alerts to Victoria Metrics
+    # No alert
+    CODE_ZERO     = 0
+    # Apparent power
+    S_ALERT      = "consistent_power"
+    LOW_S        = 1
+    HIGH_S       = 2
+    # Total window
+    TS_ALERT     = "total_window"
+    CODE_TS      = 1
+    # Voltage - V1
+    V1_ALERT     = "consistent_voltage_1"
+    LOW_V1       = 1
+    HIGH_V1      = 2
+    # Voltage - V2
+    V2_ALERT     = "consistent_voltage_2"
+    LOW_V2       = 1
+    HIGH_V2      = 2
+    # Frequency
+    F_ALERT      = "consistent_frequency"
+    LOW_F        = 1
+    HIGH_F       = 2
+    # Temperature
+    TEMP_ALERT   = "temperature"
+    CODE_TEMP    = 1
+    # Vibration
+    VIB_ALERT    = "vibration"
+    CODE_VIB     = 1
+
+    # Victoria Metrics Variables, for writing alerts to VM
+    VM_URL = "http://localhost:8428/write"
+
+    # Change this to decide if alerts are actually sent to VM or just printed
+    alerts_are_active = True
+    
 
     # Experiments:
     #
     #
     # Experiment 1: 5 in a row < 5 pctl or > 95 pctl App.Power withi time window
-    # Experiment 2: Too much/less voltage from grid
-    # Experiment 3: Too much change in frequency
+    # Experiment 2: Too much/less voltage from grid (again in a row)
+    # Experiment 3: Too much change in frequency (again in a row)
     # Experiment 4: Too low power factor (cannot be > 1) [S / P] ========== Don't know if do it or not
     # Experiment 5: Capacity of transformer. Don't send alert if capacity is available at S > 95 pctl
     # Experiment 6: High temperature check
@@ -196,7 +221,9 @@ if __name__ == "__main__":
     # Keep it to the time window
 
     end = user_to_unix_timestamp(8, 16, 2025, 11, 0, 0)
-    start = user_to_unix_timestamp(8, 13, 2025, 11, 0, 0)
+    start = user_to_unix_timestamp(8, 16, 2025, 11, 0, 0)
+
+    
     
 
 
@@ -216,14 +243,7 @@ if __name__ == "__main__":
     else:
         time_window_index = 0
 
-
-    # Victoria Metrics Variables, for writing alerts to VM
-    VM_URL = "http://localhost:8428/write"
-
-    # Change this to decide if alerts are actually sent to VM or just printed
-    alerts_are_active = True
-
-
+    
     # Experiment 1 Variables
     #
     #
@@ -244,7 +264,7 @@ if __name__ == "__main__":
     p05 = 0
     p95 = 0
 
-
+    
 
 
 
@@ -319,6 +339,16 @@ if __name__ == "__main__":
 
 
 
+    # For alerts column to show in grafana, send one alert of each type
+    send_alert_VM(VM_URL, end, S_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, TS_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, V1_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, V2_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, F_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, TEMP_ALERT, CODE_ZERO)
+    send_alert_VM(VM_URL, end, VIB_ALERT, CODE_ZERO)
+
+
 
 
     # Start the main loop
@@ -385,6 +415,7 @@ if __name__ == "__main__":
             # Data comes as a tuple (timestamp, value)
             ts_S1, valS1 = dataS1[-1] # Get latest data point for S1
             ts_S2, valS2 = dataS2[-1] # Get latest data point for S2
+            
 
             # Get time stamp for App.Power. Use S1 or S2, doesn't matter, same timestamp
             dt_S = datetime.datetime.fromtimestamp(ts_S1, pytz.utc).astimezone(pst)
@@ -446,7 +477,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Consistently under 05th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        send_alert_VM(VM_URL, ts_S1, Consistent_Under_5)
+                        send_alert_VM(VM_URL, ts_S1, S_ALERT, LOW_S)
 
 
                     under_05_in_a_row = 0 # Reset count once alert occurs
@@ -461,7 +492,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Consistently over 95th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        send_alert_VM(VM_URL, ts_S1, Consistent_Over_95)
+                        send_alert_VM(VM_URL, ts_S1, S_ALERT, HIGH_S)
 
 
                     over_95_in_a_row = 0 # Reset count once alert occurs
@@ -515,7 +546,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Total window sum over 95th pctl)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        send_alert_VM(VM_URL, ts_S1, Total_Sum_Over_95)
+                        send_alert_VM(VM_URL, ts_S1, TS_ALERT, CODE_TS)
 
 
                 # Reset total window sum to 0 so it only sums values for one window
@@ -581,8 +612,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (V1 Under-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        # send here
-                        pass
+                        send_alert_VM(VM_URL, ts_V1, V1_ALERT, LOW_V1)
 
                     under_v1_in_a_row = 0 # Reset under v1 count
 
@@ -596,7 +626,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (V1 Over-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        pass
+                        send_alert_VM(VM_URL, ts_V1, V1_ALERT, HIGH_V1)
 
                     over_v1_in_a_row = 0 # Reset over v1 count
             # V1 is in range
@@ -623,8 +653,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (V2 Under-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        #send here
-                        pass
+                        send_alert_VM(VM_URL, ts_V2, V2_ALERT, LOW_V2)
 
                     under_v2_in_a_row = 0 # Reset under v2 count
 
@@ -639,7 +668,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (V2 Over-voltage)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        pass
+                        send_alert_VM(VM_URL, ts_V2, V2_ALERT, HIGH_V2)
 
                     over_v2_in_a_row = 0 # Reset over v2 count
 
@@ -714,8 +743,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Under-frequency)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        #send here
-                        pass
+                        send_alert_VM(VM_URL, ts_F1, F_ALERT, LOW_F)
 
                     under_f_in_a_row = 0 # Reset under f count
 
@@ -729,8 +757,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Over-frequency)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        #send here
-                        pass
+                        send_alert_VM(VM_URL, ts_F1, F_ALERT, HIGH_F)
 
                     over_f_in_a_row = 0 # Reset over f count
 
@@ -794,7 +821,7 @@ if __name__ == "__main__":
                 print("\n==========THIS IS THE ALERT (Excess Temperature)==========\n")
                 # Send alert to VM
                 if alerts_are_active:
-                    send_alert_VM(VM_URL, ts_Temp, High_Temperature)
+                    send_alert_VM(VM_URL, ts_Temp, TEMP_ALERT, CODE_TEMP)
 
                                     
 
@@ -838,7 +865,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Excess Vibration)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        send_alert_VM(VM_URL, ts_VibM, High_Vibration)
+                        send_alert_VM(VM_URL, ts_VibM, VIB_ALERT, CODE_VIB)
 
 
             else:
@@ -846,7 +873,7 @@ if __name__ == "__main__":
                     print("\n==========THIS IS THE ALERT (Excess Vibration)==========\n")
                     # Send alert to VM
                     if alerts_are_active:
-                        send_alert_VM(VM_URL, ts_VibB, High_Vibration)
+                        send_alert_VM(VM_URL, ts_VibB, VIB_ALERT, CODE_VIB)
                     
         else:
             print("[WARNING] No data received")
@@ -863,5 +890,5 @@ if __name__ == "__main__":
             print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 0.5)
+        time.sleep(step if use_live_data else 1)
         
