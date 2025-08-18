@@ -19,77 +19,16 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:44:00 PDT
-
-[TEST] Lookup table parameters:  daily window number = 95, day of week = 6, power bin index = 0
-
-[TEST] Set total window sum to 0
-[TEST] Current total window sum: 9.43297
-
-
-[TEST] S1 = 0.781105
-[TEST] S2 = 0.7910560000000001
-[TEST] S1 + S2 = 9.43297
-
-[TEST] value for lookup table input: 0
-
-Metric (S): 9.43297, 5th pctl value: 1.590, 95th pctl value: 5.97
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, V1: 117.913, V2: 118.374
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, Temperature: 78.05
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 2
-
-##########################
-APPARENT POWER
-##########################
-
-
 [TEST] Current timestamp: 2025-08-16 23:45:00 PDT
 
-[TEST] Current total window sum: 15.82886
+[TEST] Lookup table parameters:  daily window number = 96, day of week = 6, power bin index = 0
+
+[TEST] Set total window sum to 0
+[TEST] Current total window sum: 6.39589
 
 
-[TEST] S1 = 0.529904
-[TEST] S2 = 0.5360779999999999
+[TEST] S1 = 3.179424
+[TEST] S2 = 3.216468
 [TEST] S1 + S2 = 6.39589
 
 [TEST] value for lookup table input: 0
@@ -97,7 +36,7 @@ APPARENT POWER
 Metric (S): 6.39589, 5th pctl value: 1.590, 95th pctl value: 5.97
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   1
 
 ##########################
 VOLTAGE
@@ -137,7 +76,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:45:00 PDT, VibrationMag: 3.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 3
+[TEST] Time window index: 2
 
 ##########################
 APPARENT POWER
@@ -146,11 +85,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:46:00 PDT
 
-[TEST] Current total window sum: 25.04970
+[TEST] Current total window sum: 15.61673
 
 
-[TEST] S1 = 0.7636860000000001
-[TEST] S2 = 0.773121
+[TEST] S1 = 4.582116
+[TEST] S2 = 4.638725999999999
 [TEST] S1 + S2 = 9.22084
 
 [TEST] value for lookup table input: 0
@@ -158,7 +97,7 @@ APPARENT POWER
 Metric (S): 9.22084, 5th pctl value: 1.590, 95th pctl value: 5.97
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   3
+[TEST] Over 95 count:   2
 
 ##########################
 VOLTAGE
@@ -198,7 +137,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:46:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 4
+[TEST] Time window index: 3
 
 ##########################
 APPARENT POWER
@@ -207,11 +146,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:47:00 PDT
 
-[TEST] Current total window sum: 31.42610
+[TEST] Current total window sum: 21.99314
 
 
-[TEST] S1 = 0.5280819999999999
-[TEST] S2 = 0.534652
+[TEST] S1 = 3.168492
+[TEST] S2 = 3.2079120000000003
 [TEST] S1 + S2 = 6.37640
 
 [TEST] value for lookup table input: 0
@@ -219,7 +158,7 @@ APPARENT POWER
 Metric (S): 6.37640, 5th pctl value: 1.590, 95th pctl value: 5.97
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   4
+[TEST] Over 95 count:   3
 
 ##########################
 VOLTAGE
@@ -259,7 +198,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:47:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 5
+[TEST] Time window index: 4
 
 ##########################
 APPARENT POWER
@@ -268,11 +207,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:48:00 PDT
 
-[TEST] Current total window sum: 36.41992
+[TEST] Current total window sum: 26.98695
 
 
-[TEST] S1 = 0.413992
-[TEST] S2 = 0.41831
+[TEST] S1 = 2.4839520000000004
+[TEST] S2 = 2.50986
 [TEST] S1 + S2 = 4.99381
 
 [TEST] value for lookup table input: 0
@@ -320,7 +259,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:48:00 PDT, VibrationMag: 2.08, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 6
+[TEST] Time window index: 5
 
 ##########################
 APPARENT POWER
@@ -329,11 +268,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:49:00 PDT
 
-[TEST] Current total window sum: 43.51970
+[TEST] Current total window sum: 34.08673
 
 
-[TEST] S1 = 0.588766
-[TEST] S2 = 0.5945309999999999
+[TEST] S1 = 3.5325959999999994
+[TEST] S2 = 3.5671859999999995
 [TEST] S1 + S2 = 7.09978
 
 [TEST] value for lookup table input: 0
@@ -381,7 +320,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:49:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 7
+[TEST] Time window index: 6
 
 ##########################
 APPARENT POWER
@@ -390,11 +329,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:50:00 PDT
 
-[TEST] Current total window sum: 50.70440
+[TEST] Current total window sum: 41.27143
 
 
-[TEST] S1 = 0.595274
-[TEST] S2 = 0.602176
+[TEST] S1 = 3.571644
+[TEST] S2 = 3.6130560000000007
 [TEST] S1 + S2 = 7.18470
 
 [TEST] value for lookup table input: 0
@@ -442,7 +381,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:50:00 PDT, VibrationMag: 3.32, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 8
+[TEST] Time window index: 7
 
 ##########################
 APPARENT POWER
@@ -451,11 +390,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:51:00 PDT
 
-[TEST] Current total window sum: 56.19705
+[TEST] Current total window sum: 46.76408
 
 
-[TEST] S1 = 0.45508
-[TEST] S2 = 0.46036200000000005
+[TEST] S1 = 2.73048
+[TEST] S2 = 2.762172
 [TEST] S1 + S2 = 5.49265
 
 [TEST] value for lookup table input: 0
@@ -503,7 +442,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:51:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 9
+[TEST] Time window index: 8
 
 ##########################
 APPARENT POWER
@@ -512,11 +451,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:52:00 PDT
 
-[TEST] Current total window sum: 62.98255
+[TEST] Current total window sum: 53.54958
 
 
-[TEST] S1 = 0.5619850000000001
-[TEST] S2 = 0.5689310000000001
+[TEST] S1 = 3.3719099999999997
+[TEST] S2 = 3.4135860000000005
 [TEST] S1 + S2 = 6.78550
 
 [TEST] value for lookup table input: 0
@@ -564,7 +503,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:52:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
+[TEST] Time window index: 9
 
 ##########################
 APPARENT POWER
@@ -573,11 +512,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:53:00 PDT
 
-[TEST] Current total window sum: 69.18713
+[TEST] Current total window sum: 59.75417
 
 
-[TEST] S1 = 0.515106
-[TEST] S2 = 0.518992
+[TEST] S1 = 3.090636
+[TEST] S2 = 3.113952
 [TEST] S1 + S2 = 6.20459
 
 [TEST] value for lookup table input: 0
@@ -625,7 +564,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:53:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
+[TEST] Time window index: 10
 
 ##########################
 APPARENT POWER
@@ -634,11 +573,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:54:00 PDT
 
-[TEST] Current total window sum: 76.69535
+[TEST] Current total window sum: 67.26239
 
 
-[TEST] S1 = 0.622232
-[TEST] S2 = 0.6291380000000001
+[TEST] S1 = 3.733392
+[TEST] S2 = 3.7748280000000003
 [TEST] S1 + S2 = 7.50822
 
 [TEST] value for lookup table input: 0
@@ -686,7 +625,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:54:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
+[TEST] Time window index: 11
 
 ##########################
 APPARENT POWER
@@ -695,11 +634,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:55:00 PDT
 
-[TEST] Current total window sum: 82.21076
+[TEST] Current total window sum: 72.77779
 
 
-[TEST] S1 = 0.456959
-[TEST] S2 = 0.462275
+[TEST] S1 = 2.741754
+[TEST] S2 = 2.7736499999999995
 [TEST] S1 + S2 = 5.51540
 
 [TEST] value for lookup table input: 0
@@ -747,7 +686,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:55:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 13
+[TEST] Time window index: 12
 
 ##########################
 APPARENT POWER
@@ -756,11 +695,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:56:00 PDT
 
-[TEST] Current total window sum: 89.91417
+[TEST] Current total window sum: 80.48120
 
 
-[TEST] S1 = 0.638005
-[TEST] S2 = 0.645897
+[TEST] S1 = 3.8280299999999996
+[TEST] S2 = 3.8753820000000005
 [TEST] S1 + S2 = 7.70341
 
 [TEST] value for lookup table input: 0
@@ -808,7 +747,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:56:00 PDT, VibrationMag: 1.91, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 14
+[TEST] Time window index: 13
 
 ##########################
 APPARENT POWER
@@ -817,11 +756,11 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:57:00 PDT
 
-[TEST] Current total window sum: 96.92692
+[TEST] Current total window sum: 87.49395
 
 
-[TEST] S1 = 0.5817089999999999
-[TEST] S2 = 0.587082
+[TEST] S1 = 3.4902539999999997
+[TEST] S2 = 3.522492
 [TEST] S1 + S2 = 7.01275
 
 [TEST] value for lookup table input: 0
@@ -869,7 +808,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:57:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 15
+[TEST] Time window index: 14
 
 ##########################
 APPARENT POWER
@@ -878,27 +817,19 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:58:00 PDT
 
-[TEST] Current total window sum: 104.71671
+[TEST] Current total window sum: 95.28374
 
 
-[TEST] S1 = 0.645614
-[TEST] S2 = 0.652685
+[TEST] S1 = 3.8736840000000003
+[TEST] S2 = 3.9161099999999998
 [TEST] S1 + S2 = 7.78979
 
 [TEST] value for lookup table input: 0
 
 Metric (S): 7.78979, 5th pctl value: 1.590, 95th pctl value: 5.97
 
-[TEST] Total window sum: 104.717
-
-[TEST] Value for the next window lookup table: 26.1791775
-[TEST] This is also the value compared to the p95 pctl of window
-
-==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
-
-[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
+[TEST] Over 95 count:   3
 
 ##########################
 VOLTAGE
@@ -937,12 +868,8 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:58:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
-[TEST] ********** Time window end **********
-
 --------------------------------------------------------------------------------------------------------------
-[TEST] ********** Time window start **********
-
-[TEST] Time window index: 1
+[TEST] Time window index: 15
 
 ##########################
 APPARENT POWER
@@ -951,20 +878,25 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-16 23:59:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 96, day of week = 6, power bin index = 13
-
-[TEST] Set total window sum to 0
-[TEST] Current total window sum: 7.38126
+[TEST] Current total window sum: 102.66500
 
 
-[TEST] S1 = 0.61105
-[TEST] S2 = 0.6191599999999999
+[TEST] S1 = 3.6662999999999997
+[TEST] S2 = 3.71496
 [TEST] S1 + S2 = 7.38126
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 0
 
-Metric (S): 7.38126, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 7.38126, 5th pctl value: 1.590, 95th pctl value: 5.97
 
+[TEST] Total window sum: 102.665
+
+[TEST] Value for the next window lookup table: 25.666251000000003
+[TEST] This is also the value compared to the p95 pctl of window
+
+==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
+
+[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -1005,8 +937,12 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-16 23:59:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] ********** Time window end **********
+
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 2
+[TEST] ********** Time window start **********
+
+[TEST] Time window index: 1
 
 ##########################
 APPARENT POWER
@@ -1015,16 +951,19 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:00:00 PDT
 
-[TEST] Current total window sum: 21.83189
+[TEST] Lookup table parameters:  daily window number = 1, day of week = 7, power bin index = 13
+
+[TEST] Set total window sum to 0
+[TEST] Current total window sum: 14.45063
 
 
-[TEST] S1 = 1.198043
-[TEST] S2 = 1.2103949999999999
+[TEST] S1 = 7.188257999999999
+[TEST] S2 = 7.26237
 [TEST] S1 + S2 = 14.45063
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 14.45063, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 14.45063, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   1
@@ -1067,7 +1006,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:00:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 3
+[TEST] Time window index: 2
 
 ##########################
 APPARENT POWER
@@ -1076,16 +1015,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:01:00 PDT
 
-[TEST] Current total window sum: 33.95266
+[TEST] Current total window sum: 26.57140
 
 
-[TEST] S1 = 1.003904
-[TEST] S2 = 1.016225
+[TEST] S1 = 6.023424
+[TEST] S2 = 6.0973500000000005
 [TEST] S1 + S2 = 12.12077
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 12.12077, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 12.12077, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1128,7 +1067,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:01:00 PDT, VibrationMag: 2.38, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 4
+[TEST] Time window index: 3
 
 ##########################
 APPARENT POWER
@@ -1137,16 +1076,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:02:00 PDT
 
-[TEST] Current total window sum: 43.68010
+[TEST] Current total window sum: 36.29884
 
 
-[TEST] S1 = 0.805123
-[TEST] S2 = 0.816117
+[TEST] S1 = 4.830738
+[TEST] S2 = 4.896701999999999
 [TEST] S1 + S2 = 9.72744
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 9.72744, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 9.72744, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1189,7 +1128,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:02:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 5
+[TEST] Time window index: 4
 
 ##########################
 APPARENT POWER
@@ -1198,16 +1137,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:03:00 PDT
 
-[TEST] Current total window sum: 53.80885
+[TEST] Current total window sum: 46.42759
 
 
-[TEST] S1 = 0.839298
-[TEST] S2 = 0.848826
+[TEST] S1 = 5.035788
+[TEST] S2 = 5.092956
 [TEST] S1 + S2 = 10.12874
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 10.12874, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 10.12874, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1250,7 +1189,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:03:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 6
+[TEST] Time window index: 5
 
 ##########################
 APPARENT POWER
@@ -1259,16 +1198,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:04:00 PDT
 
-[TEST] Current total window sum: 73.24838
+[TEST] Current total window sum: 65.86712
 
 
-[TEST] S1 = 1.6125399999999999
-[TEST] S2 = 1.627383
+[TEST] S1 = 9.67524
+[TEST] S2 = 9.764298
 [TEST] S1 + S2 = 19.43954
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 19.43954, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 19.43954, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   1
@@ -1311,7 +1250,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:04:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 7
+[TEST] Time window index: 6
 
 ##########################
 APPARENT POWER
@@ -1320,16 +1259,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:05:00 PDT
 
-[TEST] Current total window sum: 85.94324
+[TEST] Current total window sum: 78.56198
 
 
-[TEST] S1 = 1.051986
-[TEST] S2 = 1.063824
+[TEST] S1 = 6.311916000000001
+[TEST] S2 = 6.382944
 [TEST] S1 + S2 = 12.69486
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 12.69486, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 12.69486, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   2
@@ -1372,7 +1311,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:05:00 PDT, VibrationMag: 2.65, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 8
+[TEST] Time window index: 7
 
 ##########################
 APPARENT POWER
@@ -1381,16 +1320,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:06:00 PDT
 
-[TEST] Current total window sum: 104.34814
+[TEST] Current total window sum: 96.96688
 
 
-[TEST] S1 = 1.52651
-[TEST] S2 = 1.540972
+[TEST] S1 = 9.15906
+[TEST] S2 = 9.245832
 [TEST] S1 + S2 = 18.40489
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 18.40489, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 18.40489, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   3
@@ -1433,7 +1372,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:06:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 9
+[TEST] Time window index: 8
 
 ##########################
 APPARENT POWER
@@ -1442,16 +1381,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:07:00 PDT
 
-[TEST] Current total window sum: 130.72799
+[TEST] Current total window sum: 123.34673
 
 
-[TEST] S1 = 2.1903539999999997
-[TEST] S2 = 2.2062890000000004
+[TEST] S1 = 13.142123999999999
+[TEST] S2 = 13.237734
 [TEST] S1 + S2 = 26.37986
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 26.37986, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 26.37986, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   4
@@ -1494,7 +1433,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:07:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
+[TEST] Time window index: 9
 
 ##########################
 APPARENT POWER
@@ -1503,16 +1442,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:08:00 PDT
 
-[TEST] Current total window sum: 153.25417
+[TEST] Current total window sum: 145.87291
 
 
-[TEST] S1 = 1.87035
-[TEST] S2 = 1.884013
+[TEST] S1 = 11.2221
+[TEST] S2 = 11.304077999999999
 [TEST] S1 + S2 = 22.52618
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 22.52618, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 22.52618, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 
 ==========THIS IS THE ALERT (Consistently over 95th pctl)==========
@@ -1559,7 +1498,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:08:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
+[TEST] Time window index: 10
 
 ##########################
 APPARENT POWER
@@ -1568,16 +1507,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:09:00 PDT
 
-[TEST] Current total window sum: 170.77989
+[TEST] Current total window sum: 163.39863
 
 
-[TEST] S1 = 1.45316
-[TEST] S2 = 1.467793
+[TEST] S1 = 8.718960000000001
+[TEST] S2 = 8.806758
 [TEST] S1 + S2 = 17.52572
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 17.52572, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 17.52572, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   1
@@ -1620,7 +1559,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:09:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
+[TEST] Time window index: 11
 
 ##########################
 APPARENT POWER
@@ -1629,16 +1568,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:10:00 PDT
 
-[TEST] Current total window sum: 189.92196
+[TEST] Current total window sum: 182.54070
 
 
-[TEST] S1 = 1.58879
-[TEST] S2 = 1.601555
+[TEST] S1 = 9.53274
+[TEST] S2 = 9.60933
 [TEST] S1 + S2 = 19.14207
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 19.14207, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 19.14207, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   2
@@ -1681,7 +1620,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:10:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 13
+[TEST] Time window index: 12
 
 ##########################
 APPARENT POWER
@@ -1690,16 +1629,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:11:00 PDT
 
-[TEST] Current total window sum: 210.49679
+[TEST] Current total window sum: 203.11553
 
 
-[TEST] S1 = 1.707542
-[TEST] S2 = 1.721597
+[TEST] S1 = 10.245252
+[TEST] S2 = 10.329582
 [TEST] S1 + S2 = 20.57483
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 20.57483, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 20.57483, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   3
@@ -1742,7 +1681,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:11:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 14
+[TEST] Time window index: 13
 
 ##########################
 APPARENT POWER
@@ -1751,16 +1690,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:12:00 PDT
 
-[TEST] Current total window sum: 226.70441
+[TEST] Current total window sum: 219.32315
 
 
-[TEST] S1 = 1.344063
-[TEST] S2 = 1.357206
+[TEST] S1 = 8.064378000000001
+[TEST] S2 = 8.143235999999998
 [TEST] S1 + S2 = 16.20761
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 16.20761, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 16.20761, 5th pctl value: 4.130, 95th pctl value: 12.58
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   4
@@ -1803,7 +1742,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:12:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 15
+[TEST] Time window index: 14
 
 ##########################
 APPARENT POWER
@@ -1812,25 +1751,17 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:13:00 PDT
 
-[TEST] Current total window sum: 239.05729
+[TEST] Current total window sum: 231.67603
 
 
-[TEST] S1 = 1.024138
-[TEST] S2 = 1.034675
+[TEST] S1 = 6.1448279999999995
+[TEST] S2 = 6.208049999999999
 [TEST] S1 + S2 = 12.35288
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 25.666251000000003
 
-Metric (S): 12.35288, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 12.35288, 5th pctl value: 4.130, 95th pctl value: 12.58
 
-[TEST] Total window sum: 239.057
-
-[TEST] Value for the next window lookup table: 59.764321499999994
-[TEST] This is also the value compared to the p95 pctl of window
-
-==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
-
-[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -1871,12 +1802,8 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:13:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
-[TEST] ********** Time window end **********
-
 --------------------------------------------------------------------------------------------------------------
-[TEST] ********** Time window start **********
-
-[TEST] Time window index: 1
+[TEST] Time window index: 15
 
 ##########################
 APPARENT POWER
@@ -1885,22 +1812,27 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:14:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 1, day of week = 7, power bin index = 19
-
-[TEST] Set total window sum to 0
-[TEST] Current total window sum: 14.36958
+[TEST] Current total window sum: 246.04561
 
 
-[TEST] S1 = 1.190389
-[TEST] S2 = 1.2045409999999999
+[TEST] S1 = 7.142333999999999
+[TEST] S2 = 7.227245999999999
 [TEST] S1 + S2 = 14.36958
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 25.666251000000003
 
 Metric (S): 14.36958, 5th pctl value: 4.130, 95th pctl value: 12.58
 
+[TEST] Total window sum: 246.046
+
+[TEST] Value for the next window lookup table: 61.511401500000005
+[TEST] This is also the value compared to the p95 pctl of window
+
+==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
+
+[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
@@ -1939,8 +1871,12 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:14:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] ********** Time window end **********
+
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 2
+[TEST] ********** Time window start **********
+
+[TEST] Time window index: 1
 
 ##########################
 APPARENT POWER
@@ -1949,19 +1885,22 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:15:00 PDT
 
-[TEST] Current total window sum: 29.81441
+[TEST] Lookup table parameters:  daily window number = 2, day of week = 7, power bin index = 19
+
+[TEST] Set total window sum to 0
+[TEST] Current total window sum: 15.44483
 
 
-[TEST] S1 = 1.28001
-[TEST] S2 = 1.2941289999999999
+[TEST] S1 = 7.680059999999999
+[TEST] S2 = 7.764773999999999
 [TEST] S1 + S2 = 15.44483
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 15.44483, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 15.44483, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   1
 
 ##########################
 VOLTAGE
@@ -2001,7 +1940,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:15:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 3
+[TEST] Time window index: 2
 
 ##########################
 APPARENT POWER
@@ -2010,16 +1949,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:16:00 PDT
 
-[TEST] Current total window sum: 40.83337
+[TEST] Current total window sum: 26.46379
 
 
-[TEST] S1 = 0.9127609999999999
-[TEST] S2 = 0.923732
+[TEST] S1 = 5.476566
+[TEST] S2 = 5.5423919999999995
 [TEST] S1 + S2 = 11.01896
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 11.01896, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 11.01896, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2062,7 +2001,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:16:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 4
+[TEST] Time window index: 3
 
 ##########################
 APPARENT POWER
@@ -2071,16 +2010,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:17:00 PDT
 
-[TEST] Current total window sum: 50.11517
+[TEST] Current total window sum: 35.74559
 
 
-[TEST] S1 = 0.768414
-[TEST] S2 = 0.778552
+[TEST] S1 = 4.6104840000000005
+[TEST] S2 = 4.6713119999999995
 [TEST] S1 + S2 = 9.28180
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 9.28180, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.28180, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2123,7 +2062,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:17:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 5
+[TEST] Time window index: 4
 
 ##########################
 APPARENT POWER
@@ -2132,16 +2071,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:18:00 PDT
 
-[TEST] Current total window sum: 58.76822
+[TEST] Current total window sum: 44.39864
 
 
-[TEST] S1 = 0.7168920000000001
-[TEST] S2 = 0.725283
+[TEST] S1 = 4.3013520000000005
+[TEST] S2 = 4.351698000000001
 [TEST] S1 + S2 = 8.65305
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 8.65305, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 8.65305, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2184,7 +2123,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:18:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 6
+[TEST] Time window index: 5
 
 ##########################
 APPARENT POWER
@@ -2193,16 +2132,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:19:00 PDT
 
-[TEST] Current total window sum: 68.81594
+[TEST] Current total window sum: 54.44636
 
 
-[TEST] S1 = 0.832613
-[TEST] S2 = 0.8420080000000001
+[TEST] S1 = 4.995678
+[TEST] S2 = 5.052048000000001
 [TEST] S1 + S2 = 10.04773
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 10.04773, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 10.04773, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2245,7 +2184,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:19:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 7
+[TEST] Time window index: 6
 
 ##########################
 APPARENT POWER
@@ -2254,16 +2193,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:20:00 PDT
 
-[TEST] Current total window sum: 78.12026
+[TEST] Current total window sum: 63.75068
 
 
-[TEST] S1 = 0.770709
-[TEST] S2 = 0.78001
+[TEST] S1 = 4.624254
+[TEST] S2 = 4.680059999999999
 [TEST] S1 + S2 = 9.30431
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 9.30431, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.30431, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2306,7 +2245,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:20:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 8
+[TEST] Time window index: 7
 
 ##########################
 APPARENT POWER
@@ -2315,16 +2254,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:21:00 PDT
 
-[TEST] Current total window sum: 86.76084
+[TEST] Current total window sum: 72.39126
 
 
-[TEST] S1 = 0.715201
-[TEST] S2 = 0.724896
+[TEST] S1 = 4.291206
+[TEST] S2 = 4.349376
 [TEST] S1 + S2 = 8.64058
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 8.64058, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 8.64058, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2367,7 +2306,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:21:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 9
+[TEST] Time window index: 8
 
 ##########################
 APPARENT POWER
@@ -2376,16 +2315,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:22:00 PDT
 
-[TEST] Current total window sum: 96.85727
+[TEST] Current total window sum: 82.48769
 
 
-[TEST] S1 = 0.8364579999999999
-[TEST] S2 = 0.8462799999999999
+[TEST] S1 = 5.0187479999999995
+[TEST] S2 = 5.07768
 [TEST] S1 + S2 = 10.09643
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 10.09643, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 10.09643, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2428,7 +2367,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:22:00 PDT, VibrationMag: 1.91, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
+[TEST] Time window index: 9
 
 ##########################
 APPARENT POWER
@@ -2437,16 +2376,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:23:00 PDT
 
-[TEST] Current total window sum: 110.91702
+[TEST] Current total window sum: 96.54744
 
 
-[TEST] S1 = 1.1648910000000001
-[TEST] S2 = 1.178401
+[TEST] S1 = 6.989346
+[TEST] S2 = 7.070406000000001
 [TEST] S1 + S2 = 14.05975
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 14.05975, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 14.05975, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   1
@@ -2489,7 +2428,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:23:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
+[TEST] Time window index: 10
 
 ##########################
 APPARENT POWER
@@ -2498,16 +2437,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:24:00 PDT
 
-[TEST] Current total window sum: 122.98451
+[TEST] Current total window sum: 108.61493
 
 
-[TEST] S1 = 0.999122
-[TEST] S2 = 1.012126
+[TEST] S1 = 5.994732
+[TEST] S2 = 6.072755999999999
 [TEST] S1 + S2 = 12.06749
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 12.06749, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 12.06749, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2550,7 +2489,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:24:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
+[TEST] Time window index: 11
 
 ##########################
 APPARENT POWER
@@ -2559,16 +2498,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:25:00 PDT
 
-[TEST] Current total window sum: 135.46352
+[TEST] Current total window sum: 121.09394
 
 
-[TEST] S1 = 1.033679
-[TEST] S2 = 1.046157
+[TEST] S1 = 6.2020740000000005
+[TEST] S2 = 6.276941999999999
 [TEST] S1 + S2 = 12.47902
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 12.47902, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 12.47902, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2611,7 +2550,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:25:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 13
+[TEST] Time window index: 12
 
 ##########################
 APPARENT POWER
@@ -2620,16 +2559,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:26:00 PDT
 
-[TEST] Current total window sum: 144.33539
+[TEST] Current total window sum: 129.96581
 
 
-[TEST] S1 = 0.734578
-[TEST] S2 = 0.744066
+[TEST] S1 = 4.407468
+[TEST] S2 = 4.464396000000001
 [TEST] S1 + S2 = 8.87186
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 8.87186, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 8.87186, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2672,7 +2611,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:26:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 14
+[TEST] Time window index: 13
 
 ##########################
 APPARENT POWER
@@ -2681,16 +2620,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:27:00 PDT
 
-[TEST] Current total window sum: 153.72174
+[TEST] Current total window sum: 139.35216
 
 
-[TEST] S1 = 0.777691
-[TEST] S2 = 0.786701
+[TEST] S1 = 4.666146
+[TEST] S2 = 4.720206
 [TEST] S1 + S2 = 9.38635
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 9.38635, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.38635, 5th pctl value: 4.130, 95th pctl value: 12.48
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2733,7 +2672,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:27:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 15
+[TEST] Time window index: 14
 
 ##########################
 APPARENT POWER
@@ -2742,25 +2681,17 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:28:00 PDT
 
-[TEST] Current total window sum: 163.55579
+[TEST] Current total window sum: 149.18621
 
 
-[TEST] S1 = 0.814284
-[TEST] S2 = 0.824725
+[TEST] S1 = 4.885704
+[TEST] S2 = 4.9483500000000005
 [TEST] S1 + S2 = 9.83405
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 61.511401500000005
 
-Metric (S): 9.83405, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.83405, 5th pctl value: 4.130, 95th pctl value: 12.48
 
-[TEST] Total window sum: 163.556
-
-[TEST] Value for the next window lookup table: 40.8889485
-[TEST] This is also the value compared to the p95 pctl of window
-
-==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
-
-[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -2801,12 +2732,8 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:28:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
-[TEST] ********** Time window end **********
-
 --------------------------------------------------------------------------------------------------------------
-[TEST] ********** Time window start **********
-
-[TEST] Time window index: 1
+[TEST] Time window index: 15
 
 ##########################
 APPARENT POWER
@@ -2815,20 +2742,25 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:29:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 2, day of week = 7, power bin index = 19
-
-[TEST] Set total window sum to 0
-[TEST] Current total window sum: 10.05094
+[TEST] Current total window sum: 159.23716
 
 
-[TEST] S1 = 0.832778
-[TEST] S2 = 0.842379
+[TEST] S1 = 4.996668
+[TEST] S2 = 5.054274
 [TEST] S1 + S2 = 10.05094
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 61.511401500000005
 
 Metric (S): 10.05094, 5th pctl value: 4.130, 95th pctl value: 12.48
 
+[TEST] Total window sum: 159.237
+
+[TEST] Value for the next window lookup table: 39.809289
+[TEST] This is also the value compared to the p95 pctl of window
+
+==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
+
+[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -2869,8 +2801,12 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:29:00 PDT, VibrationMag: 2.31, VibrationBool: 0.0
+[TEST] ********** Time window end **********
+
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 2
+[TEST] ********** Time window start **********
+
+[TEST] Time window index: 1
 
 ##########################
 APPARENT POWER
@@ -2879,16 +2815,19 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:30:00 PDT
 
-[TEST] Current total window sum: 17.70800
+[TEST] Lookup table parameters:  daily window number = 3, day of week = 7, power bin index = 19
+
+[TEST] Set total window sum to 0
+[TEST] Current total window sum: 7.65706
 
 
-[TEST] S1 = 0.634359
-[TEST] S2 = 0.641818
+[TEST] S1 = 3.8061540000000003
+[TEST] S2 = 3.850908
 [TEST] S1 + S2 = 7.65706
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 7.65706, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 7.65706, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2931,7 +2870,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:30:00 PDT, VibrationMag: 1.63, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 3
+[TEST] Time window index: 2
 
 ##########################
 APPARENT POWER
@@ -2940,16 +2879,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:31:00 PDT
 
-[TEST] Current total window sum: 26.88938
+[TEST] Current total window sum: 16.83844
 
 
-[TEST] S1 = 0.760717
-[TEST] S2 = 0.769512
+[TEST] S1 = 4.564302
+[TEST] S2 = 4.617072
 [TEST] S1 + S2 = 9.18137
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 9.18137, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 9.18137, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2992,7 +2931,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:31:00 PDT, VibrationMag: 3.51, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 4
+[TEST] Time window index: 3
 
 ##########################
 APPARENT POWER
@@ -3001,16 +2940,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:32:00 PDT
 
-[TEST] Current total window sum: 34.66240
+[TEST] Current total window sum: 24.61145
 
 
-[TEST] S1 = 0.643629
-[TEST] S2 = 0.6518740000000001
+[TEST] S1 = 3.8617740000000005
+[TEST] S2 = 3.911244
 [TEST] S1 + S2 = 7.77302
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 7.77302, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 7.77302, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3053,7 +2992,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:32:00 PDT, VibrationMag: 2.31, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 5
+[TEST] Time window index: 4
 
 ##########################
 APPARENT POWER
@@ -3062,16 +3001,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:33:00 PDT
 
-[TEST] Current total window sum: 43.93019
+[TEST] Current total window sum: 33.87925
 
 
-[TEST] S1 = 0.768312
-[TEST] S2 = 0.77632
+[TEST] S1 = 4.609872
+[TEST] S2 = 4.65792
 [TEST] S1 + S2 = 9.26779
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 9.26779, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 9.26779, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3114,7 +3053,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:33:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 6
+[TEST] Time window index: 5
 
 ##########################
 APPARENT POWER
@@ -3123,16 +3062,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:34:00 PDT
 
-[TEST] Current total window sum: 52.35563
+[TEST] Current total window sum: 42.30469
 
 
-[TEST] S1 = 0.6967519999999999
-[TEST] S2 = 0.707488
+[TEST] S1 = 4.180511999999999
+[TEST] S2 = 4.244928
 [TEST] S1 + S2 = 8.42544
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.42544, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.42544, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3175,7 +3114,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:34:00 PDT, VibrationMag: 1.63, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 7
+[TEST] Time window index: 6
 
 ##########################
 APPARENT POWER
@@ -3184,16 +3123,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:35:00 PDT
 
-[TEST] Current total window sum: 60.71648
+[TEST] Current total window sum: 50.66554
 
 
-[TEST] S1 = 0.692399
-[TEST] S2 = 0.701077
+[TEST] S1 = 4.154394
+[TEST] S2 = 4.206461999999999
 [TEST] S1 + S2 = 8.36086
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.36086, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.36086, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3236,7 +3175,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:35:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 8
+[TEST] Time window index: 7
 
 ##########################
 APPARENT POWER
@@ -3245,16 +3184,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:36:00 PDT
 
-[TEST] Current total window sum: 69.50048
+[TEST] Current total window sum: 59.44954
 
 
-[TEST] S1 = 0.72762
-[TEST] S2 = 0.736379
+[TEST] S1 = 4.3657200000000005
+[TEST] S2 = 4.418274
 [TEST] S1 + S2 = 8.78399
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.78399, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.78399, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3297,7 +3236,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:36:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 9
+[TEST] Time window index: 8
 
 ##########################
 APPARENT POWER
@@ -3306,16 +3245,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:37:00 PDT
 
-[TEST] Current total window sum: 77.87474
+[TEST] Current total window sum: 67.82380
 
 
-[TEST] S1 = 0.69339
-[TEST] S2 = 0.702321
+[TEST] S1 = 4.16034
+[TEST] S2 = 4.213926000000001
 [TEST] S1 + S2 = 8.37427
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.37427, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.37427, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3358,7 +3297,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:37:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
+[TEST] Time window index: 9
 
 ##########################
 APPARENT POWER
@@ -3367,16 +3306,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:38:00 PDT
 
-[TEST] Current total window sum: 88.39637
+[TEST] Current total window sum: 78.34543
 
 
-[TEST] S1 = 0.871262
-[TEST] S2 = 0.882342
+[TEST] S1 = 5.227572
+[TEST] S2 = 5.294052
 [TEST] S1 + S2 = 10.52162
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 10.52162, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 10.52162, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3419,7 +3358,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:38:00 PDT, VibrationMag: 1.0, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
+[TEST] Time window index: 10
 
 ##########################
 APPARENT POWER
@@ -3428,16 +3367,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:39:00 PDT
 
-[TEST] Current total window sum: 97.13859
+[TEST] Current total window sum: 87.08765
 
 
-[TEST] S1 = 0.724358
-[TEST] S2 = 0.732679
+[TEST] S1 = 4.3461479999999995
+[TEST] S2 = 4.396074
 [TEST] S1 + S2 = 8.74222
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.74222, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.74222, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3480,7 +3419,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:39:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
+[TEST] Time window index: 11
 
 ##########################
 APPARENT POWER
@@ -3489,16 +3428,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:40:00 PDT
 
-[TEST] Current total window sum: 106.42612
+[TEST] Current total window sum: 96.37518
 
 
-[TEST] S1 = 0.768706
-[TEST] S2 = 0.779216
+[TEST] S1 = 4.612236
+[TEST] S2 = 4.675296
 [TEST] S1 + S2 = 9.28753
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 9.28753, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 9.28753, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3541,7 +3480,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:40:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 13
+[TEST] Time window index: 12
 
 ##########################
 APPARENT POWER
@@ -3550,16 +3489,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:41:00 PDT
 
-[TEST] Current total window sum: 116.42795
+[TEST] Current total window sum: 106.37701
 
 
-[TEST] S1 = 0.828335
-[TEST] S2 = 0.8386359999999999
+[TEST] S1 = 4.97001
+[TEST] S2 = 5.031816
 [TEST] S1 + S2 = 10.00183
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 10.00183, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 10.00183, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3602,7 +3541,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:41:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 14
+[TEST] Time window index: 13
 
 ##########################
 APPARENT POWER
@@ -3611,16 +3550,16 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:42:00 PDT
 
-[TEST] Current total window sum: 126.50055
+[TEST] Current total window sum: 116.44961
 
 
-[TEST] S1 = 0.8347190000000001
-[TEST] S2 = 0.844048
+[TEST] S1 = 5.008314
+[TEST] S2 = 5.064288
 [TEST] S1 + S2 = 10.07260
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 10.07260, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 10.07260, 5th pctl value: 4.130, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -3663,7 +3602,7 @@ VIBRATION
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:42:00 PDT, VibrationMag: 0.0, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 15
+[TEST] Time window index: 14
 
 ##########################
 APPARENT POWER
@@ -3672,25 +3611,17 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:43:00 PDT
 
-[TEST] Current total window sum: 135.32762
+[TEST] Current total window sum: 125.27668
 
 
-[TEST] S1 = 0.7312150000000001
-[TEST] S2 = 0.7399640000000001
+[TEST] S1 = 4.38729
+[TEST] S2 = 4.439784
 [TEST] S1 + S2 = 8.82707
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 39.809289
 
-Metric (S): 8.82707, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 8.82707, 5th pctl value: 4.130, 95th pctl value: 12.5
 
-[TEST] Total window sum: 135.328
-
-[TEST] Value for the next window lookup table: 33.831906
-[TEST] This is also the value compared to the p95 pctl of window
-
-==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
-
-[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -3731,12 +3662,8 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:43:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
-[TEST] ********** Time window end **********
-
 --------------------------------------------------------------------------------------------------------------
-[TEST] ********** Time window start **********
-
-[TEST] Time window index: 1
+[TEST] Time window index: 15
 
 ##########################
 APPARENT POWER
@@ -3745,20 +3672,25 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:44:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 3, day of week = 7, power bin index = 17
-
-[TEST] Set total window sum to 0
-[TEST] Current total window sum: 8.82024
+[TEST] Current total window sum: 134.09692
 
 
-[TEST] S1 = 0.7302430000000001
-[TEST] S2 = 0.739797
+[TEST] S1 = 4.381458
+[TEST] S2 = 4.438782
 [TEST] S1 + S2 = 8.82024
 
-[TEST] value for lookup table input: 33.831906
+[TEST] value for lookup table input: 39.809289
 
 Metric (S): 8.82024, 5th pctl value: 4.130, 95th pctl value: 12.5
 
+[TEST] Total window sum: 134.097
+
+[TEST] Value for the next window lookup table: 33.5242305
+[TEST] This is also the value compared to the p95 pctl of window
+
+==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
+
+[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -3799,8 +3731,12 @@ VIBRATION
 
 [TEST] Threshold: 20
 [TEST] Timestamp: 2025-08-17 00:44:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+[TEST] ********** Time window end **********
+
 --------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 2
+[TEST] ********** Time window start **********
+
+[TEST] Time window index: 1
 
 ##########################
 APPARENT POWER
@@ -3809,10 +3745,407 @@ APPARENT POWER
 
 [TEST] Current timestamp: 2025-08-17 00:45:00 PDT
 
-[TEST] Current total window sum: 17.63809
+[TEST] Lookup table parameters:  daily window number = 4, day of week = 7, power bin index = 17
+
+[TEST] Set total window sum to 0
+[TEST] Current total window sum: 8.81785
 
 
-[TEST] S1 = 0.730263
-[TEST] S2 = 0.739379
+[TEST] S1 = 4.381578
+[TEST] S2 = 4.436274
 [TEST] S1 + S2 = 8.81785
 
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.81785, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:45:00 PDT, V1: 118.055, V2: 118.516
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:45:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:45:00 PDT, Temperature: 78.41
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:45:00 PDT, VibrationMag: 2.58, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 2
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:46:00 PDT
+
+[TEST] Current total window sum: 17.62750
+
+
+[TEST] S1 = 4.374036
+[TEST] S2 = 4.435608
+[TEST] S1 + S2 = 8.80964
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.80964, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:46:00 PDT, V1: 117.984, V2: 118.445
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:46:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:46:00 PDT, Temperature: 78.38
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:46:00 PDT, VibrationMag: 1.63, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 3
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:47:00 PDT
+
+[TEST] Current total window sum: 26.44555
+
+
+[TEST] S1 = 4.381907999999999
+[TEST] S2 = 4.436142
+[TEST] S1 + S2 = 8.81805
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.81805, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:47:00 PDT, V1: 118.019, V2: 118.481
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:47:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:47:00 PDT, Temperature: 78.36
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:47:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 4
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:48:00 PDT
+
+[TEST] Current total window sum: 35.25293
+
+
+[TEST] S1 = 4.367814
+[TEST] S2 = 4.439568
+[TEST] S1 + S2 = 8.80738
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.80738, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:48:00 PDT, V1: 118.019, V2: 118.481
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:48:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:48:00 PDT, Temperature: 78.38
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:48:00 PDT, VibrationMag: 2.65, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 5
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:49:00 PDT
+
+[TEST] Current total window sum: 44.08023
+
+
+[TEST] S1 = 4.38762
+[TEST] S2 = 4.4396819999999995
+[TEST] S1 + S2 = 8.82730
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.82730, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:49:00 PDT, V1: 118.019, V2: 118.481
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:49:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:49:00 PDT, Temperature: 78.38
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:49:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 6
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:50:00 PDT
+
+[TEST] Current total window sum: 52.88987
+
+
+[TEST] S1 = 4.377642
+[TEST] S2 = 4.431996
+[TEST] S1 + S2 = 8.80964
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.80964, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:50:00 PDT, V1: 118.019, V2: 118.481
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:50:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 00:50:00 PDT, Temperature: 78.35
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 00:50:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 7
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 00:51:00 PDT
+
+[TEST] Current total window sum: 61.70567
+
+
+[TEST] S1 = 4.3787579999999995
+[TEST] S2 = 4.437048000000001
+[TEST] S1 + S2 = 8.81581
+
+[TEST] value for lookup table input: 33.5242305
+
+Metric (S): 8.81581, 5th pctl value: 4.140, 95th pctl value: 12.5
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:51:00 PDT, V1: 117.984, V2: 118.445
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 00:51:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05

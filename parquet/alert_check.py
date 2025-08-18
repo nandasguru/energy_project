@@ -220,8 +220,8 @@ if __name__ == "__main__":
     # Just keep 'start' the same as 'end'
     # Keep it to the time window
 
-    end = user_to_unix_timestamp(8, 17, 2025, 0, 54, 0)
-    start = user_to_unix_timestamp(8, 17, 2025, 0, 54, 0)
+    end = user_to_unix_timestamp(8, 17, 2025, 0, 45, 0)
+    start = user_to_unix_timestamp(8, 17, 2025, 0, 45, 0)
 
     # Decides whether to collect real time (True) or historical (False) data
     use_live_data = False
@@ -423,6 +423,10 @@ if __name__ == "__main__":
             dt_S = datetime.datetime.fromtimestamp(ts_S1, pytz.utc).astimezone(pst)
             dt_S_str = dt_S.strftime("%Y-%m-%d %H:%M:%S %Z") # Human readable string
 
+            # Immediately scale S back up
+            valS1 *= power_scalar
+            valS2 *= power_scalar
+
             # valS1 and valS2 are in W, first convert to kW
             valS1 /= 1000.0
             valS2 /= 1000.0
@@ -458,7 +462,6 @@ if __name__ == "__main__":
             #S = valS1
             #S = valS2
             S = valS1 + valS2 # Calculate total S
-            S *= power_scalar # Immediately scale S back up once total S is calculated
 
             total_window_sum += S # Will be used later for next window lookup table
             print(f"[TEST] Current total window sum: {total_window_sum:.5f}\n")
