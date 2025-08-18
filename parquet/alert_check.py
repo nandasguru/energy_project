@@ -220,12 +220,8 @@ if __name__ == "__main__":
     # Just keep 'start' the same as 'end'
     # Keep it to the time window
 
-    end = user_to_unix_timestamp(8, 16, 2025, 11, 0, 0)
-    start = user_to_unix_timestamp(8, 16, 2025, 11, 0, 0)
-
-    
-    
-
+    end = user_to_unix_timestamp(8, 17, 2025, 0, 54, 0)
+    start = user_to_unix_timestamp(8, 17, 2025, 0, 54, 0)
 
     # Decides whether to collect real time (True) or historical (False) data
     use_live_data = False
@@ -258,11 +254,16 @@ if __name__ == "__main__":
     BIN_EDGES_NPY = pathlib.Path("parquet/727935-24234__8641_8761_8891_9006_9251_power_bin_edges.npy")
     lookup = QuantileLookupPandas(LOOKUP_PARQUET, BIN_EDGES_NPY)
 
-    # Initialize
+    # Initialize lookup input
     value_for_lookup_input = 0
+
     total_window_sum = 0
     p05 = 0
     p95 = 0
+    # Since the gs/ls cannot handle high current, current (and thus app.power) values will
+    # be fed to the simulators scaled down. Hence, scale the app.power back up to regular
+    # values
+    power_scalar = 6
 
     
 
@@ -347,6 +348,7 @@ if __name__ == "__main__":
     send_alert_VM(VM_URL, end, F_ALERT, CODE_ZERO)
     send_alert_VM(VM_URL, end, TEMP_ALERT, CODE_ZERO)
     send_alert_VM(VM_URL, end, VIB_ALERT, CODE_ZERO)
+    time.sleep(1)
 
 
 
@@ -455,7 +457,8 @@ if __name__ == "__main__":
             # ==========Still need to decide whether to use 1 phase or both combined. Comment whichever necessary==========
             #S = valS1
             #S = valS2
-            S = valS1 + valS2
+            S = valS1 + valS2 # Calculate total S
+            S *= power_scalar # Immediately scale S back up once total S is calculated
 
             total_window_sum += S # Will be used later for next window lookup table
             print(f"[TEST] Current total window sum: {total_window_sum:.5f}\n")
@@ -890,5 +893,5 @@ if __name__ == "__main__":
             print("[TEST] ********** Time window end **********\n")
             time_window_index = 0
         
-        time.sleep(step if use_live_data else 1)
+        time.sleep(step if use_live_data else 0.5)
         

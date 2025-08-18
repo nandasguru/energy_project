@@ -19,30 +19,30 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:44:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:54:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 95, day of week = 6, power bin index = 0
+[TEST] Lookup table parameters:  daily window number = 4, day of week = 7, power bin index = 0
 
 [TEST] Set total window sum to 0
-[TEST] Current total window sum: 9.43297
+[TEST] Current total window sum: 3.33970
 
 
-[TEST] S1 = 0.781105
-[TEST] S2 = 0.7910560000000001
-[TEST] S1 + S2 = 9.43297
+[TEST] S1 = 0.27703500000000003
+[TEST] S2 = 0.279581
+[TEST] S1 + S2 = 3.33970
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 9.43297, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 3.33970, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, V1: 117.913, V2: 118.374
+[TEST] Timestamp: 2025-08-17 00:54:00 PDT, V1: 119.155, V2: 119.652
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -55,7 +55,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:54:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -67,14 +67,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, Temperature: 78.05
+[TEST] Timestamp: 2025-08-17 00:54:00 PDT, Temperature: 78.39
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:44:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:54:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 2
 
@@ -83,27 +83,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:45:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:55:00 PDT
 
-[TEST] Current total window sum: 15.82886
+[TEST] Current total window sum: 7.62340
 
 
-[TEST] S1 = 0.529904
-[TEST] S2 = 0.5360779999999999
-[TEST] S1 + S2 = 6.39589
+[TEST] S1 = 0.35501499999999997
+[TEST] S2 = 0.358936
+[TEST] S1 + S2 = 4.28371
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 6.39589, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 4.28371, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:45:00 PDT, V1: 118.516, V2: 118.977
+[TEST] Timestamp: 2025-08-17 00:55:00 PDT, V1: 118.977, V2: 119.439
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -116,7 +116,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:45:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:55:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -128,14 +128,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:45:00 PDT, Temperature: 78.0
+[TEST] Timestamp: 2025-08-17 00:55:00 PDT, Temperature: 78.38
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:45:00 PDT, VibrationMag: 3.16, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:55:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 3
 
@@ -144,27 +144,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:46:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:56:00 PDT
 
-[TEST] Current total window sum: 25.04970
+[TEST] Current total window sum: 11.26048
 
 
-[TEST] S1 = 0.7636860000000001
-[TEST] S2 = 0.773121
-[TEST] S1 + S2 = 9.22084
+[TEST] S1 = 0.30185199999999995
+[TEST] S2 = 0.304328
+[TEST] S1 + S2 = 3.63708
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 9.22084, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 3.63708, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   3
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:46:00 PDT, V1: 117.913, V2: 118.374
+[TEST] Timestamp: 2025-08-17 00:56:00 PDT, V1: 119.084, V2: 119.581
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -177,7 +177,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:46:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:56:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -189,14 +189,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:46:00 PDT, Temperature: 77.97
+[TEST] Timestamp: 2025-08-17 00:56:00 PDT, Temperature: 78.39
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:46:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:56:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 4
 
@@ -205,27 +205,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:47:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:57:00 PDT
 
-[TEST] Current total window sum: 31.42610
+[TEST] Current total window sum: 16.25194
 
 
-[TEST] S1 = 0.5280819999999999
-[TEST] S2 = 0.534652
-[TEST] S1 + S2 = 6.37640
+[TEST] S1 = 0.413372
+[TEST] S2 = 0.418537
+[TEST] S1 + S2 = 4.99145
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 6.37640, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 4.99145, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   4
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:47:00 PDT, V1: 118.587, V2: 119.013
+[TEST] Timestamp: 2025-08-17 00:57:00 PDT, V1: 118.871, V2: 119.332
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -238,7 +238,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:47:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:57:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -250,14 +250,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:47:00 PDT, Temperature: 78.01
+[TEST] Timestamp: 2025-08-17 00:57:00 PDT, Temperature: 78.43
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:47:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:57:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 5
 
@@ -266,18 +266,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:48:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:58:00 PDT
 
-[TEST] Current total window sum: 36.41992
+[TEST] Current total window sum: 20.68640
 
 
-[TEST] S1 = 0.413992
-[TEST] S2 = 0.41831
-[TEST] S1 + S2 = 4.99381
+[TEST] S1 = 0.367637
+[TEST] S2 = 0.37144099999999997
+[TEST] S1 + S2 = 4.43447
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 4.99381, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 4.43447, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -286,7 +286,7 @@ Metric (S): 4.99381, 5th pctl value: 1.590, 95th pctl value: 5.97
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:48:00 PDT, V1: 118.8, V2: 119.297
+[TEST] Timestamp: 2025-08-17 00:58:00 PDT, V1: 118.942, V2: 119.403
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -299,7 +299,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:48:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:58:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -311,14 +311,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:48:00 PDT, Temperature: 78.03
+[TEST] Timestamp: 2025-08-17 00:58:00 PDT, Temperature: 78.42
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:48:00 PDT, VibrationMag: 2.08, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:58:00 PDT, VibrationMag: 4.32, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 6
 
@@ -327,27 +327,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:49:00 PDT
+[TEST] Current timestamp: 2025-08-17 00:59:00 PDT
 
-[TEST] Current total window sum: 43.51970
+[TEST] Current total window sum: 24.99583
 
 
-[TEST] S1 = 0.588766
-[TEST] S2 = 0.5945309999999999
-[TEST] S1 + S2 = 7.09978
+[TEST] S1 = 0.35700299999999996
+[TEST] S2 = 0.361234
+[TEST] S1 + S2 = 4.30942
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 7.09978, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 4.30942, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:49:00 PDT, V1: 118.41, V2: 118.906
+[TEST] Timestamp: 2025-08-17 00:59:00 PDT, V1: 119.013, V2: 119.474
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -360,7 +360,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:49:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 00:59:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -372,14 +372,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:49:00 PDT, Temperature: 78.04
+[TEST] Timestamp: 2025-08-17 00:59:00 PDT, Temperature: 78.36
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:49:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 00:59:00 PDT, VibrationMag: 5.35, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 7
 
@@ -388,27 +388,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:50:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:00:00 PDT
 
-[TEST] Current total window sum: 50.70440
+[TEST] Current total window sum: 28.43375
 
 
-[TEST] S1 = 0.595274
-[TEST] S2 = 0.602176
-[TEST] S1 + S2 = 7.18470
+[TEST] S1 = 0.285085
+[TEST] S2 = 0.287903
+[TEST] S1 + S2 = 3.43793
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 7.18470, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 3.43793, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:50:00 PDT, V1: 118.374, V2: 118.835
+[TEST] Timestamp: 2025-08-17 01:00:00 PDT, V1: 119.19, V2: 119.652
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -421,7 +421,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:50:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:00:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -433,14 +433,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:50:00 PDT, Temperature: 78.05
+[TEST] Timestamp: 2025-08-17 01:00:00 PDT, Temperature: 78.29
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:50:00 PDT, VibrationMag: 3.32, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:00:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 8
 
@@ -449,18 +449,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:51:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:01:00 PDT
 
-[TEST] Current total window sum: 56.19705
+[TEST] Current total window sum: 31.56879
 
 
-[TEST] S1 = 0.45508
-[TEST] S2 = 0.46036200000000005
-[TEST] S1 + S2 = 5.49265
+[TEST] S1 = 0.26039
+[TEST] S2 = 0.26211599999999996
+[TEST] S1 + S2 = 3.13504
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 5.49265, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 3.13504, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -469,7 +469,7 @@ Metric (S): 5.49265, 5th pctl value: 1.590, 95th pctl value: 5.97
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:51:00 PDT, V1: 118.729, V2: 119.226
+[TEST] Timestamp: 2025-08-17 01:01:00 PDT, V1: 119.226, V2: 119.687
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -482,7 +482,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:51:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:01:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -494,14 +494,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:51:00 PDT, Temperature: 78.08
+[TEST] Timestamp: 2025-08-17 01:01:00 PDT, Temperature: 78.31
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:51:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:01:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 9
 
@@ -510,201 +510,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:52:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:02:00 PDT
 
-[TEST] Current total window sum: 62.98255
-
-
-[TEST] S1 = 0.5619850000000001
-[TEST] S2 = 0.5689310000000001
-[TEST] S1 + S2 = 6.78550
-
-[TEST] value for lookup table input: 0
-
-Metric (S): 6.78550, 5th pctl value: 1.590, 95th pctl value: 5.97
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:52:00 PDT, V1: 118.481, V2: 118.942
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:52:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:52:00 PDT, Temperature: 78.1
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:52:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
-
-##########################
-APPARENT POWER
-##########################
+[TEST] Current total window sum: 34.60649
 
 
-[TEST] Current timestamp: 2025-08-16 23:53:00 PDT
-
-[TEST] Current total window sum: 69.18713
-
-
-[TEST] S1 = 0.515106
-[TEST] S2 = 0.518992
-[TEST] S1 + S2 = 6.20459
+[TEST] S1 = 0.25202600000000003
+[TEST] S2 = 0.254258
+[TEST] S1 + S2 = 3.03770
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 6.20459, 5th pctl value: 1.590, 95th pctl value: 5.97
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:53:00 PDT, V1: 118.623, V2: 119.084
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:53:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:53:00 PDT, Temperature: 78.07
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:53:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-16 23:54:00 PDT
-
-[TEST] Current total window sum: 76.69535
-
-
-[TEST] S1 = 0.622232
-[TEST] S2 = 0.6291380000000001
-[TEST] S1 + S2 = 7.50822
-
-[TEST] value for lookup table input: 0
-
-Metric (S): 7.50822, 5th pctl value: 1.590, 95th pctl value: 5.97
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   3
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:54:00 PDT, V1: 118.303, V2: 118.764
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-16 23:54:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:54:00 PDT, Temperature: 78.05
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:54:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-16 23:55:00 PDT
-
-[TEST] Current total window sum: 82.21076
-
-
-[TEST] S1 = 0.456959
-[TEST] S2 = 0.462275
-[TEST] S1 + S2 = 5.51540
-
-[TEST] value for lookup table input: 0
-
-Metric (S): 5.51540, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 3.03770, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -713,7 +530,7 @@ Metric (S): 5.51540, 5th pctl value: 1.590, 95th pctl value: 5.97
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:55:00 PDT, V1: 118.729, V2: 119.19
+[TEST] Timestamp: 2025-08-17 01:02:00 PDT, V1: 119.226, V2: 119.723
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -726,7 +543,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:55:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:02:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -738,14 +555,197 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:55:00 PDT, Temperature: 78.07
+[TEST] Timestamp: 2025-08-17 01:02:00 PDT, Temperature: 78.27
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:55:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:02:00 PDT, VibrationMag: 3.79, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 10
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:03:00 PDT
+
+[TEST] Current total window sum: 38.37868
+
+
+[TEST] S1 = 0.31295
+[TEST] S2 = 0.315748
+[TEST] S1 + S2 = 3.77219
+
+[TEST] value for lookup table input: 0
+
+Metric (S): 3.77219, 5th pctl value: 1.570, 95th pctl value: 5.67
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:03:00 PDT, V1: 119.119, V2: 119.616
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:03:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:03:00 PDT, Temperature: 78.28
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:03:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 11
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:04:00 PDT
+
+[TEST] Current total window sum: 40.56760
+
+
+[TEST] S1 = 0.181993
+[TEST] S2 = 0.182826
+[TEST] S1 + S2 = 2.18891
+
+[TEST] value for lookup table input: 0
+
+Metric (S): 2.18891, 5th pctl value: 1.570, 95th pctl value: 5.67
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:04:00 PDT, V1: 119.403, V2: 119.9
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:04:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:04:00 PDT, Temperature: 78.34
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:04:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 12
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:05:00 PDT
+
+[TEST] Current total window sum: 44.34319
+
+
+[TEST] S1 = 0.312591
+[TEST] S2 = 0.316675
+[TEST] S1 + S2 = 3.77560
+
+[TEST] value for lookup table input: 0
+
+Metric (S): 3.77560, 5th pctl value: 1.570, 95th pctl value: 5.67
+
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:05:00 PDT, V1: 119.119, V2: 119.616
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:05:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:05:00 PDT, Temperature: 78.29
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:05:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 13
 
@@ -754,27 +754,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:56:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:06:00 PDT
 
-[TEST] Current total window sum: 89.91417
+[TEST] Current total window sum: 47.33969
 
 
-[TEST] S1 = 0.638005
-[TEST] S2 = 0.645897
-[TEST] S1 + S2 = 7.70341
+[TEST] S1 = 0.24878299999999998
+[TEST] S2 = 0.250633
+[TEST] S1 + S2 = 2.99650
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 7.70341, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 2.99650, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:56:00 PDT, V1: 118.268, V2: 118.729
+[TEST] Timestamp: 2025-08-17 01:06:00 PDT, V1: 119.261, V2: 119.723
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -787,7 +787,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:56:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:06:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -799,14 +799,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:56:00 PDT, Temperature: 78.07
+[TEST] Timestamp: 2025-08-17 01:06:00 PDT, Temperature: 78.29
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:56:00 PDT, VibrationMag: 1.91, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:06:00 PDT, VibrationMag: 4.04, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 14
 
@@ -815,27 +815,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:57:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:07:00 PDT
 
-[TEST] Current total window sum: 96.92692
+[TEST] Current total window sum: 53.94242
 
 
-[TEST] S1 = 0.5817089999999999
-[TEST] S2 = 0.587082
-[TEST] S1 + S2 = 7.01275
+[TEST] S1 = 0.5465979999999999
+[TEST] S2 = 0.553858
+[TEST] S1 + S2 = 6.60274
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 7.01275, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 6.60274, 5th pctl value: 1.570, 95th pctl value: 5.67
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   1
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:57:00 PDT, V1: 118.41, V2: 118.871
+[TEST] Timestamp: 2025-08-17 01:07:00 PDT, V1: 118.516, V2: 118.977
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -848,7 +848,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:57:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:07:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -860,14 +860,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:57:00 PDT, Temperature: 78.08
+[TEST] Timestamp: 2025-08-17 01:07:00 PDT, Temperature: 78.27
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:57:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:07:00 PDT, VibrationMag: 4.12, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 15
 
@@ -876,22 +876,22 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:58:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:08:00 PDT
 
-[TEST] Current total window sum: 104.71671
+[TEST] Current total window sum: 63.38998
 
 
-[TEST] S1 = 0.645614
-[TEST] S2 = 0.652685
-[TEST] S1 + S2 = 7.78979
+[TEST] S1 = 0.783971
+[TEST] S2 = 0.790621
+[TEST] S1 + S2 = 9.44755
 
 [TEST] value for lookup table input: 0
 
-Metric (S): 7.78979, 5th pctl value: 1.590, 95th pctl value: 5.97
+Metric (S): 9.44755, 5th pctl value: 1.570, 95th pctl value: 5.67
 
-[TEST] Total window sum: 104.717
+[TEST] Total window sum: 63.390
 
-[TEST] Value for the next window lookup table: 26.1791775
+[TEST] Value for the next window lookup table: 15.847494
 [TEST] This is also the value compared to the p95 pctl of window
 
 ==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
@@ -904,7 +904,7 @@ Metric (S): 7.78979, 5th pctl value: 1.590, 95th pctl value: 5.97
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:58:00 PDT, V1: 118.232, V2: 118.694
+[TEST] Timestamp: 2025-08-17 01:08:00 PDT, V1: 117.877, V2: 118.339
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -917,7 +917,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:58:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:08:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -929,14 +929,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:58:00 PDT, Temperature: 78.11
+[TEST] Timestamp: 2025-08-17 01:08:00 PDT, Temperature: 78.24
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:58:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:08:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 [TEST] ********** Time window end **********
 
 --------------------------------------------------------------------------------------------------------------
@@ -949,21 +949,21 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-16 23:59:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:09:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 96, day of week = 6, power bin index = 13
+[TEST] Lookup table parameters:  daily window number = 5, day of week = 7, power bin index = 8
 
 [TEST] Set total window sum to 0
-[TEST] Current total window sum: 7.38126
+[TEST] Current total window sum: 6.76797
 
 
-[TEST] S1 = 0.61105
-[TEST] S2 = 0.6191599999999999
-[TEST] S1 + S2 = 7.38126
+[TEST] S1 = 0.56065
+[TEST] S2 = 0.567345
+[TEST] S1 + S2 = 6.76797
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 7.38126, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 6.76797, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -972,7 +972,7 @@ Metric (S): 7.38126, 5th pctl value: 4.200, 95th pctl value: 12.67
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:59:00 PDT, V1: 118.374, V2: 118.835
+[TEST] Timestamp: 2025-08-17 01:09:00 PDT, V1: 118.445, V2: 118.942
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -985,7 +985,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-16 23:59:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:09:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -997,14 +997,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-16 23:59:00 PDT, Temperature: 78.12
+[TEST] Timestamp: 2025-08-17 01:09:00 PDT, Temperature: 78.21
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-16 23:59:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:09:00 PDT, VibrationMag: 2.94, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 2
 
@@ -1013,27 +1013,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:00:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:10:00 PDT
 
-[TEST] Current total window sum: 21.83189
+[TEST] Current total window sum: 12.79564
 
 
-[TEST] S1 = 1.198043
-[TEST] S2 = 1.2103949999999999
-[TEST] S1 + S2 = 14.45063
+[TEST] S1 = 0.499319
+[TEST] S2 = 0.505293
+[TEST] S1 + S2 = 6.02767
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 14.45063, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 6.02767, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:00:00 PDT, V1: 116.777, V2: 117.239
+[TEST] Timestamp: 2025-08-17 01:10:00 PDT, V1: 118.623, V2: 119.119
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1046,7 +1046,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:00:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:10:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1058,14 +1058,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:00:00 PDT, Temperature: 78.18
+[TEST] Timestamp: 2025-08-17 01:10:00 PDT, Temperature: 78.22
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:00:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:10:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 3
 
@@ -1074,18 +1074,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:01:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:11:00 PDT
 
-[TEST] Current total window sum: 33.95266
+[TEST] Current total window sum: 19.19975
 
 
-[TEST] S1 = 1.003904
-[TEST] S2 = 1.016225
-[TEST] S1 + S2 = 12.12077
+[TEST] S1 = 0.530692
+[TEST] S2 = 0.5366599999999999
+[TEST] S1 + S2 = 6.40411
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 12.12077, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 6.40411, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1094,7 +1094,7 @@ Metric (S): 12.12077, 5th pctl value: 4.200, 95th pctl value: 12.67
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:01:00 PDT, V1: 117.31, V2: 117.771
+[TEST] Timestamp: 2025-08-17 01:11:00 PDT, V1: 118.516, V2: 118.977
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1107,7 +1107,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:01:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:11:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1119,14 +1119,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:01:00 PDT, Temperature: 78.21
+[TEST] Timestamp: 2025-08-17 01:11:00 PDT, Temperature: 78.22
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:01:00 PDT, VibrationMag: 2.38, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:11:00 PDT, VibrationMag: 4.93, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 4
 
@@ -1135,18 +1135,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:02:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:12:00 PDT
 
-[TEST] Current total window sum: 43.68010
+[TEST] Current total window sum: 24.62122
 
 
-[TEST] S1 = 0.805123
-[TEST] S2 = 0.816117
-[TEST] S1 + S2 = 9.72744
+[TEST] S1 = 0.44919099999999995
+[TEST] S2 = 0.454386
+[TEST] S1 + S2 = 5.42146
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 9.72744, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 5.42146, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1155,7 +1155,7 @@ Metric (S): 9.72744, 5th pctl value: 4.200, 95th pctl value: 12.67
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:02:00 PDT, V1: 117.842, V2: 118.303
+[TEST] Timestamp: 2025-08-17 01:12:00 PDT, V1: 118.764, V2: 119.226
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1168,7 +1168,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:02:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:12:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1180,14 +1180,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:02:00 PDT, Temperature: 78.21
+[TEST] Timestamp: 2025-08-17 01:12:00 PDT, Temperature: 78.21
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:02:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:12:00 PDT, VibrationMag: 4.65, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 5
 
@@ -1196,18 +1196,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:03:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:13:00 PDT
 
-[TEST] Current total window sum: 53.80885
+[TEST] Current total window sum: 28.85825
 
 
-[TEST] S1 = 0.839298
-[TEST] S2 = 0.848826
-[TEST] S1 + S2 = 10.12874
+[TEST] S1 = 0.351352
+[TEST] S2 = 0.35482100000000005
+[TEST] S1 + S2 = 4.23704
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 10.12874, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 4.23704, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -1216,7 +1216,7 @@ Metric (S): 10.12874, 5th pctl value: 4.200, 95th pctl value: 12.67
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:03:00 PDT, V1: 117.735, V2: 118.197
+[TEST] Timestamp: 2025-08-17 01:13:00 PDT, V1: 119.013, V2: 119.474
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1229,7 +1229,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:03:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:13:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1241,14 +1241,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:03:00 PDT, Temperature: 78.21
+[TEST] Timestamp: 2025-08-17 01:13:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:03:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:13:00 PDT, VibrationMag: 2.65, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 6
 
@@ -1257,27 +1257,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:04:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:14:00 PDT
 
-[TEST] Current total window sum: 73.24838
+[TEST] Current total window sum: 35.28959
 
 
-[TEST] S1 = 1.6125399999999999
-[TEST] S2 = 1.627383
-[TEST] S1 + S2 = 19.43954
+[TEST] S1 = 0.533566
+[TEST] S2 = 0.538323
+[TEST] S1 + S2 = 6.43133
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 19.43954, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 6.43133, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:04:00 PDT, V1: 115.713, V2: 116.139
+[TEST] Timestamp: 2025-08-17 01:14:00 PDT, V1: 118.516, V2: 119.013
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1290,7 +1290,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:04:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:14:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1302,14 +1302,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:04:00 PDT, Temperature: 78.21
+[TEST] Timestamp: 2025-08-17 01:14:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:04:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:14:00 PDT, VibrationMag: 3.32, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 7
 
@@ -1318,27 +1318,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:05:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:15:00 PDT
 
-[TEST] Current total window sum: 85.94324
+[TEST] Current total window sum: 39.52916
 
 
-[TEST] S1 = 1.051986
-[TEST] S2 = 1.063824
-[TEST] S1 + S2 = 12.69486
+[TEST] S1 = 0.351392
+[TEST] S2 = 0.355203
+[TEST] S1 + S2 = 4.23957
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 12.69486, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 4.23957, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:05:00 PDT, V1: 117.132, V2: 117.594
+[TEST] Timestamp: 2025-08-17 01:15:00 PDT, V1: 119.013, V2: 119.474
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1351,7 +1351,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:05:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:15:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1363,14 +1363,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:05:00 PDT, Temperature: 78.2
+[TEST] Timestamp: 2025-08-17 01:15:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:05:00 PDT, VibrationMag: 2.65, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:15:00 PDT, VibrationMag: 8.76, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 8
 
@@ -1379,27 +1379,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:06:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:16:00 PDT
 
-[TEST] Current total window sum: 104.34814
+[TEST] Current total window sum: 44.45877
 
 
-[TEST] S1 = 1.52651
-[TEST] S2 = 1.540972
-[TEST] S1 + S2 = 18.40489
+[TEST] S1 = 0.409014
+[TEST] S2 = 0.412588
+[TEST] S1 + S2 = 4.92961
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 18.40489, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 4.92961, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   3
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:06:00 PDT, V1: 115.926, V2: 116.352
+[TEST] Timestamp: 2025-08-17 01:16:00 PDT, V1: 118.835, V2: 119.332
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1412,7 +1412,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:06:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:16:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1424,14 +1424,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:06:00 PDT, Temperature: 78.2
+[TEST] Timestamp: 2025-08-17 01:16:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:06:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:16:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 9
 
@@ -1440,27 +1440,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:07:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:17:00 PDT
 
-[TEST] Current total window sum: 130.72799
+[TEST] Current total window sum: 48.11983
 
 
-[TEST] S1 = 2.1903539999999997
-[TEST] S2 = 2.2062890000000004
-[TEST] S1 + S2 = 26.37986
+[TEST] S1 = 0.303396
+[TEST] S2 = 0.30678
+[TEST] S1 + S2 = 3.66106
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 26.37986, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 3.66106, 5th pctl value: 4.150, 95th pctl value: 12.47
 
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   4
+[TEST] Under 5 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:07:00 PDT, V1: 114.045, V2: 114.471
+[TEST] Timestamp: 2025-08-17 01:17:00 PDT, V1: 119.155, V2: 119.616
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1473,7 +1473,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:07:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:17:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1485,14 +1485,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:07:00 PDT, Temperature: 78.22
+[TEST] Timestamp: 2025-08-17 01:17:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:07:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:17:00 PDT, VibrationMag: 2.94, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 10
 
@@ -1501,31 +1501,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:08:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:18:00 PDT
 
-[TEST] Current total window sum: 153.25417
-
-
-[TEST] S1 = 1.87035
-[TEST] S2 = 1.884013
-[TEST] S1 + S2 = 22.52618
-
-[TEST] value for lookup table input: 26.1791775
-
-Metric (S): 22.52618, 5th pctl value: 4.200, 95th pctl value: 12.67
+[TEST] Current total window sum: 51.24800
 
 
-==========THIS IS THE ALERT (Consistently over 95th pctl)==========
+[TEST] S1 = 0.259523
+[TEST] S2 = 0.261839
+[TEST] S1 + S2 = 3.12817
 
-[TEST] Alert sent to VM successfully!
-[TEST] Under 5 count:   0
+[TEST] value for lookup table input: 15.847494
+
+Metric (S): 3.12817, 5th pctl value: 4.150, 95th pctl value: 12.47
+
+[TEST] Under 5 count:   2
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:08:00 PDT, V1: 114.932, V2: 115.358
+[TEST] Timestamp: 2025-08-17 01:18:00 PDT, V1: 119.226, V2: 119.687
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1538,7 +1534,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:08:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:18:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1550,14 +1546,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:08:00 PDT, Temperature: 78.25
+[TEST] Timestamp: 2025-08-17 01:18:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:08:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:18:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 11
 
@@ -1566,27 +1562,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:09:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:19:00 PDT
 
-[TEST] Current total window sum: 170.77989
+[TEST] Current total window sum: 55.85554
 
 
-[TEST] S1 = 1.45316
-[TEST] S2 = 1.467793
-[TEST] S1 + S2 = 17.52572
+[TEST] S1 = 0.381666
+[TEST] S2 = 0.386257
+[TEST] S1 + S2 = 4.60754
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 17.52572, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 4.60754, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:09:00 PDT, V1: 116.068, V2: 116.494
+[TEST] Timestamp: 2025-08-17 01:19:00 PDT, V1: 118.942, V2: 119.439
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1599,7 +1595,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:09:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:19:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1611,14 +1607,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:09:00 PDT, Temperature: 78.25
+[TEST] Timestamp: 2025-08-17 01:19:00 PDT, Temperature: 78.18
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:09:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:19:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 12
 
@@ -1627,27 +1623,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:10:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:20:00 PDT
 
-[TEST] Current total window sum: 189.92196
+[TEST] Current total window sum: 61.28005
 
 
-[TEST] S1 = 1.58879
-[TEST] S2 = 1.601555
-[TEST] S1 + S2 = 19.14207
+[TEST] S1 = 0.449635
+[TEST] S2 = 0.45444999999999997
+[TEST] S1 + S2 = 5.42451
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 19.14207, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 5.42451, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:10:00 PDT, V1: 115.677, V2: 116.139
+[TEST] Timestamp: 2025-08-17 01:20:00 PDT, V1: 118.764, V2: 119.226
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1660,7 +1656,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:10:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:20:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1672,14 +1668,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:10:00 PDT, Temperature: 78.27
+[TEST] Timestamp: 2025-08-17 01:20:00 PDT, Temperature: 78.18
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:10:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:20:00 PDT, VibrationMag: 7.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 13
 
@@ -1688,27 +1684,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:11:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:21:00 PDT
 
-[TEST] Current total window sum: 210.49679
+[TEST] Current total window sum: 66.47925
 
 
-[TEST] S1 = 1.707542
-[TEST] S2 = 1.721597
-[TEST] S1 + S2 = 20.57483
+[TEST] S1 = 0.430681
+[TEST] S2 = 0.435853
+[TEST] S1 + S2 = 5.19920
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 20.57483, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 5.19920, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   3
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:11:00 PDT, V1: 115.393, V2: 115.819
+[TEST] Timestamp: 2025-08-17 01:21:00 PDT, V1: 118.8, V2: 119.261
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1721,7 +1717,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:11:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:21:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1733,14 +1729,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:11:00 PDT, Temperature: 78.28
+[TEST] Timestamp: 2025-08-17 01:21:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:11:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:21:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 14
 
@@ -1749,27 +1745,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:12:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:22:00 PDT
 
-[TEST] Current total window sum: 226.70441
+[TEST] Current total window sum: 73.68976
 
 
-[TEST] S1 = 1.344063
-[TEST] S2 = 1.357206
-[TEST] S1 + S2 = 16.20761
+[TEST] S1 = 0.5973350000000001
+[TEST] S2 = 0.6044160000000001
+[TEST] S1 + S2 = 7.21051
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 16.20761, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 7.21051, 5th pctl value: 4.150, 95th pctl value: 12.47
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   4
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:12:00 PDT, V1: 116.316, V2: 116.742
+[TEST] Timestamp: 2025-08-17 01:22:00 PDT, V1: 118.41, V2: 118.835
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1782,7 +1778,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:12:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:22:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1794,14 +1790,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:12:00 PDT, Temperature: 78.32
+[TEST] Timestamp: 2025-08-17 01:22:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:12:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:22:00 PDT, VibrationMag: 2.52, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 15
 
@@ -1810,22 +1806,22 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:13:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:23:00 PDT
 
-[TEST] Current total window sum: 239.05729
+[TEST] Current total window sum: 81.58852
 
 
-[TEST] S1 = 1.024138
-[TEST] S2 = 1.034675
-[TEST] S1 + S2 = 12.35288
+[TEST] S1 = 0.655514
+[TEST] S2 = 0.660947
+[TEST] S1 + S2 = 7.89877
 
-[TEST] value for lookup table input: 26.1791775
+[TEST] value for lookup table input: 15.847494
 
-Metric (S): 12.35288, 5th pctl value: 4.200, 95th pctl value: 12.67
+Metric (S): 7.89877, 5th pctl value: 4.150, 95th pctl value: 12.47
 
-[TEST] Total window sum: 239.057
+[TEST] Total window sum: 81.589
 
-[TEST] Value for the next window lookup table: 59.764321499999994
+[TEST] Value for the next window lookup table: 20.397130499999996
 [TEST] This is also the value compared to the p95 pctl of window
 
 ==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
@@ -1838,7 +1834,7 @@ Metric (S): 12.35288, 5th pctl value: 4.200, 95th pctl value: 12.67
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:13:00 PDT, V1: 117.168, V2: 117.629
+[TEST] Timestamp: 2025-08-17 01:23:00 PDT, V1: 118.197, V2: 118.658
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1851,7 +1847,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:13:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:23:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1863,14 +1859,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:13:00 PDT, Temperature: 78.34
+[TEST] Timestamp: 2025-08-17 01:23:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:13:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:23:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 [TEST] ********** Time window end **********
 
 --------------------------------------------------------------------------------------------------------------
@@ -1883,30 +1879,30 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:14:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:24:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 1, day of week = 7, power bin index = 19
+[TEST] Lookup table parameters:  daily window number = 6, day of week = 7, power bin index = 10
 
 [TEST] Set total window sum to 0
-[TEST] Current total window sum: 14.36958
+[TEST] Current total window sum: 6.91558
 
 
-[TEST] S1 = 1.190389
-[TEST] S2 = 1.2045409999999999
-[TEST] S1 + S2 = 14.36958
+[TEST] S1 = 0.572682
+[TEST] S2 = 0.579914
+[TEST] S1 + S2 = 6.91558
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 14.36958, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 6.91558, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:14:00 PDT, V1: 116.777, V2: 117.239
+[TEST] Timestamp: 2025-08-17 01:24:00 PDT, V1: 118.481, V2: 118.942
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1919,7 +1915,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:14:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:24:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1931,14 +1927,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:14:00 PDT, Temperature: 78.35
+[TEST] Timestamp: 2025-08-17 01:24:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:14:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:24:00 PDT, VibrationMag: 3.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 2
 
@@ -1947,27 +1943,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:15:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:25:00 PDT
 
-[TEST] Current total window sum: 29.81441
+[TEST] Current total window sum: 15.94367
 
 
-[TEST] S1 = 1.28001
-[TEST] S2 = 1.2941289999999999
-[TEST] S1 + S2 = 15.44483
+[TEST] S1 = 0.749004
+[TEST] S2 = 0.755678
+[TEST] S1 + S2 = 9.02809
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 15.44483, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.02809, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
-[TEST] Over 95 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:15:00 PDT, V1: 116.529, V2: 116.955
+[TEST] Timestamp: 2025-08-17 01:25:00 PDT, V1: 117.984, V2: 118.41
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -1980,7 +1976,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:15:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:25:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -1992,14 +1988,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:15:00 PDT, Temperature: 78.38
+[TEST] Timestamp: 2025-08-17 01:25:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:15:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:25:00 PDT, VibrationMag: 2.83, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 3
 
@@ -2008,18 +2004,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:16:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:26:00 PDT
 
-[TEST] Current total window sum: 40.83337
+[TEST] Current total window sum: 27.40108
 
 
-[TEST] S1 = 0.9127609999999999
-[TEST] S2 = 0.923732
-[TEST] S1 + S2 = 11.01896
+[TEST] S1 = 0.9486939999999999
+[TEST] S2 = 0.960874
+[TEST] S1 + S2 = 11.45741
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 11.01896, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 11.45741, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2028,7 +2024,7 @@ Metric (S): 11.01896, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:16:00 PDT, V1: 117.487, V2: 117.948
+[TEST] Timestamp: 2025-08-17 01:26:00 PDT, V1: 117.487, V2: 117.913
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2041,7 +2037,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:16:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:26:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2053,14 +2049,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:16:00 PDT, Temperature: 78.35
+[TEST] Timestamp: 2025-08-17 01:26:00 PDT, Temperature: 78.18
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:16:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:26:00 PDT, VibrationMag: 3.74, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 4
 
@@ -2069,18 +2065,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:17:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:27:00 PDT
 
-[TEST] Current total window sum: 50.11517
+[TEST] Current total window sum: 36.93967
 
 
-[TEST] S1 = 0.768414
-[TEST] S2 = 0.778552
-[TEST] S1 + S2 = 9.28180
+[TEST] S1 = 0.791489
+[TEST] S2 = 0.798276
+[TEST] S1 + S2 = 9.53859
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 9.28180, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.53859, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2089,7 +2085,7 @@ Metric (S): 9.28180, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:17:00 PDT, V1: 117.913, V2: 118.374
+[TEST] Timestamp: 2025-08-17 01:27:00 PDT, V1: 117.877, V2: 118.339
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2102,7 +2098,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:17:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:27:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2114,14 +2110,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:17:00 PDT, Temperature: 78.41
+[TEST] Timestamp: 2025-08-17 01:27:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:17:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:27:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 5
 
@@ -2130,18 +2126,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:18:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:28:00 PDT
 
-[TEST] Current total window sum: 58.76822
+[TEST] Current total window sum: 46.11826
 
 
-[TEST] S1 = 0.7168920000000001
-[TEST] S2 = 0.725283
-[TEST] S1 + S2 = 8.65305
+[TEST] S1 = 0.760614
+[TEST] S2 = 0.7691520000000001
+[TEST] S1 + S2 = 9.17860
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 8.65305, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 9.17860, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2150,7 +2146,7 @@ Metric (S): 8.65305, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:18:00 PDT, V1: 118.019, V2: 118.445
+[TEST] Timestamp: 2025-08-17 01:28:00 PDT, V1: 117.948, V2: 118.41
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2163,7 +2159,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:18:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:28:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2175,14 +2171,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:18:00 PDT, Temperature: 78.42
+[TEST] Timestamp: 2025-08-17 01:28:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:18:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:28:00 PDT, VibrationMag: 6.61, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 6
 
@@ -2191,18 +2187,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:19:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:29:00 PDT
 
-[TEST] Current total window sum: 68.81594
+[TEST] Current total window sum: 56.39383
 
 
-[TEST] S1 = 0.832613
-[TEST] S2 = 0.8420080000000001
-[TEST] S1 + S2 = 10.04773
+[TEST] S1 = 0.851306
+[TEST] S2 = 0.861289
+[TEST] S1 + S2 = 10.27557
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 10.04773, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 10.27557, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2211,7 +2207,7 @@ Metric (S): 10.04773, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:19:00 PDT, V1: 117.735, V2: 118.197
+[TEST] Timestamp: 2025-08-17 01:29:00 PDT, V1: 117.735, V2: 118.197
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2224,7 +2220,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:19:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:29:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2236,14 +2232,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:19:00 PDT, Temperature: 78.45
+[TEST] Timestamp: 2025-08-17 01:29:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:19:00 PDT, VibrationMag: 2.45, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:29:00 PDT, VibrationMag: 5.26, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 7
 
@@ -2252,18 +2248,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:20:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:30:00 PDT
 
-[TEST] Current total window sum: 78.12026
+[TEST] Current total window sum: 64.43536
 
 
-[TEST] S1 = 0.770709
-[TEST] S2 = 0.78001
-[TEST] S1 + S2 = 9.30431
+[TEST] S1 = 0.666208
+[TEST] S2 = 0.674046
+[TEST] S1 + S2 = 8.04152
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 9.30431, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 8.04152, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2272,7 +2268,7 @@ Metric (S): 9.30431, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:20:00 PDT, V1: 117.877, V2: 118.339
+[TEST] Timestamp: 2025-08-17 01:30:00 PDT, V1: 118.197, V2: 118.658
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2285,7 +2281,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:20:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:30:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2297,14 +2293,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:20:00 PDT, Temperature: 78.5
+[TEST] Timestamp: 2025-08-17 01:30:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:20:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:30:00 PDT, VibrationMag: 2.71, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 8
 
@@ -2313,18 +2309,18 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:21:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:31:00 PDT
 
-[TEST] Current total window sum: 86.76084
+[TEST] Current total window sum: 70.46548
 
 
-[TEST] S1 = 0.715201
-[TEST] S2 = 0.724896
-[TEST] S1 + S2 = 8.64058
+[TEST] S1 = 0.499025
+[TEST] S2 = 0.505995
+[TEST] S1 + S2 = 6.03012
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 8.64058, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 6.03012, 5th pctl value: 4.160, 95th pctl value: 12.5
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2333,7 +2329,7 @@ Metric (S): 8.64058, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:21:00 PDT, V1: 118.055, V2: 118.516
+[TEST] Timestamp: 2025-08-17 01:31:00 PDT, V1: 118.658, V2: 119.119
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2346,7 +2342,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:21:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:31:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2358,14 +2354,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:21:00 PDT, Temperature: 78.41
+[TEST] Timestamp: 2025-08-17 01:31:00 PDT, Temperature: 78.2
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:21:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:31:00 PDT, VibrationMag: 3.37, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 9
 
@@ -2374,27 +2370,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:22:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:32:00 PDT
 
-[TEST] Current total window sum: 96.85727
+[TEST] Current total window sum: 73.93741
 
 
-[TEST] S1 = 0.8364579999999999
-[TEST] S2 = 0.8462799999999999
-[TEST] S1 + S2 = 10.09643
+[TEST] S1 = 0.287567
+[TEST] S2 = 0.291089
+[TEST] S1 + S2 = 3.47194
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 10.09643, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 3.47194, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   1
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:22:00 PDT, V1: 117.735, V2: 118.161
+[TEST] Timestamp: 2025-08-17 01:32:00 PDT, V1: 119.155, V2: 119.616
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2407,7 +2403,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:22:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:32:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2419,14 +2415,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:22:00 PDT, Temperature: 78.41
+[TEST] Timestamp: 2025-08-17 01:32:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:22:00 PDT, VibrationMag: 1.91, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:32:00 PDT, VibrationMag: 3.42, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 10
 
@@ -2435,27 +2431,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:23:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:33:00 PDT
 
-[TEST] Current total window sum: 110.91702
+[TEST] Current total window sum: 77.61950
 
 
-[TEST] S1 = 1.1648910000000001
-[TEST] S2 = 1.178401
-[TEST] S1 + S2 = 14.05975
+[TEST] S1 = 0.305652
+[TEST] S2 = 0.308029
+[TEST] S1 + S2 = 3.68209
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 14.05975, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 3.68209, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   1
+[TEST] Under 5 count:   2
+[TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:23:00 PDT, V1: 116.848, V2: 117.31
+[TEST] Timestamp: 2025-08-17 01:33:00 PDT, V1: 119.119, V2: 119.581
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2468,7 +2464,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:23:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:33:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2480,14 +2476,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:23:00 PDT, Temperature: 78.46
+[TEST] Timestamp: 2025-08-17 01:33:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:23:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:33:00 PDT, VibrationMag: 7.26, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 11
 
@@ -2496,27 +2492,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:24:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:34:00 PDT
 
-[TEST] Current total window sum: 122.98451
+[TEST] Current total window sum: 80.16658
 
 
-[TEST] S1 = 0.999122
-[TEST] S2 = 1.012126
-[TEST] S1 + S2 = 12.06749
+[TEST] S1 = 0.211425
+[TEST] S2 = 0.213088
+[TEST] S1 + S2 = 2.54708
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 12.06749, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 2.54708, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   3
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:24:00 PDT, V1: 117.31, V2: 117.735
+[TEST] Timestamp: 2025-08-17 01:34:00 PDT, V1: 119.368, V2: 119.864
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2529,7 +2525,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:24:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:34:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2541,14 +2537,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:24:00 PDT, Temperature: 78.49
+[TEST] Timestamp: 2025-08-17 01:34:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:24:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:34:00 PDT, VibrationMag: 4.97, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 12
 
@@ -2557,27 +2553,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:25:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:35:00 PDT
 
-[TEST] Current total window sum: 135.46352
+[TEST] Current total window sum: 83.76123
 
 
-[TEST] S1 = 1.033679
-[TEST] S2 = 1.046157
-[TEST] S1 + S2 = 12.47902
+[TEST] S1 = 0.298152
+[TEST] S2 = 0.300957
+[TEST] S1 + S2 = 3.59465
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 12.47902, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 3.59465, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   4
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:25:00 PDT, V1: 117.168, V2: 117.629
+[TEST] Timestamp: 2025-08-17 01:35:00 PDT, V1: 119.155, V2: 119.616
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2590,7 +2586,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:25:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:35:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2602,14 +2598,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:25:00 PDT, Temperature: 78.55
+[TEST] Timestamp: 2025-08-17 01:35:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:25:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:35:00 PDT, VibrationMag: 3.32, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 13
 
@@ -2618,19 +2614,23 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:26:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:36:00 PDT
 
-[TEST] Current total window sum: 144.33539
+[TEST] Current total window sum: 86.86505
 
 
-[TEST] S1 = 0.734578
-[TEST] S2 = 0.744066
-[TEST] S1 + S2 = 8.87186
+[TEST] S1 = 0.257759
+[TEST] S2 = 0.259545
+[TEST] S1 + S2 = 3.10382
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 8.87186, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 3.10382, 5th pctl value: 4.160, 95th pctl value: 12.5
 
+
+==========THIS IS THE ALERT (Consistently under 05th pctl)==========
+
+[TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
 
@@ -2638,7 +2638,7 @@ Metric (S): 8.87186, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:26:00 PDT, V1: 118.019, V2: 118.445
+[TEST] Timestamp: 2025-08-17 01:36:00 PDT, V1: 119.226, V2: 119.687
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2651,7 +2651,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:26:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:36:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2663,14 +2663,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:26:00 PDT, Temperature: 78.53
+[TEST] Timestamp: 2025-08-17 01:36:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:26:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:36:00 PDT, VibrationMag: 3.7, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 14
 
@@ -2679,27 +2679,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:27:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:37:00 PDT
 
-[TEST] Current total window sum: 153.72174
+[TEST] Current total window sum: 90.78987
 
 
-[TEST] S1 = 0.777691
-[TEST] S2 = 0.786701
-[TEST] S1 + S2 = 9.38635
+[TEST] S1 = 0.325357
+[TEST] S2 = 0.328779
+[TEST] S1 + S2 = 3.92482
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 9.38635, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 3.92482, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   1
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:27:00 PDT, V1: 117.877, V2: 118.303
+[TEST] Timestamp: 2025-08-17 01:37:00 PDT, V1: 119.119, V2: 119.581
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2712,7 +2712,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:27:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:37:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2724,14 +2724,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:27:00 PDT, Temperature: 78.48
+[TEST] Timestamp: 2025-08-17 01:37:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:27:00 PDT, VibrationMag: 1.83, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:37:00 PDT, VibrationMag: 6.66, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 15
 
@@ -2740,22 +2740,22 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:28:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:38:00 PDT
 
-[TEST] Current total window sum: 163.55579
+[TEST] Current total window sum: 95.21389
 
 
-[TEST] S1 = 0.814284
-[TEST] S2 = 0.824725
-[TEST] S1 + S2 = 9.83405
+[TEST] S1 = 0.366678
+[TEST] S2 = 0.37065800000000004
+[TEST] S1 + S2 = 4.42402
 
-[TEST] value for lookup table input: 59.764321499999994
+[TEST] value for lookup table input: 20.397130499999996
 
-Metric (S): 9.83405, 5th pctl value: 4.130, 95th pctl value: 12.58
+Metric (S): 4.42402, 5th pctl value: 4.160, 95th pctl value: 12.5
 
-[TEST] Total window sum: 163.556
+[TEST] Total window sum: 95.214
 
-[TEST] Value for the next window lookup table: 40.8889485
+[TEST] Value for the next window lookup table: 23.803471499999997
 [TEST] This is also the value compared to the p95 pctl of window
 
 ==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
@@ -2768,7 +2768,7 @@ Metric (S): 9.83405, 5th pctl value: 4.130, 95th pctl value: 12.58
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:28:00 PDT, V1: 117.771, V2: 118.232
+[TEST] Timestamp: 2025-08-17 01:38:00 PDT, V1: 118.942, V2: 119.439
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2781,7 +2781,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:28:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:38:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2793,14 +2793,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:28:00 PDT, Temperature: 78.42
+[TEST] Timestamp: 2025-08-17 01:38:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:28:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:38:00 PDT, VibrationMag: 2.94, VibrationBool: 0.0
 [TEST] ********** Time window end **********
 
 --------------------------------------------------------------------------------------------------------------
@@ -2813,21 +2813,21 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:29:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:39:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 2, day of week = 7, power bin index = 19
+[TEST] Lookup table parameters:  daily window number = 7, day of week = 7, power bin index = 12
 
 [TEST] Set total window sum to 0
-[TEST] Current total window sum: 10.05094
+[TEST] Current total window sum: 4.93807
 
 
-[TEST] S1 = 0.832778
-[TEST] S2 = 0.842379
-[TEST] S1 + S2 = 10.05094
+[TEST] S1 = 0.409036
+[TEST] S2 = 0.413976
+[TEST] S1 + S2 = 4.93807
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 10.05094, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 4.93807, 5th pctl value: 4.140, 95th pctl value: 12.7
 
 [TEST] Under 5 count:   0
 [TEST] Over 95 count:   0
@@ -2836,7 +2836,7 @@ Metric (S): 10.05094, 5th pctl value: 4.130, 95th pctl value: 12.48
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:29:00 PDT, V1: 117.735, V2: 118.197
+[TEST] Timestamp: 2025-08-17 01:39:00 PDT, V1: 118.871, V2: 119.368
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2849,7 +2849,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:29:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:39:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2861,14 +2861,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:29:00 PDT, Temperature: 78.42
+[TEST] Timestamp: 2025-08-17 01:39:00 PDT, Temperature: 78.17
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:29:00 PDT, VibrationMag: 2.31, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:39:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 2
 
@@ -2877,27 +2877,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:30:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:40:00 PDT
 
-[TEST] Current total window sum: 17.70800
+[TEST] Current total window sum: 7.48337
 
 
-[TEST] S1 = 0.634359
-[TEST] S2 = 0.641818
-[TEST] S1 + S2 = 7.65706
+[TEST] S1 = 0.211634
+[TEST] S2 = 0.212583
+[TEST] S1 + S2 = 2.54530
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 7.65706, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 2.54530, 5th pctl value: 4.140, 95th pctl value: 12.7
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   1
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:30:00 PDT, V1: 118.268, V2: 118.729
+[TEST] Timestamp: 2025-08-17 01:40:00 PDT, V1: 119.368, V2: 119.829
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2910,7 +2910,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:30:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:40:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2922,14 +2922,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:30:00 PDT, Temperature: 78.43
+[TEST] Timestamp: 2025-08-17 01:40:00 PDT, Temperature: 78.18
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:30:00 PDT, VibrationMag: 1.63, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:40:00 PDT, VibrationMag: 2.0, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 3
 
@@ -2938,27 +2938,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:31:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:41:00 PDT
 
-[TEST] Current total window sum: 26.88938
+[TEST] Current total window sum: 9.65977
 
 
-[TEST] S1 = 0.760717
-[TEST] S2 = 0.769512
-[TEST] S1 + S2 = 9.18137
+[TEST] S1 = 0.18099600000000002
+[TEST] S2 = 0.18173699999999998
+[TEST] S1 + S2 = 2.17640
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 9.18137, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 2.17640, 5th pctl value: 4.140, 95th pctl value: 12.7
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   2
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:31:00 PDT, V1: 117.913, V2: 118.374
+[TEST] Timestamp: 2025-08-17 01:41:00 PDT, V1: 119.439, V2: 119.9
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -2971,7 +2971,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:31:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:41:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -2983,14 +2983,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:31:00 PDT, Temperature: 78.42
+[TEST] Timestamp: 2025-08-17 01:41:00 PDT, Temperature: 78.14
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:31:00 PDT, VibrationMag: 3.51, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:41:00 PDT, VibrationMag: 3.32, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 4
 
@@ -2999,27 +2999,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:32:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:42:00 PDT
 
-[TEST] Current total window sum: 34.66240
+[TEST] Current total window sum: 11.90183
 
 
-[TEST] S1 = 0.643629
-[TEST] S2 = 0.6518740000000001
-[TEST] S1 + S2 = 7.77302
+[TEST] S1 = 0.186901
+[TEST] S2 = 0.186775
+[TEST] S1 + S2 = 2.24206
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 7.77302, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 2.24206, 5th pctl value: 4.140, 95th pctl value: 12.7
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   3
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:32:00 PDT, V1: 118.268, V2: 118.694
+[TEST] Timestamp: 2025-08-17 01:42:00 PDT, V1: 119.439, V2: 119.9
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -3032,7 +3032,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:32:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:42:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -3044,14 +3044,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:32:00 PDT, Temperature: 78.36
+[TEST] Timestamp: 2025-08-17 01:42:00 PDT, Temperature: 78.11
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:32:00 PDT, VibrationMag: 2.31, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:42:00 PDT, VibrationMag: 6.68, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 5
 
@@ -3060,27 +3060,27 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:33:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:43:00 PDT
 
-[TEST] Current total window sum: 43.93019
+[TEST] Current total window sum: 14.10905
 
 
-[TEST] S1 = 0.768312
-[TEST] S2 = 0.77632
-[TEST] S1 + S2 = 9.26779
+[TEST] S1 = 0.183202
+[TEST] S2 = 0.184668
+[TEST] S1 + S2 = 2.20722
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 9.26779, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 2.20722, 5th pctl value: 4.140, 95th pctl value: 12.7
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   4
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:33:00 PDT, V1: 117.877, V2: 118.339
+[TEST] Timestamp: 2025-08-17 01:43:00 PDT, V1: 119.474, V2: 119.935
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -3093,7 +3093,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:33:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:43:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -3105,14 +3105,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:33:00 PDT, Temperature: 78.36
+[TEST] Timestamp: 2025-08-17 01:43:00 PDT, Temperature: 78.14
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:33:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:43:00 PDT, VibrationMag: 2.08, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 6
 
@@ -3121,574 +3121,21 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:34:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:44:00 PDT
 
-[TEST] Current total window sum: 52.35563
+[TEST] Current total window sum: 16.13984
 
 
-[TEST] S1 = 0.6967519999999999
-[TEST] S2 = 0.707488
-[TEST] S1 + S2 = 8.42544
+[TEST] S1 = 0.168876
+[TEST] S2 = 0.16959
+[TEST] S1 + S2 = 2.03080
 
-[TEST] value for lookup table input: 40.8889485
+[TEST] value for lookup table input: 23.803471499999997
 
-Metric (S): 8.42544, 5th pctl value: 4.130, 95th pctl value: 12.48
+Metric (S): 2.03080, 5th pctl value: 4.140, 95th pctl value: 12.7
 
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
 
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:34:00 PDT, V1: 118.126, V2: 118.587
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:34:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:34:00 PDT, Temperature: 78.38
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:34:00 PDT, VibrationMag: 1.63, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 7
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:35:00 PDT
-
-[TEST] Current total window sum: 60.71648
-
-
-[TEST] S1 = 0.692399
-[TEST] S2 = 0.701077
-[TEST] S1 + S2 = 8.36086
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 8.36086, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:35:00 PDT, V1: 118.09, V2: 118.552
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:35:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:35:00 PDT, Temperature: 78.31
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:35:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 8
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:36:00 PDT
-
-[TEST] Current total window sum: 69.50048
-
-
-[TEST] S1 = 0.72762
-[TEST] S2 = 0.736379
-[TEST] S1 + S2 = 8.78399
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 8.78399, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:36:00 PDT, V1: 118.019, V2: 118.481
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:36:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:36:00 PDT, Temperature: 78.24
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:36:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 9
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:37:00 PDT
-
-[TEST] Current total window sum: 77.87474
-
-
-[TEST] S1 = 0.69339
-[TEST] S2 = 0.702321
-[TEST] S1 + S2 = 8.37427
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 8.37427, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:37:00 PDT, V1: 118.09, V2: 118.587
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:37:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:37:00 PDT, Temperature: 78.27
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:37:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 10
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:38:00 PDT
-
-[TEST] Current total window sum: 88.39637
-
-
-[TEST] S1 = 0.871262
-[TEST] S2 = 0.882342
-[TEST] S1 + S2 = 10.52162
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 10.52162, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:38:00 PDT, V1: 117.664, V2: 118.09
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:38:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:38:00 PDT, Temperature: 78.29
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:38:00 PDT, VibrationMag: 1.0, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 11
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:39:00 PDT
-
-[TEST] Current total window sum: 97.13859
-
-
-[TEST] S1 = 0.724358
-[TEST] S2 = 0.732679
-[TEST] S1 + S2 = 8.74222
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 8.74222, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:39:00 PDT, V1: 118.019, V2: 118.481
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:39:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:39:00 PDT, Temperature: 78.28
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:39:00 PDT, VibrationMag: 0.58, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 12
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:40:00 PDT
-
-[TEST] Current total window sum: 106.42612
-
-
-[TEST] S1 = 0.768706
-[TEST] S2 = 0.779216
-[TEST] S1 + S2 = 9.28753
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 9.28753, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:40:00 PDT, V1: 117.948, V2: 118.41
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:40:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:40:00 PDT, Temperature: 78.29
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:40:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 13
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:41:00 PDT
-
-[TEST] Current total window sum: 116.42795
-
-
-[TEST] S1 = 0.828335
-[TEST] S2 = 0.8386359999999999
-[TEST] S1 + S2 = 10.00183
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 10.00183, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:41:00 PDT, V1: 117.735, V2: 118.197
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:41:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:41:00 PDT, Temperature: 78.36
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:41:00 PDT, VibrationMag: 0.82, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 14
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:42:00 PDT
-
-[TEST] Current total window sum: 126.50055
-
-
-[TEST] S1 = 0.8347190000000001
-[TEST] S2 = 0.844048
-[TEST] S1 + S2 = 10.07260
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 10.07260, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Under 5 count:   0
-[TEST] Over 95 count:   0
-
-##########################
-VOLTAGE
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:42:00 PDT, V1: 117.735, V2: 118.197
-
-[TEST] V1 and V2 counts:
-[TEST] Under Threshold: 114, Over Threshold: 126
-[TEST] Under v1 count:  0
-[TEST] Over v1 count: 0
-[TEST] Under v2 count: 0
-[TEST] Over v2 count: 0
-
-##########################
-FREQUENCY
-##########################
-
-[TEST] Timestamp: 2025-08-17 00:42:00 PDT, F1: 59.98, F2: 59.98
-
-[TEST] F counts:
-[TEST] Under Threshold: 59.95, Over Threshold: 60.05
-[TEST] Under f count: 0
-[TEST] Over f count: 0
-
-##########################
-TEMPERATURE
-##########################
-
-[TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:42:00 PDT, Temperature: 78.38
-
-##########################
-VIBRATION
-##########################
-
-[TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:42:00 PDT, VibrationMag: 0.0, VibrationBool: 0.0
---------------------------------------------------------------------------------------------------------------
-[TEST] Time window index: 15
-
-##########################
-APPARENT POWER
-##########################
-
-
-[TEST] Current timestamp: 2025-08-17 00:43:00 PDT
-
-[TEST] Current total window sum: 135.32762
-
-
-[TEST] S1 = 0.7312150000000001
-[TEST] S2 = 0.7399640000000001
-[TEST] S1 + S2 = 8.82707
-
-[TEST] value for lookup table input: 40.8889485
-
-Metric (S): 8.82707, 5th pctl value: 4.130, 95th pctl value: 12.48
-
-[TEST] Total window sum: 135.328
-
-[TEST] Value for the next window lookup table: 33.831906
-[TEST] This is also the value compared to the p95 pctl of window
-
-==========THIS IS THE ALERT (Total window sum over 95th pctl)==========
+==========THIS IS THE ALERT (Consistently under 05th pctl)==========
 
 [TEST] Alert sent to VM successfully!
 [TEST] Under 5 count:   0
@@ -3698,7 +3145,7 @@ Metric (S): 8.82707, 5th pctl value: 4.130, 95th pctl value: 12.48
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:43:00 PDT, V1: 117.984, V2: 118.445
+[TEST] Timestamp: 2025-08-17 01:44:00 PDT, V1: 119.439, V2: 119.935
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -3711,7 +3158,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:43:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:44:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -3723,14 +3170,571 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:43:00 PDT, Temperature: 78.41
+[TEST] Timestamp: 2025-08-17 01:44:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:43:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:44:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 7
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:45:00 PDT
+
+[TEST] Current total window sum: 18.57722
+
+
+[TEST] S1 = 0.20187
+[TEST] S2 = 0.20436
+[TEST] S1 + S2 = 2.43738
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.43738, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   1
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:45:00 PDT, V1: 119.403, V2: 119.864
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:45:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:45:00 PDT, Temperature: 78.14
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:45:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 8
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:46:00 PDT
+
+[TEST] Current total window sum: 20.84159
+
+
+[TEST] S1 = 0.188212
+[TEST] S2 = 0.189183
+[TEST] S1 + S2 = 2.26437
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.26437, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   2
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:46:00 PDT, V1: 119.403, V2: 119.9
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:46:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:46:00 PDT, Temperature: 78.12
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:46:00 PDT, VibrationMag: 4.65, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 9
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:47:00 PDT
+
+[TEST] Current total window sum: 23.18078
+
+
+[TEST] S1 = 0.194333
+[TEST] S2 = 0.195531
+[TEST] S1 + S2 = 2.33918
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.33918, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   3
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:47:00 PDT, V1: 119.403, V2: 119.864
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:47:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:47:00 PDT, Temperature: 78.12
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:47:00 PDT, VibrationMag: 1.29, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 10
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:48:00 PDT
+
+[TEST] Current total window sum: 25.81631
+
+
+[TEST] S1 = 0.218679
+[TEST] S2 = 0.220577
+[TEST] S1 + S2 = 2.63554
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.63554, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   4
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:48:00 PDT, V1: 119.368, V2: 119.829
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:48:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:48:00 PDT, Temperature: 78.14
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:48:00 PDT, VibrationMag: 5.74, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 11
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:49:00 PDT
+
+[TEST] Current total window sum: 28.20699
+
+
+[TEST] S1 = 0.19878
+[TEST] S2 = 0.199666
+[TEST] S1 + S2 = 2.39068
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.39068, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+
+==========THIS IS THE ALERT (Consistently under 05th pctl)==========
+
+[TEST] Alert sent to VM successfully!
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:49:00 PDT, V1: 119.368, V2: 119.864
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:49:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:49:00 PDT, Temperature: 78.15
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:49:00 PDT, VibrationMag: 3.11, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 12
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:50:00 PDT
+
+[TEST] Current total window sum: 31.47479
+
+
+[TEST] S1 = 0.271241
+[TEST] S2 = 0.27339199999999997
+[TEST] S1 + S2 = 3.26780
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 3.26780, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   1
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:50:00 PDT, V1: 119.19, V2: 119.652
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:50:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:50:00 PDT, Temperature: 78.11
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:50:00 PDT, VibrationMag: 3.56, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 13
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:51:00 PDT
+
+[TEST] Current total window sum: 34.59869
+
+
+[TEST] S1 = 0.259064
+[TEST] S2 = 0.261586
+[TEST] S1 + S2 = 3.12390
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 3.12390, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   2
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:51:00 PDT, V1: 119.261, V2: 119.758
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:51:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:51:00 PDT, Temperature: 78.12
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:51:00 PDT, VibrationMag: 4.73, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 14
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:52:00 PDT
+
+[TEST] Current total window sum: 36.91912
+
+
+[TEST] S1 = 0.192747
+[TEST] S2 = 0.19399100000000002
+[TEST] S1 + S2 = 2.32043
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.32043, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Under 5 count:   3
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:52:00 PDT, V1: 119.403, V2: 119.864
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:52:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:52:00 PDT, Temperature: 78.11
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:52:00 PDT, VibrationMag: 5.0, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 15
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:53:00 PDT
+
+[TEST] Current total window sum: 39.18250
+
+
+[TEST] S1 = 0.187999
+[TEST] S2 = 0.18923099999999998
+[TEST] S1 + S2 = 2.26338
+
+[TEST] value for lookup table input: 23.803471499999997
+
+Metric (S): 2.26338, 5th pctl value: 4.140, 95th pctl value: 12.7
+
+[TEST] Total window sum: 39.182
+
+[TEST] Value for the next window lookup table: 9.795623999999998
+[TEST] This is also the value compared to the p95 pctl of window
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:53:00 PDT, V1: 119.403, V2: 119.9
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:53:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:53:00 PDT, Temperature: 78.12
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:53:00 PDT, VibrationMag: 5.83, VibrationBool: 0.0
 [TEST] ********** Time window end **********
 
 --------------------------------------------------------------------------------------------------------------
@@ -3743,30 +3747,30 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:44:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:54:00 PDT
 
-[TEST] Lookup table parameters:  daily window number = 3, day of week = 7, power bin index = 17
+[TEST] Lookup table parameters:  daily window number = 8, day of week = 7, power bin index = 5
 
 [TEST] Set total window sum to 0
-[TEST] Current total window sum: 8.82024
+[TEST] Current total window sum: 0.11150
 
 
-[TEST] S1 = 0.7302430000000001
-[TEST] S2 = 0.739797
-[TEST] S1 + S2 = 8.82024
+[TEST] S1 = 0.01295
+[TEST] S2 = 0.005634
+[TEST] S1 + S2 = 0.11150
 
-[TEST] value for lookup table input: 33.831906
+[TEST] value for lookup table input: 9.795623999999998
 
-Metric (S): 8.82024, 5th pctl value: 4.130, 95th pctl value: 12.5
+Metric (S): 0.11150, 5th pctl value: 4.230, 95th pctl value: 11.92
 
-[TEST] Under 5 count:   0
+[TEST] Under 5 count:   1
 [TEST] Over 95 count:   0
 
 ##########################
 VOLTAGE
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:44:00 PDT, V1: 118.019, V2: 118.481
+[TEST] Timestamp: 2025-08-17 01:54:00 PDT, V1: 119.864, V2: 120.361
 
 [TEST] V1 and V2 counts:
 [TEST] Under Threshold: 114, Over Threshold: 126
@@ -3779,7 +3783,7 @@ VOLTAGE
 FREQUENCY
 ##########################
 
-[TEST] Timestamp: 2025-08-17 00:44:00 PDT, F1: 59.98, F2: 59.98
+[TEST] Timestamp: 2025-08-17 01:54:00 PDT, F1: 59.98, F2: 59.98
 
 [TEST] F counts:
 [TEST] Under Threshold: 59.95, Over Threshold: 60.05
@@ -3791,14 +3795,14 @@ TEMPERATURE
 ##########################
 
 [TEST] Threshold: 90 F
-[TEST] Timestamp: 2025-08-17 00:44:00 PDT, Temperature: 78.41
+[TEST] Timestamp: 2025-08-17 01:54:00 PDT, Temperature: 78.15
 
 ##########################
 VIBRATION
 ##########################
 
 [TEST] Threshold: 20
-[TEST] Timestamp: 2025-08-17 00:44:00 PDT, VibrationMag: 1.41, VibrationBool: 0.0
+[TEST] Timestamp: 2025-08-17 01:54:00 PDT, VibrationMag: 2.16, VibrationBool: 0.0
 --------------------------------------------------------------------------------------------------------------
 [TEST] Time window index: 2
 
@@ -3807,12 +3811,353 @@ APPARENT POWER
 ##########################
 
 
-[TEST] Current timestamp: 2025-08-17 00:45:00 PDT
+[TEST] Current timestamp: 2025-08-17 01:55:00 PDT
 
-[TEST] Current total window sum: 17.63809
+[TEST] Current total window sum: 0.19564
 
 
-[TEST] S1 = 0.730263
-[TEST] S2 = 0.739379
-[TEST] S1 + S2 = 8.81785
+[TEST] S1 = 0.009113
+[TEST] S2 = 0.004909
+[TEST] S1 + S2 = 0.08413
 
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.08413, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+[TEST] Under 5 count:   2
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:55:00 PDT, V1: 119.9, V2: 120.361
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:55:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:55:00 PDT, Temperature: 78.15
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:55:00 PDT, VibrationMag: 1.91, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 3
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:56:00 PDT
+
+[TEST] Current total window sum: 0.26105
+
+
+[TEST] S1 = 0.007388
+[TEST] S2 = 0.0035150000000000003
+[TEST] S1 + S2 = 0.06542
+
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.06542, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+[TEST] Under 5 count:   3
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:56:00 PDT, V1: 119.9, V2: 120.397
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:56:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:56:00 PDT, Temperature: 78.1
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:56:00 PDT, VibrationMag: 1.15, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 4
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:57:00 PDT
+
+[TEST] Current total window sum: 0.33451
+
+
+[TEST] S1 = 0.007557
+[TEST] S2 = 0.004686
+[TEST] S1 + S2 = 0.07346
+
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.07346, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+[TEST] Under 5 count:   4
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:57:00 PDT, V1: 119.864, V2: 120.361
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:57:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:57:00 PDT, Temperature: 78.11
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:57:00 PDT, VibrationMag: 2.08, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 5
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:58:00 PDT
+
+[TEST] Current total window sum: 0.43335
+
+
+[TEST] S1 = 0.010114000000000001
+[TEST] S2 = 0.006359
+[TEST] S1 + S2 = 0.09884
+
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.09884, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+
+==========THIS IS THE ALERT (Consistently under 05th pctl)==========
+
+[TEST] Alert sent to VM successfully!
+[TEST] Under 5 count:   0
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:58:00 PDT, V1: 119.864, V2: 120.326
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:58:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:58:00 PDT, Temperature: 78.1
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:58:00 PDT, VibrationMag: 2.65, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 6
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 01:59:00 PDT
+
+[TEST] Current total window sum: 0.50847
+
+
+[TEST] S1 = 0.007833999999999999
+[TEST] S2 = 0.004686
+[TEST] S1 + S2 = 0.07512
+
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.07512, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+[TEST] Under 5 count:   1
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:59:00 PDT, V1: 119.9, V2: 120.361
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 01:59:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
+TEMPERATURE
+##########################
+
+[TEST] Threshold: 90 F
+[TEST] Timestamp: 2025-08-17 01:59:00 PDT, Temperature: 78.05
+
+##########################
+VIBRATION
+##########################
+
+[TEST] Threshold: 20
+[TEST] Timestamp: 2025-08-17 01:59:00 PDT, VibrationMag: 1.73, VibrationBool: 0.0
+--------------------------------------------------------------------------------------------------------------
+[TEST] Time window index: 7
+
+##########################
+APPARENT POWER
+##########################
+
+
+[TEST] Current timestamp: 2025-08-17 02:00:00 PDT
+
+[TEST] Current total window sum: 0.60161
+
+
+[TEST] S1 = 0.009721
+[TEST] S2 = 0.005803
+[TEST] S1 + S2 = 0.09314
+
+[TEST] value for lookup table input: 9.795623999999998
+
+Metric (S): 0.09314, 5th pctl value: 4.230, 95th pctl value: 11.92
+
+[TEST] Under 5 count:   2
+[TEST] Over 95 count:   0
+
+##########################
+VOLTAGE
+##########################
+
+[TEST] Timestamp: 2025-08-17 02:00:00 PDT, V1: 119.9, V2: 120.397
+
+[TEST] V1 and V2 counts:
+[TEST] Under Threshold: 114, Over Threshold: 126
+[TEST] Under v1 count:  0
+[TEST] Over v1 count: 0
+[TEST] Under v2 count: 0
+[TEST] Over v2 count: 0
+
+##########################
+FREQUENCY
+##########################
+
+[TEST] Timestamp: 2025-08-17 02:00:00 PDT, F1: 59.98, F2: 59.98
+
+[TEST] F counts:
+[TEST] Under Threshold: 59.95, Over Threshold: 60.05
+[TEST] Under f count: 0
+[TEST] Over f count: 0
+
+##########################
